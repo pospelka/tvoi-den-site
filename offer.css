@@ -1,0 +1,825 @@
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../fonts/MontserratAlternates-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+
+:root {
+    --color-light: #ffff;
+    --color-dark: #29262B;
+    --color-gray: #494949;
+    --color-purple: #9157FF;
+    --color-purple-light: #C2A1FF;
+    --color-purple-light-2: #DDCBFF;
+    --color-purple-extra-light: #F9F3FF;
+    --color-pink: #F164C6;
+    --color-pink-gradient: linear-gradient(90deg, #f060c3 0%, #ffa0f5 100%);
+    --color-purple-gradient: linear-gradient(90deg, #9157ff 0%, #ccb1ff 62.02%, #d5beff 100%);
+    --color-purple-light-gradient: linear-gradient(180deg, #fff 0%, #e7daff 100%);
+
+    --box-shadow: 7px 7px 0 0 #c8abff;
+    --box-shadow-2: 0 4px 4px 0 rgba(135, 119, 166, 0.25);
+
+    --font-family-base: "Montserrat Alternates", sans-serif;
+    --font-family-accent: "Gogol", sans-serif;
+
+    --container-width: 1240px;
+
+    --transition-duration: 0.2s;
+
+    --border: 1px solid #9157FF;
+
+}
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+.offer-title,
+.offer-section-title,
+.offer-subtitle,
+.offer-requisite-value {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #2d2d2d;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.9), transparent 32%),
+    linear-gradient(180deg, #f7f2ec 0%, #f3ede6 100%);
+}
+
+.offer-page {
+  padding: 56px 0 90px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.offer-document {
+  position: relative;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #eadfd3;
+  border-radius: 32px;
+  padding: 56px 64px;
+  box-shadow:
+    0 8px 30px rgba(89, 66, 44, 0.06),
+    0 28px 80px rgba(89, 66, 44, 0.09);
+  backdrop-filter: blur(6px);
+}
+
+.offer-header {
+  margin-bottom: 42px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #e8ddd1;
+}
+
+.offer-kicker {
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9b7d63;
+}
+
+.offer-title {
+  margin: 0;
+  font-size: 44px;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #1f1c19;
+}
+
+.offer-intro {
+  margin-bottom: 22px;
+}
+
+.offer-paragraph {
+  margin: 0 0 18px;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #403a35;
+}
+
+.offer-paragraph--last {
+  margin-bottom: 0;
+}
+
+.offer-accent {
+  font-weight: 700;
+  color: #1f1c19;
+}
+
+.offer-section,
+.offer-appendix {
+  margin-top: 38px;
+  padding-top: 34px;
+  border-top: 1px solid #e8ddd1;
+}
+
+.offer-section-title {
+  margin: 0 0 22px;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #1f1c19;
+}
+
+.offer-subsection + .offer-subsection {
+  margin-top: 28px;
+}
+
+.offer-subtitle {
+  margin: 0 0 14px;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #2c2723;
+}
+
+.offer-point {
+  margin: 0 0 16px;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #403a35;
+}
+
+.offer-point-number {
+  font-weight: 800;
+  color: #1d1a18;
+}
+
+.offer-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.offer-list li {
+  position: relative;
+  margin-bottom: 14px;
+  padding-left: 0;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #403a35;
+}
+
+.offer-list li:last-child {
+  margin-bottom: 0;
+}
+
+.offer-note {
+  margin: 22px 0 24px;
+  padding: 24px 26px;
+  background: linear-gradient(180deg, #fcfaf7 0%, #f8f3ed 100%);
+  border: 1px solid #ece0d5;
+  border-radius: 22px;
+}
+
+.offer-note--soft {
+  margin: 16px 0 18px;
+}
+
+.offer-note-text {
+  margin: 0 0 14px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4a433d;
+}
+
+.offer-list--letters li {
+  padding-left: 30px;
+}
+
+.offer-list--letters li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 700;
+  color: #8e725b;
+}
+
+.offer-list--letters li:nth-child(1)::before {
+  content: "а)";
+}
+
+.offer-list--letters li:nth-child(2)::before {
+  content: "б)";
+}
+
+.offer-list--inner li {
+  padding-left: 0;
+}
+
+.offer-section--requisites .offer-section-title {
+  margin-bottom: 24px;
+}
+
+.offer-requisites {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.offer-requisite-card {
+  padding: 22px 24px;
+  background: linear-gradient(180deg, #fcfaf7 0%, #f8f3ed 100%);
+  border: 1px solid #ece0d5;
+  border-radius: 20px;
+  min-height: 106px;
+}
+
+.offer-requisite-card--wide {
+  grid-column: span 2;
+}
+
+.offer-requisite-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9b7d63;
+}
+
+.offer-requisite-value {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.7;
+  font-weight: 600;
+  color: #2c2723;
+  word-break: break-word;
+}
+
+.offer-appendix-head {
+  margin-bottom: 22px;
+}
+
+.offer-appendix-head .offer-section-title {
+  margin-bottom: 0;
+}
+
+.offer-list--rules {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 18px;
+}
+
+.offer-list--rules li {
+  min-height: 100%;
+  padding: 20px 22px 20px 58px;
+  background: linear-gradient(180deg, #fcfaf7 0%, #f8f3ed 100%);
+  border: 1px solid #ece0d5;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(89, 66, 44, 0.04);
+}
+
+.offer-list--rules li::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 24px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #cfb198 0%, #a98463 100%);
+  box-shadow: 0 0 0 6px rgba(207, 177, 152, 0.18);
+}
+
+
+
+/* стрелка назад */
+
+.offer-back {
+  position: sticky;
+  top: 24px;
+  z-index: 20;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 24px 0 20px;
+  padding: 12px 18px;
+
+  border: none;
+  border-radius: 999px;
+  background-color: #8f57ff;
+
+  color: #fff;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 15px;
+  line-height: 1;
+  text-decoration: none;
+
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(143, 87, 255, 0.25);
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.offer-back svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.offer-back span {
+  color: #fff;
+}
+
+.offer-back:hover {
+  background-color: #7a43f0;
+}
+
+.offer-back:focus {
+  outline: none;
+}
+
+@media (max-width: 435px) {
+  .offer-back {
+    top: 16px;
+    margin: 16px 0 16px;
+    padding: 10px 14px;
+    font-size: 15px;
+  }
+}
+
+
+@media (max-width: 435px) {
+  .offer-page {
+    padding: 24px 0 40px;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .offer-document {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  /* заголовок */
+  .offer-title {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .offer-kicker {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  /* текст */
+  .offer-paragraph,
+  .offer-point,
+  .offer-list li {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* секции */
+  .offer-section,
+  .offer-appendix {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+
+  .offer-section-title {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .offer-subtitle {
+    font-size: 16px;
+  }
+
+  /* блоки (серые карточки) */
+  .offer-note {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  /* списки */
+  .offer-list--letters li {
+    padding-left: 22px;
+  }
+
+  /* реквизиты — в одну колонку */
+  .offer-requisites {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .offer-requisite-card {
+    padding: 16px;
+    min-height: auto;
+  }
+
+  .offer-requisite-value {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* приложение — карточки в одну колонку */
+  .offer-list--rules {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .offer-list--rules li {
+    padding: 16px 14px 16px 42px;
+    border-radius: 14px;
+  }
+
+  .offer-list--rules li::before {
+    left: 14px;
+    top: 18px;
+    width: 10px;
+    height: 10px;
+  }
+
+  /* отступ после реквизитов */
+  .offer-section--requisites {
+    margin-bottom: 40px;
+  }
+}
