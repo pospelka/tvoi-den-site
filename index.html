@@ -1,117 +1,119 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <title>Твой День</title>
   </head>
   <body>
     <script src="tvoi-den.js/script.js" defer></script>
+
     <!-- хеддер -->
-<!-- ДЕСКТОПНЫЙ ХЕДЕР -->
-<header class="header desktop-header" id="siteHeader">
-  <div class="container">
-    <div class="header-inner">
-      <div class="header-logo">
-        <img
-          src="image/балаган логотип.svg"
-          alt="логотип балаган"
-          class="logo-balagan"
-        />
-        <img
-          src="image/твой день логотип.svg"
-          alt="логотип твой день"
-          class="logo-tvoi-den"
-        />
+    <!-- ДЕСКТОПНЫЙ ХЕДЕР -->
+    <header class="header desktop-header" id="siteHeader">
+      <div class="container">
+        <div class="header-inner">
+          <div class="header-logo">
+            <img
+              src="image/балаган логотип.svg"
+              alt="логотип балаган"
+              class="logo-balagan"
+            />
+            <img
+              src="image/твой день логотип.svg"
+              alt="логотип твой день"
+              class="logo-tvoi-den"
+            />
+          </div>
+
+          <nav class="header-items" aria-label="Основное меню">
+            <a href="#first" class="header-item">ГЛАВНАЯ</a>
+            <a href="#interior" class="header-item">ИНТЕРЬЕР</a>
+            <a href="#rules" class="header-item">ПРАВИЛА</a>
+            <a href="#price" class="header-item">ЦЕНЫ</a>
+            <a href="#additional" class="header-item">ДОП.УСЛУГИ</a>
+            <a href="#address" class="header-item">АДРЕС</a>
+            <a href="#reviews" class="header-item">ОТЗЫВЫ</a>
+          </nav>
+
+          <div class="header-contacts">
+            <div class="number">
+              <a href="https://max.ru/u/f9LHodD0cOJWDXlfQP_b83EdN4VKzNkR4BSoYPe0M-LM2IZvOeE4PMUziQY">
+                <img
+                  src="icons/макс иконка.svg"
+                  alt="иконка мессенджера"
+                  class="header-contact-icon"
+                />
+              </a>
+              <a href="tel:+79063298381" class="header-phone">+7 906 329-83-81</a>
+            </div>
+
+            <p class="address">г. Казань, метро Дубравная, ул. Дубравная 2Д</p>
+          </div>
+        </div>
       </div>
+    </header>
 
-      <nav class="header-items" aria-label="Основное меню">
-        <a href="#first" class="header-item">ГЛАВНАЯ</a>
-        <a href="#interior" class="header-item">ИНТЕРЬЕР</a>
-        <a href="#rules" class="header-item">ПРАВИЛА</a>
-        <a href="#price" class="header-item">ЦЕНЫ</a>
-        <a href="#additional" class="header-item">ДОП.УСЛУГИ</a>
-        <a href="#address" class="header-item">АДРЕС</a>
-        <a href="#reviews" class="header-item">ОТЗЫВЫ</a>
-      </nav>
-
-      <div class="header-contacts">
-        <div class="number">
-          <a href="https://max.ru/u/f9LHodD0cOJWDXlfQP_b83EdN4VKzNkR4BSoYPe0M-LM2IZvOeE4PMUziQY">
+    <!-- МОБИЛЬНЫЙ ХЕДЕР -->
+    <header class="mobile-header">
+      <div class="mobile-header__inner">
+        <div class="mobile-header__logos">
           <img
-            src="icons/макс иконка.svg"
-            alt="иконка мессенджера"
-            class="header-contact-icon"
-          /></a>
-          <a href="tel:+79063298381" class="header-phone">+7 906 329-83-81</a>
+            src="image/балаган логотип.svg"
+            alt="логотип балаган"
+            class="mobile-header__logo-balagan"
+          />
+          <img
+            src="image/твой день логотип.svg"
+            alt="логотип твой день"
+            class="mobile-header__logo-day"
+          />
         </div>
 
-        <p class="address">г. Казань, метро Дубравная, ул. Дубравная 2Д</p>
+        <p class="mobile-header__address">
+          г. Казань, метро Дубравная, ул. Дубравная 2Д
+        </p>
+
+        <button
+          class="mobile-burger"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- МОБИЛЬНАЯ ПЛАШКА -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-panel">
+        <button class="mobile-menu-close" type="button" aria-label="Закрыть меню">
+          ×
+        </button>
+
+        <nav class="mobile-menu-nav" aria-label="Мобильное меню">
+          <a href="#first" class="mobile-menu-link">Главная</a>
+          <a href="#interior" class="mobile-menu-link">Интерьер</a>
+          <a href="#rules" class="mobile-menu-link">Правила</a>
+          <a href="#price" class="mobile-menu-link">Цены</a>
+          <a href="#additional" class="mobile-menu-link">Доп. услуги</a>
+          <a href="#address" class="mobile-menu-link">Контакты</a>
+          <a href="#reviews" class="mobile-menu-link">Отзывы</a>
+        </nav>
+
+        <div class="mobile-menu-bottom">
+          <a href="tel:+79063298381" class="mobile-menu-phone">+7 906 329-83-81</a>
+          <p class="mobile-menu-address">
+            г. Казань, метро Дубравная,<br />
+            ул. Дубравная 2Д
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</header>
-
-<!-- МОБИЛЬНЫЙ ХЕДЕР -->
-<header class="mobile-header">
-  <div class="mobile-header__inner">
-    <div class="mobile-header__logos">
-      <img
-        src="image/балаган логотип.svg"
-        alt="логотип балаган"
-        class="mobile-header__logo-balagan"
-      />
-      <img
-        src="image/твой день логотип.svg"
-        alt="логотип твой день"
-        class="mobile-header__logo-day"
-      />
-    </div>
-
-    <p class="mobile-header__address">
-      г. Казань, метро Дубравная, ул. Дубравная 2Д
-    </p>
-
-    <button
-      class="mobile-burger"
-      type="button"
-      aria-label="Открыть меню"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
-
-<!-- МОБИЛЬНАЯ ПЛАШКА -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-panel">
-    <button class="mobile-menu-close" type="button" aria-label="Закрыть меню">
-      ×
-    </button>
-
-    <nav class="mobile-menu-nav" aria-label="Мобильное меню">
-      <a href="#first" class="mobile-menu-link">Главная</a>
-      <a href="#interior" class="mobile-menu-link">Интерьер</a>
-      <a href="#rules" class="mobile-menu-link">Правила</a>
-      <a href="#price" class="mobile-menu-link">Цены</a>
-      <a href="#additional" class="mobile-menu-link">Доп. услуги</a>
-      <a href="#address" class="mobile-menu-link">Контакты</a>
-      <a href="#reviews" class="mobile-menu-link">Отзывы</a>
-    </nav>
-
-    <div class="mobile-menu-bottom">
-      <a href="tel:+79063298381" class="mobile-menu-phone">+7 906 329-83-81</a>
-      <p class="mobile-menu-address">
-        г. Казань, метро Дубравная,<br />
-        ул. Дубравная 2Д
-      </p>
-    </div>
-  </div>
-</div>
 
     <main>
       <!-- секция главный экран -->
@@ -130,55 +132,57 @@
             class="banner banner-mobile"
           />
         </div>
-          <div class="sign">
-            <p class="sign_text">
-              Твой классный <br />праздник <br />от <strong>А</strong> до
-              <strong>Я</strong>
-            </p>
-          </div>
 
-          <button class="button_book open-modal" id="openModal" type="button">
-            <div class="button-content">
-              <img
-                src="icons/иконка звонка.svg"
-                alt="иконка звонка"
-                class="call-icon"
-              />
-              <p class="button_book_text">Забронировать</p>
-            </div>
+        <div class="sign">
+          <p class="sign_text">
+            Твой классный <br />праздник <br />от <strong>А</strong> до
+            <strong>Я</strong>
+          </p>
+        </div>
+
+        <button class="button_book open-modal" id="openModal" type="button">
+          <div class="button-content">
+            <img
+              src="icons/иконка звонка.svg"
+              alt="иконка звонка"
+              class="call-icon"
+            />
+            <p class="button_book_text">Забронировать</p>
+          </div>
+        </button>
+
+        <div class="card" hidden>
+          <button type="button">
+            <a href="">Позвонить +7 906-329-83-81</a>
           </button>
 
-          <div class="card" hidden>
-            <button type="button">
-              <a href="">Позвонить +7 906-329-83-81</a>
-            </button>
+          <button type="button">
+            <a href="">Отменить</a>
+          </button>
+        </div>
 
-            <button type="button">
-              <a href="">Отменить</a>
-            </button>
-          </div>
+        <div class="sign-cookie" id="cookieBanner">
+          <div class="sign-cookie_content">
+            <p class="sign-cookie_text">
+              Сайт использует cookie-файлы, чтобы сделать ваше пребывание на нем максимально удобным.
+              Оставаясь на сайте, вы даёте своё согласие на использование cookie-файлов.
+            </p>
 
-          <div class="sign-cookie" id="cookieBanner">
-            <div class="sign-cookie_content">
-              <p class="sign-cookie_text">
-                Сайт использует cookie-файлы, чтобы сделать ваше пребывание на нем максимально удобным.
-                Оставаясь на сайте, вы даёте своё согласие на использование cookie-файлов.
-              </p>
+            <div class="sign-cookie_actions">
+              <button class="sign-cookie_button" id="cookieAccept" type="button">
+                <span class="sign-cookie_button_text">Соглашаюсь</span>
+              </button>
 
-              <div class="sign-cookie_actions">
-                <button class="sign-cookie_button" id="cookieAccept" type="button">
-                  <span class="sign-cookie_button_text">Соглашаюсь</span>
-                </button>
-
-                <img
-                  src="image/печенье.png"
-                  alt="печенька"
-                  class="sign-cookie_image"
-                />
-              </div>
+              <img
+                src="image/печенье.png"
+                alt="печенька"
+                class="sign-cookie_image"
+              />
             </div>
           </div>
+        </div>
       </section>
+
       <!-- секция слоган -->
       <section class="slogan">
         <div class="slogan-wrap">
@@ -195,6 +199,7 @@
           </div>
         </div>
       </section>
+
       <!-- секция почему мы -->
       <section class="why-we">
         <h3 class="title-why-we">
@@ -248,294 +253,294 @@
           </li>
         </ul>
       </section>
+
       <!-- секция обзор студии -->
       <section class="studio-overview" id="interior">
-  <div class="container">
-    <div class="studio-overview-top">
-      <h1 class="title-studio-overview">ОБЗОР СТУДИИ</h1>
+        <div class="container">
+          <div class="studio-overview-top">
+            <h1 class="title-studio-overview">ОБЗОР СТУДИИ</h1>
 
-      <button class="button-studio-overview open-video" type="button">
-        <span class="button-studio-overview-text">Видео-обзор студии</span>
-        <svg
-          width="43"
-          height="43"
-          viewBox="0 0 58 58"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M41.6624 26.5642C43.0868 27.3865 43.0868 29.4424 41.6624 30.2647L24.0362 40.4412C22.6119 41.2635 20.8315 40.2356 20.8315 38.5909L20.8315 18.238C20.8315 16.5933 22.6119 15.5653 24.0362 16.3877L41.6624 26.5642Z"
-            fill="white"
-          />
-          <circle
-            cx="28.6292"
-            cy="28.6292"
-            r="27.6292"
-            stroke="white"
-            stroke-width="2"
-          />
-        </svg>
-      </button>
-    </div>
+            <button class="button-studio-overview open-video" type="button">
+              <span class="button-studio-overview-text">Видео-обзор студии</span>
+              <svg
+                width="43"
+                height="43"
+                viewBox="0 0 58 58"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M41.6624 26.5642C43.0868 27.3865 43.0868 29.4424 41.6624 30.2647L24.0362 40.4412C22.6119 41.2635 20.8315 40.2356 20.8315 38.5909L20.8315 18.238C20.8315 16.5933 22.6119 15.5653 24.0362 16.3877L41.6624 26.5642Z"
+                  fill="white"
+                />
+                <circle
+                  cx="28.6292"
+                  cy="28.6292"
+                  r="27.6292"
+                  stroke="white"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
 
-    <div class="studio-overview-controls">
-      <div class="dots-studio-overview">
-        <button class="dot active" type="button" aria-label="Слайд 1"></button>
-        <button class="dot" type="button" aria-label="Слайд 2"></button>
-        <button class="dot" type="button" aria-label="Слайд 3"></button>
-        <button class="dot" type="button" aria-label="Слайд 4"></button>
-        <button class="dot" type="button" aria-label="Слайд 5"></button>
-        <button class="dot" type="button" aria-label="Слайд 6"></button>
-      </div>
+          <div class="studio-overview-controls">
+            <div class="dots-studio-overview">
+              <button class="dot active" type="button" aria-label="Слайд 1"></button>
+              <button class="dot" type="button" aria-label="Слайд 2"></button>
+              <button class="dot" type="button" aria-label="Слайд 3"></button>
+              <button class="dot" type="button" aria-label="Слайд 4"></button>
+              <button class="dot" type="button" aria-label="Слайд 5"></button>
+              <button class="dot" type="button" aria-label="Слайд 6"></button>
+            </div>
 
-      <div class="slider-studio-overview">
-         <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
+            <div class="slider-studio-overview">
+              <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M15 18L9 12L15 6"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
 
-        <button class="price-arrow price-arrow-next" type="button" aria-label="Следующий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M9 18L15 12L9 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
+              <button class="price-arrow price-arrow-next" type="button" aria-label="Следующий слайд">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M9 18L15 12L9 6"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
 
-    <div class="studio-overview-window">
+          <div class="studio-overview-window">
+            <button class="price-arrow mobile-studio-arrow" type="button" aria-label="Следующий слайд">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
 
-      <button class="price-arrow mobile-studio-arrow" type="button" aria-label="Следующий слайд">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <path
-        d="M9 18L15 12L9 6"
-        stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
-  </button>
+            <div class="container-studio-overview">
+              <article class="content">
+                <img
+                  src="image/1. обзор/1. Общая.jpg"
+                  alt="Фото студии 1"
+                  class="studio-overview-image"
+                />
+                <div class="studio-overview-info">
+                  <span class="number-studio-overview">01</span>
+                  <p class="text-studio-overview">
+                    Студия площадью 120 кв.м светлая и стильная, разделена на две зоны — обеденный зал и зал для игр.
+                  </p>
+                </div>
+              </article>
 
-      <div class="container-studio-overview">
-        <article class="content">
-          <img
-            src="image/1. обзор/1. Общая.jpg"
-            alt="Фото студии 1"
-            class="studio-overview-image"
-          />
-          <div class="studio-overview-info">
-            <span class="number-studio-overview">01</span>
-            <p class="text-studio-overview">
+              <article class="content">
+                <img
+                  src="image/1. обзор/2. столы.jpg"
+                  alt="Фото студии 2"
+                  class="studio-overview-image"
+                />
+                <div class="studio-overview-info">
+                  <span class="number-studio-overview">02</span>
+                  <p class="text-studio-overview">
+                    Два обеденных стола на 26 персон для Ваших душевных бесед и теплых праздников.
+                  </p>
+                </div>
+              </article>
+
+              <article class="content">
+                <img
+                  src="image/1. обзор/3. кухня.jpg"
+                  alt="Фото студии 3"
+                  class="studio-overview-image"
+                />
+                <div class="studio-overview-info">
+                  <span class="number-studio-overview">03</span>
+                  <p class="text-studio-overview">
+                    В студии есть кухня с разнообразной посудой, которой можно свободно пользоваться на празднике.
+                  </p>
+                </div>
+              </article>
+
+              <article class="content">
+                <img
+                  src="image/1. обзор/4. домик.jpg"
+                  alt="Фото студии 4"
+                  class="studio-overview-image"
+                />
+                <div class="studio-overview-info">
+                  <span class="number-studio-overview">04</span>
+                  <p class="text-studio-overview">
+                    Двухэтажный игровой домик с горкой разделен на две зоны: комнату юных модниц и комнату супергероев.
+                  </p>
+                </div>
+              </article>
+
+              <article class="content">
+                <img
+                  src="image/1. обзор/5. туалет.jpg"
+                  alt="Фото студии 5"
+                  class="studio-overview-image"
+                />
+                <div class="studio-overview-info">
+                  <span class="number-studio-overview">05</span>
+                  <p class="text-studio-overview">
+                    У нас имеется аккуратная и ухоженная туалетная комната, поддерживаемая в чистоте и порядке.
+                  </p>
+                </div>
+              </article>
+
+              <article class="content">
+                <img
+                  src="image/1. обзор/6. девочки.jpg"
+                  alt="Фото студии 6"
+                  class="studio-overview-image"
+                />
+                <div class="studio-overview-info">
+                  <span class="number-studio-overview">06</span>
+                  <p class="text-studio-overview">
+                    В зоне для девочек – стильная гримерка с костюмами и деревянные игрушки для игры в салон красоты.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ОБЗОР СТУДИИ МОБИЛКА -->
+      <section class="studio-overview-mobile" aria-label="Обзор студии">
+        <div class="container">
+          <div class="studio-overview-mobile-top">
+            <h2 class="title-studio-overview-mobile">ОБЗОР СТУДИИ</h2>
+
+            <button class="button-studio-overview-mobile open-video" type="button">
+              <span class="button-studio-overview-mobile-text">Видео-обзор студии</span>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 58 58"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M41.6624 26.5642C43.0868 27.3865 43.0868 29.4424 41.6624 30.2647L24.0362 40.4412C22.6119 41.2635 20.8315 40.2356 20.8315 38.5909L20.8315 18.238C20.8315 16.5933 22.6119 15.5653 24.0362 16.3877L41.6624 26.5642Z"
+                  fill="white"
+                />
+                <circle
+                  cx="28.6292"
+                  cy="28.6292"
+                  r="27.6292"
+                  stroke="white"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="studio-overview-mobile-controls">
+            <div class="dots-studio-overview-mobile">
+              <button class="dot active" type="button" aria-label="Слайд 1"></button>
+              <button class="dot" type="button" aria-label="Слайд 2"></button>
+              <button class="dot" type="button" aria-label="Слайд 3"></button>
+              <button class="dot" type="button" aria-label="Слайд 4"></button>
+              <button class="dot" type="button" aria-label="Слайд 5"></button>
+              <button class="dot" type="button" aria-label="Слайд 6"></button>
+            </div>
+          </div>
+
+          <div class="studio-overview-mobile-window">
+            <div class="studio-overview-mobile-track">
+              <article class="studio-overview-mobile-slide">
+                <img
+                  src="image/1. обзор/1. Общая.jpg"
+                  alt="Фото студии 1"
+                  class="studio-overview-mobile-image"
+                />
+              </article>
+
+              <article class="studio-overview-mobile-slide">
+                <img
+                  src="image/1. обзор/2. столы.jpg"
+                  alt="Фото студии 2"
+                  class="studio-overview-mobile-image"
+                />
+              </article>
+
+              <article class="studio-overview-mobile-slide">
+                <img
+                  src="image/1. обзор/3. кухня.jpg"
+                  alt="Фото студии 3"
+                  class="studio-overview-mobile-image"
+                />
+              </article>
+
+              <article class="studio-overview-mobile-slide">
+                <img
+                  src="image/1. обзор/4. домик.jpg"
+                  alt="Фото студии 4"
+                  class="studio-overview-mobile-image"
+                />
+              </article>
+
+              <article class="studio-overview-mobile-slide">
+                <img
+                  src="image/1. обзор/5. туалет.jpg"
+                  alt="Фото студии 5"
+                  class="studio-overview-mobile-image"
+                />
+              </article>
+
+              <article class="studio-overview-mobile-slide">
+                <img
+                  src="image/1. обзор/6. девочки.jpg"
+                  alt="Фото студии 6"
+                  class="studio-overview-mobile-image"
+                />
+              </article>
+            </div>
+
+            <button
+              class="price-arrow studio-overview-mobile-arrow"
+              type="button"
+              aria-label="Следующий слайд"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="studio-overview-mobile-info">
+            <span class="number-studio-overview-mobile">01</span>
+            <p class="text-studio-overview-mobile">
               Студия площадью 120 кв.м светлая и стильная, разделена на две зоны — обеденный зал и зал для игр.
             </p>
           </div>
-        </article>
+        </div>
+      </section>
 
-        <article class="content">
-          <img
-            src="image/1. обзор/2. столы.jpg"
-            alt="Фото студии 2"
-            class="studio-overview-image"
-          />
-          <div class="studio-overview-info">
-            <span class="number-studio-overview">02</span>
-            <p class="text-studio-overview">
-              Два обеденных стола на 26 персон для Ваших душевных бесед и теплых праздников.
-            </p>
-          </div>
-        </article>
-
-        <article class="content">
-          <img
-            src="image/1. обзор/3. кухня.jpg"
-            alt="Фото студии 3"
-            class="studio-overview-image"
-          />
-          <div class="studio-overview-info">
-            <span class="number-studio-overview">03</span>
-            <p class="text-studio-overview">
-              В студии есть кухня с разнообразной посудой, которой можно свободно пользоваться на празднике.
-            </p>
-          </div>
-        </article>
-
-        <article class="content">
-          <img
-            src="image/1. обзор/4. домик.jpg"
-            alt="Фото студии 4"
-            class="studio-overview-image"
-          />
-          <div class="studio-overview-info">
-            <span class="number-studio-overview">04</span>
-            <p class="text-studio-overview">
-              Двухэтажный игровой домик с горкой разделен на две зоны: комнату юных модниц и комнату супергероев.
-            </p>
-          </div>
-        </article>
-
-        <article class="content">
-          <img
-            src="image/1. обзор/5. туалет.jpg"
-            alt="Фото студии 5"
-            class="studio-overview-image"
-          />
-          <div class="studio-overview-info">
-            <span class="number-studio-overview">05</span>
-            <p class="text-studio-overview">
-              У нас имеется аккуратная и ухоженная туалетная комната, поддерживаемая в чистоте и порядке.
-            </p>
-          </div>
-        </article>
-
-        <article class="content">
-          <img
-            src="image/1. обзор/6. девочки.jpg"
-            alt="Фото студии 6"
-            class="studio-overview-image"
-          />
-          <div class="studio-overview-info">
-            <span class="number-studio-overview">06</span>
-            <p class="text-studio-overview">
-              В зоне для девочек – стильная гримерка с костюмами и деревянные игрушки для игры в салон красоты.
-            </p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ОБЗОР СТУДИИ МОБИЛКА -->
- <section class="studio-overview-mobile" aria-label="Обзор студии">
-  <div class="container">
-    <div class="studio-overview-mobile-top">
-      <h2 class="title-studio-overview-mobile">ОБЗОР СТУДИИ</h2>
-
-      <button class="button-studio-overview-mobile open-video" type="button">
-        <span class="button-studio-overview-mobile-text">Видео-обзор студии</span>
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 58 58"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M41.6624 26.5642C43.0868 27.3865 43.0868 29.4424 41.6624 30.2647L24.0362 40.4412C22.6119 41.2635 20.8315 40.2356 20.8315 38.5909L20.8315 18.238C20.8315 16.5933 22.6119 15.5653 24.0362 16.3877L41.6624 26.5642Z"
-            fill="white"
-          />
-          <circle
-            cx="28.6292"
-            cy="28.6292"
-            r="27.6292"
-            stroke="white"
-            stroke-width="2"
-          />
-        </svg>
-      </button>
-    </div>
-
-    <div class="studio-overview-mobile-controls">
-      <div class="dots-studio-overview-mobile">
-        <button class="dot active" type="button" aria-label="Слайд 1"></button>
-        <button class="dot" type="button" aria-label="Слайд 2"></button>
-        <button class="dot" type="button" aria-label="Слайд 3"></button>
-        <button class="dot" type="button" aria-label="Слайд 4"></button>
-        <button class="dot" type="button" aria-label="Слайд 5"></button>
-        <button class="dot" type="button" aria-label="Слайд 6"></button>
-      </div>
-    </div>
-
-    <div class="studio-overview-mobile-window">
-      <div class="studio-overview-mobile-track">
-        <article class="studio-overview-mobile-slide">
-          <img
-            src="image/1. обзор/1. Общая.jpg"
-            alt="Фото студии 1"
-            class="studio-overview-mobile-image"
-          />
-        </article>
-
-        <article class="studio-overview-mobile-slide">
-          <img
-            src="image/1. обзор/2. столы.jpg"
-            alt="Фото студии 2"
-            class="studio-overview-mobile-image"
-          />
-        </article>
-
-        <article class="studio-overview-mobile-slide">
-          <img
-            src="image/1. обзор/3. кухня.jpg"
-            alt="Фото студии 3"
-            class="studio-overview-mobile-image"
-          />
-        </article>
-
-        <article class="studio-overview-mobile-slide">
-          <img
-            src="image/1. обзор/4. домик.jpg"
-            alt="Фото студии 4"
-            class="studio-overview-mobile-image"
-          />
-        </article>
-
-        <article class="studio-overview-mobile-slide">
-          <img
-            src="image/1. обзор/5. туалет.jpg"
-            alt="Фото студии 5"
-            class="studio-overview-mobile-image"
-          />
-        </article>
-
-        <article class="studio-overview-mobile-slide">
-          <img
-            src="image/1. обзор/6. девочки.jpg"
-            alt="Фото студии 6"
-            class="studio-overview-mobile-image"
-          />
-        </article>
-      </div>
-
-      <button
-        class="price-arrow studio-overview-mobile-arrow"
-        type="button"
-        aria-label="Следующий слайд"
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M9 18L15 12L9 6"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-    </div>
-
-    <div class="studio-overview-mobile-info">
-      <span class="number-studio-overview-mobile">01</span>
-      <p class="text-studio-overview-mobile">
-        Студия площадью 120 кв.м светлая и стильная, разделена на две зоны — обеденный зал и зал для игр.
-      </p>
-    </div>
-  </div>
-</section>
- 
       <!-- секция правила аренды -->
       <section class="rules-section" id="rules">
         <div class="rules-content">
@@ -543,1611 +548,1598 @@
             <h1 class="title-rules">ПРАВИЛА АРЕНДЫ</h1>
             <div class="rules-sign">Обязательно к прочтению</div>
           </div>
-        <div class="rules">
-          <div class="rule">
-            <div class="rule-title">ОБУВЬ</div>
-            <div class="rule-text">
-              У нас в студии запрещено ходить в уличной обуви! Пожалуйста,
-              предупредите своих гостей о необходимости взять с собой сменную
-              обувь. Для вашего удобства у нас есть тапочки и одноразовые
-              носочки.
+          <div class="rules">
+            <div class="rule">
+              <div class="rule-title">ОБУВЬ</div>
+              <div class="rule-text">
+                У нас в студии запрещено ходить в уличной обуви! Пожалуйста,
+                предупредите своих гостей о необходимости взять с собой сменную
+                обувь. Для вашего удобства у нас есть тапочки и одноразовые
+                носочки.
+              </div>
             </div>
-          </div>
 
-          <div class="rule">
-            <div class="rule-title">ВРЕМЯ НА ПОДГОТОВКУ</div>
-            <div class="rule-text">
-              За 30 минут до начала мероприятия мы будем вас ждать для
-              подготовки к празднику. Вас встретит наш администратор и поможет
-              накрыть на стол.
+            <div class="rule">
+              <div class="rule-title">ВРЕМЯ НА ПОДГОТОВКУ</div>
+              <div class="rule-text">
+                За 30 минут до начала мероприятия мы будем вас ждать для
+                подготовки к празднику. Вас встретит наш администратор и поможет
+                накрыть на стол.
+              </div>
             </div>
-          </div>
 
-          <div class="rule">
-            <div class="rule-title">ВМЕСТИМОСТЬ</div>
-            <div class="rule-text">
-              Рекомендуем до 26 человек в совокупности. У нас 2 обеденных стола,
-              каждый вмещает до 13 человек.
+            <div class="rule">
+              <div class="rule-title">ВМЕСТИМОСТЬ</div>
+              <div class="rule-text">
+                Рекомендуем до 26 человек в совокупности. У нас 2 обеденных стола,
+                каждый вмещает до 13 человек.
+              </div>
             </div>
-          </div>
 
-          <div class="rule">
-            <div class="rule-title">ЕДА</div>
-            <div class="rule-text">
-              Вы можете заказать кейтеринг или принести еду и напитки с собой!
-              Сервировка стола и уборка - на нас!
+            <div class="rule">
+              <div class="rule-title">ЕДА</div>
+              <div class="rule-text">
+                Вы можете заказать кейтеринг или принести еду и напитки с собой!
+                Сервировка стола и уборка - на нас!
+              </div>
             </div>
-          </div>
 
-          <div class="rule">
-            <div class="rule-title">БЕЗ АЛКОГОЛЯ</div>
-            <div class="rule-text">
-              Концепция нашего заведения не допускает употребление алкоголя.
+            <div class="rule">
+              <div class="rule-title">БЕЗ АЛКОГОЛЯ</div>
+              <div class="rule-text">
+                Концепция нашего заведения не допускает употребление алкоголя.
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </section>
+
       <!-- секция прайс-лист -->
       <section class="price-list" id="price">
-  <div class="container">
-    <div class="price-list-top">
-      <h1 class="title-price-list">ПРАЙС-ПАКЕТЫ</h1>
+        <div class="container">
+          <div class="price-list-top">
+            <h1 class="title-price-list">ПРАЙС-ПАКЕТЫ</h1>
 
-      <button class="price-list-button" type="button">
-        <span>Есть еще</span>
-        <svg
-          width="47"
-          height="24"
-          viewBox="0 0 47 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M1.30469 11.7566H43.9831M43.9831 11.7566L30.1577 1.30469M43.9831 11.7566L30.1577 22.2084"
-            stroke="white"
-            stroke-width="2.61297"
-            stroke-linecap="round"
-          />
-        </svg>
-      </button>
-    </div>
+            <button class="price-list-button" type="button">
+              <span>Есть еще</span>
+              <svg
+                width="47"
+                height="24"
+                viewBox="0 0 47 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.30469 11.7566H43.9831M43.9831 11.7566L30.1577 1.30469M43.9831 11.7566L30.1577 22.2084"
+                  stroke="white"
+                  stroke-width="2.61297"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+          </div>
 
-    <div class="price-list-controls">
-      <div class="dots-price-list">
-        <button class="dot active" type="button" aria-label="Слайд 1"></button>
-        <button class="dot" type="button" aria-label="Слайд 2"></button>
-        <button class="dot" type="button" aria-label="Слайд 3"></button>
-        <button class="dot" type="button" aria-label="Слайд 4"></button>
-        <button class="dot" type="button" aria-label="Слайд 5"></button>
-        <button class="dot" type="button" aria-label="Слайд 6"></button>
-        <button class="dot" type="button" aria-label="Слайд 7"></button>
-      </div>
+          <div class="price-list-controls">
+            <div class="dots-price-list">
+              <button class="dot active" type="button" aria-label="Слайд 1"></button>
+              <button class="dot" type="button" aria-label="Слайд 2"></button>
+              <button class="dot" type="button" aria-label="Слайд 3"></button>
+              <button class="dot" type="button" aria-label="Слайд 4"></button>
+              <button class="dot" type="button" aria-label="Слайд 5"></button>
+              <button class="dot" type="button" aria-label="Слайд 6"></button>
+              <button class="dot" type="button" aria-label="Слайд 7"></button>
+            </div>
 
-      <div class="price-list-arrows">
-        <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
+            <div class="price-list-arrows">
+              <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M15 18L9 12L15 6"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
 
-        <button class="price-arrow price-arrow-next" type="button" aria-label="Следующий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M9 18L15 12L9 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <div class="price-list-window">
-      <div class="price-list-track">
-
-        <!-- СЛАЙД 1 -->
-        <article class="price-slide">
-          <div class="slider-price-list">
-            <div class="content-block">
-              <div class="slider-content-left">
-                <div class="price-item">
-                  <div class="price-top">
-                    <h3 class="price-title">Феи и эльфы <br>“Долины Грёз”</h3>
-                    <div class="age">6+</div>
-                  </div>
-
-                  <div class="video-block">
-                    <video class="video" controls poster="/image/2. Пакеты/1. Феи.jpg">
-                      <source src="video/Пакет Феи и Эльфы.MOV--online-audio-convert.com.mp4" type="video/mp4" />
-                    </video>
-
-                    <button 
-                      class="play-button open-video" 
-                      type="button" 
-                      aria-label="Воспроизвести видео"
-                      data-video="/video/Пакет Феи и Эльфы.MOV--online-audio-convert.com.mp4"
-                    >
-                      <svg
-                        width="197"
-                        height="197"
-                        viewBox="0 0 197 197"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z"
-                          fill="white"
-                        />
-                        <circle
-                          cx="98.2321"
-                          cy="98.2321"
-                          r="96.766"
-                          stroke="white"
-                          stroke-width="2.9323"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="slider-content-right">
-                <div class="chips">
-                  <div class="sign-rent">Аренда зала на 3 ч</div>
-                  <div class="sign-programm">Программа с 2-мя героями на 1,5 ч</div>
-                </div>
-
-                <ul class="content-list">
-                  <li class="content-item">Фэнтази сказка с феей и эльфом.</li>
-                  <li class="content-item">Невероятный реквизит ручной работы.</li>
-                  <li class="content-item">Мастер класс "Подсвечник Долины Грез".</li>
-                  <li class="content-item">Фокусы, Танец световых крыльев, Коктейль из слез русалок.</li>
-                  <li class="content-item">Тематическая фотозона.</li>
-                </ul>
-
-                <div class="info-block">
-                  <div class="price-block">
-                    <div class="price-text-block">
-                      <div class="sign-price">Стоимость</div>
-
-                      <p class="price-text-1">
-                        <strong>В будни:</strong><br>
-                        до 15:00 - <span class="text-big">24300</span> руб.<br>
-                        в вечернее время - <span class="text-big">27300</span> руб.
-                      </p>
-
-                      <p class="price-text-2">
-                        <strong>В выходные и праздничные дни:</strong><br>
-                        <span class="text-big">29900</span> руб.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="add-info">
-                    <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
-                    <ul class="add-info-list">
-                      <li class="add-info-item">Сервировка стола <br> (30 минут для подготовки к празднику)</li>
-                      <li class="add-info-item">Электронные пригласительные. <br> (Подробности у администратора!)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              <button class="price-arrow price-arrow-next" type="button" aria-label="Следующий слайд">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M9 18L15 12L9 6"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
-        </article>
 
-        <!-- СЛАЙД 2 -->
-        <article class="price-slide">
-          <div class="slider-price-list">
-            <div class="content-block">
-              <div class="slider-content-left">
-                <div class="price-item">
-                  <div class="price-top">
-                    <h3 class="price-title">Свит бэйби</h3>
-                    <div class="age">2+</div>
-                  </div>
-
-                  <div class="video-block">
-                    <video class="video" controls poster="/image/2. Пакеты/2. Sweet бэби.jpg">
-                      <source src="video.mp4" type="video/mp4" />
-                    </video>
-
-                    <button 
-                      class="play-button open-video" 
-                      type="button" 
-                      aria-label="Воспроизвести видео"
-                      data-video="/video/video1.mp4"
-                    >
-                      <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
-                        <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="slider-content-right">
-                <div class="chips">
-                  <div class="sign-rent">Аренда зала на 3 ч</div>
-                  <div class="sign-programm">Программа с 1 героем на 1,5 ч</div>
-                </div>
-
-                <ul class="content-list">
-                  <li class="content-item">На выбор челленджи или дискотека с лентами.</li>
-                  <li class="content-item">Фотозона базовая.</li>
-                </ul>
-
-                <div class="info-block">
-                  <div class="price-block">
-                    <div class="price-text-block">
-                      <div class="sign-price">Стоимость</div>
-
-                      <p class="price-text-1">
-                        <strong>В будни:</strong><br>
-                        до 15:00 - <span class="text-big">16600</span> руб.<br>
-                        в вечернее время - <span class="text-big">19500</span> руб.
-                      </p>
-
-                      <p class="price-text-2">
-                        <strong>В выходные и праздничные дни:</strong><br>
-                        <span class="text-big">21500</span> руб.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="add-info">
-                    <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
-                    <ul class="add-info-list">
-                      <li class="add-info-item">Сервировка стола <br> (30 минут для подготовки к празднику)</li>
-                      <li class="add-info-item">Электронные пригласительные. <br> (Подробности у администратора!)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- СЛАЙД 3 -->
-        <article class="price-slide">
-          <div class="slider-price-list">
-            <div class="content-block">
-              <div class="slider-content-left">
-                <div class="price-item">
-                  <div class="price-top">
-                    <h3 class="price-title">Пати бум</h3>
-                    <div class="age">4+</div>
-                  </div>
-
-                  <div class="video-block">
-                    <video class="video video--fix" controls poster="/image/2. Пакеты/3. Пати бум.JPG">
-                      <source src="video/Пакет Пати Бум.MOV--online-audio-convert.com.mp4" type="video/mp4" />
-                    </video>
-
-                    <button 
-                      class="play-button open-video" 
-                      type="button" 
-                      aria-label="Воспроизвести видео"
-                      data-video="/video/Пакет Пати Бум.MOV--online-audio-convert.com.mp4"
-                    >
-                      <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
-                        <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="slider-content-right">
-                <div class="chips">
-                  <div class="sign-rent">Аренда зала на 3,5 ч</div>
-                  <div class="sign-programm">Анимация с героем на 2 ч</div>
-                </div>
-
-                <ul class="content-list">
-                  <li class="content-item">Бьюти бокс на встречу гостей.</li>
-                  <li class="content-item">Челленджи или дискотека с лентами.</li>
-                  <li class="content-item">На выбор 6 шоу-программ.</li>
-                  <li class="content-item">Тематическая фотозона.</li>
-                </ul>
-
-                <div class="info-block">
-                  <div class="price-block">
-                    <div class="price-text-block">
-                      <div class="sign-price">Стоимость</div>
-
-                      <p class="price-text-1">
-                        <strong>В будни:</strong><br>
-                        до 15:00 - <span class="text-big">25500</span> руб.<br>
-                        в вечернее время - <span class="text-big">30000</span> руб.
-                      </p>
-
-                      <p class="price-text-2">
-                        <strong>В выходные и праздничные дни:</strong><br>
-                        <span class="text-big">33000</span> руб.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="add-info">
-                    <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
-                    <ul class="add-info-list">
-                      <li class="add-info-item">Сервировка стола <br> (30 минут для подготовки к празднику)</li>
-                      <li class="add-info-item">Электронные пригласительные. <br> (Подробности у администратора!)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- СЛАЙД 4 -->
-        <article class="price-slide">
-          <div class="slider-price-list">
-            <div class="content-block">
-              <div class="slider-content-left">
-                <div class="price-item">
-                  <div class="price-top">
-                    <h3 class="price-title">Лайт</h3>
-                    <div class="age">1+</div>
-                  </div>
-
-                  <div class="video-block">
-                    <video class="video video--fix-2" controls poster="/image/2. Пакеты/4. Лайт.jpg">
-                      <source src="video.mp4" type="video/mp4" />
-                    </video>
-
-                    <button 
-                      class="play-button open-video" 
-                      type="button" 
-                      aria-label="Воспроизвести видео"
-                      data-video="/video/video1.mp4"
-                    >
-                      <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
-                        <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="slider-content-right">
-                <div class="chips">
-                  <div class="sign-rent">Аренда зала на 3 ч</div>
-                  <div class="sign-programm">Анимация с героем на 1 ч</div>
-                </div>
-
-                <ul class="content-list">
-                  <li class="content-item">Сопровождение администратора.</li>
-                  <li class="content-item">Мыльные пузырики или фигурки из шариков.</li>
-                  <li class="content-item">Фотозона базовая.</li>
-                </ul>
-
-                <div class="info-block">
-                  <div class="price-block">
-                    <div class="price-text-block">
-                      <div class="sign-price">Стоимость</div>
-
-                      <p class="price-text-1">
-                        <strong>В будни:</strong><br>
-                        до 15:00 - <span class="text-big">13600</span> руб.<br>
-                        в вечернее время - <span class="text-big">16000</span> руб.
-                      </p>
-
-                      <p class="price-text-2">
-                        <strong>В выходные и праздничные дни:</strong><br>
-                        <span class="text-big">17600</span> руб.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="add-info">
-                    <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
-                    <ul class="add-info-list">
-                      <li class="add-info-item">Сервировка стола <br> (30 минут для подготовки к празднику)</li>
-                      <li class="add-info-item">Электронные пригласительные. <br> (Подробности у администратора!)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- СЛАЙД 5 -->
-        <article class="price-slide">
-          <div class="slider-price-list">
-            <div class="content-block">
-              <div class="slider-content-left">
-                <div class="price-item">
-                  <div class="price-top">
-                    <h3 class="price-title">Время ЧЕ</h3>
-                    <div class="age">10+</div>
-                  </div>
-
-                  <div class="video-block">
-                    <video class="video" controls poster="/image/2. Пакеты/5. Время Че.JPG">
-                      <source src="video.mp4" type="video/mp4" />
-                    </video>
-
-                    <button 
-                      class="play-button open-video" 
-                      type="button" 
-                      aria-label="Воспроизвести видео"
-                      data-video="/video/video1.mp4"
-                    >
-                      <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
-                        <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="slider-content-right">
-                <div class="chips">
-                  <div class="sign-rent">Аренда зала на 3 ч</div>
-                  <div class="sign-programm">Программа с 2-мя героями на 1,5 ч</div>
-                </div>
-
-                <ul class="content-list">
-                  <li class="content-item">10 трендовых челленджей из соцсетей.</li>
-                  <li class="content-item">Энергичные командные игры.</li>
-                  <li class="content-item">Веселая атмосфера и море позитива.</li>
-                  <li class="content-item">Фотозона базовая.</li>
-                </ul>
-
-                <div class="info-block">
-                  <div class="price-block">
-                    <div class="price-text-block">
-                      <div class="sign-price">Стоимость</div>
-
-                      <p class="price-text-1">
-                        <strong>В будни:</strong><br>
-                        до 15:00 - <span class="text-big">21300</span> руб.<br>
-                        в вечернее время - <span class="text-big">23600</span> руб.
-                      </p>
-
-                      <p class="price-text-2">
-                        <strong>В выходные и праздничные дни:</strong><br>
-                        <span class="text-big">25900</span> руб.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="add-info">
-                    <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
-                    <ul class="add-info-list">
-                      <li class="add-info-item">Сервировка стола <br> (30 минут для подготовки к празднику)</li>
-                      <li class="add-info-item">Электронные пригласительные. <br> (Подробности у администратора!)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- СЛАЙД 6 -->
-        <article class="price-slide">
-          <div class="slider-price-list">
-            <div class="content-block">
-              <div class="slider-content-left">
-                <div class="price-item">
-                  <div class="price-top">
-                    <h3 class="price-title">В тренде</h3>
-                    <div class="age">6+</div>
-                  </div>
-
-                  <div class="video-block">
-                    <video class="video" controls poster="/image/2. Пакеты/6. В тренде.jpg">
-                      <source src="video/Пакет В тренде.MOV--online-audio-convert.com.mp4" type="video/mp4" />
-                    </video>
-
-                    <button 
-                      class="play-button open-video" 
-                      type="button" 
-                      aria-label="Воспроизвести видео"
-                      data-video="/video/Пакет В тренде.MOV--online-audio-convert.com.mp4"
-                    >
-                      <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
-                        <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="slider-content-right">
-                <div class="chips">
-                  <div class="sign-rent">Аренда зала на 3 ч</div>
-                  <div class="sign-programm">Анимация с героем на 2 часа</div>
-                </div>
-
-                <ul class="content-list">
-                  <li class="content-item">3 вида челленджей.</li>
-                  <li class="content-item">Фольгированная дискотека с лентами.</li>
-                  <li class="content-item">Фотозона базовая.</li>
-                </ul>
-
-                <div class="info-block">
-                  <div class="price-block">
-                    <div class="price-text-block">
-                      <div class="sign-price">Стоимость</div>
-
-                      <p class="price-text-1">
-                        <strong>В будни:</strong><br>
-                        до 15:00 - <span class="text-big">19500</span> руб.<br>
-                        в вечернее время - <span class="text-big">22900</span> руб.
-                      </p>
-
-                      <p class="price-text-2">
-                        <strong>В выходные и праздничные дни:</strong><br>
-                        <span class="text-big">25200</span> руб.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="add-info">
-                    <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
-                    <ul class="add-info-list">
-                      <li class="add-info-item">Сервировка стола <br> (30 минут для подготовки к празднику)</li>
-                      <li class="add-info-item">Электронные пригласительные. <br> (Подробности у администратора!)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- СЛАЙД 7 -->
-        <article class="price-slide">
-          <div class="slider-price-list">
-            <div class="content-block">
-              <div class="slider-content-left">
-                <div class="price-item">
-                  <div class="price-top">
-                    <h3 class="price-title">Веселая ферма</h3>
-                    <div class="age">1+</div>
-                  </div>
-
-                  <div class="video-block">
-                    <video class="video" controls poster="/image/2. Пакеты/7. Веселая ферма.jpg">
-                      <source src="video/Пакет ферма.MOV--online-audio-convert.com.mp4" type="video/mp4" />
-                    </video>
-
-                    <button 
-                      class="play-button open-video" 
-                      type="button" 
-                      aria-label="Воспроизвести видео"
-                      data-video="/video/Пакет ферма.MOV--online-audio-convert.com.mp4"
-                    >
-                      <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
-                        <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="slider-content-right">
-                <div class="chips">
-                  <div class="sign-rent">Аренда зала на 3 ч</div>
-                  <div class="sign-programm">Программа с 2-мя героями на 1,5 ч</div>
-                </div>
-
-                <ul class="content-list">
-                  <li class="content-item">Познакомимся с садовыми инструментами.</li>
-                  <li class="content-item">Вырастим урожай: от семечки до сбора овощей.</li>
-                  <li class="content-item">Поваляемся на сеновале и соберем стоги сена.</li>
-                  <li class="content-item">Отправимся пасти животных на поле.</li>
-                  <li class="content-item">Тематическая фотозона.</li>
-                </ul>
-
-                <div class="info-block">
-                  <div class="price-block">
-                    <div class="price-text-block">
-                      <div class="sign-price">Стоимость</div>
-
-                      <p class="price-text-1">
-                        <strong>В будни:</strong><br>
-                        до 15:00 - <span class="text-big">18300</span> руб.<br>
-                        в вечернее время - <span class="text-big">20300</span> руб.
-                      </p>
-
-                      <p class="price-text-2">
-                        <strong>В выходные и праздничные дни:</strong><br>
-                        <span class="text-big">21300</span> руб.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="add-info">
-                    <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
-                    <ul class="add-info-list">
-                      <li class="add-info-item">Сервировка стола <br> (30 минут для подготовки к празднику)</li>
-                      <li class="add-info-item">Электронные пригласительные. <br> (Подробности у администратора!)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </div>
-</section>
-      <!-- секция дополнительные услуги -->
- <section class="additional-services container" id="additional">
-  <h1 class="title-additional-services">ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ</h1>
-
-  <!-- 1. ШОУ-ПРОГРАММЫ -->
-  <div class="service-card">
-    <div class="service-card__media">
-       <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-
-
-      <div class="service-card__slider">
-        <div class="service-card__track">
-          <img src="image/3. Допуслуги/1. Мыльное шоуу.JPG" alt="Шоу-программы 1" class="service-card__image image--soup" />
-          <img src="image/3. Допуслуги/2. Тесла.jpg" alt="Шоу-программы 2" class="service-card__image image--tesla" />
-          <img src="image/3. Допуслуги/3. Там, где живут мечты.jpg" alt="Шоу-программы 3" class="service-card__image image--dreams" />
-          <img src="image/3. Допуслуги/4. Шоколадный pop it.jpg" alt="Шоу-программы 4" class="service-card__image image--chocolate" />
-          <img src="image/3. Допуслуги/5. Научное шоу.jpg" alt="Шоу-программы 1" class="service-card__image image--science" />
-          <img src="image/3. Допуслуги/6. крио шоу.png" alt="Шоу-программы 2" class="service-card__image image--krio" />
-          <img src="image/3. Допуслуги/6. ростовая кукла.jpg" alt="Шоу-программы 3" class="service-card__image image--doll" />
-          <img src="image/3. Допуслуги/7. Бьюти бар.jpg" alt="Шоу-программы 4" class="service-card__image image--beauty" />
-          <img src="image/3. Допуслуги/8. Ты в танцах.jpg" alt="Шоу-программы 4" class="service-card__image image--dance" />
-
-        </div>
-      </div>
-
-        <button class="price-arrow price-arrow-next" type="button" aria-label="Следующий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M9 18L15 12L9 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-    </div>
-
-    <div class="service-card__content">
-      <h4 class="service-card__title">ШОУ-ПРОГРАММЫ</h4>
-
-      <div class="prices-list">
-        <div class="price-row">
-          <span class="price-name">Мыльное шоу</span>
-          <span class="price-line"></span>
-          <span class="price-value">7000 р./25 минут</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">Тесла шоу</span>
-          <span class="price-line"></span>
-          <span class="price-value">8000 р./25 минут</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">“Там, где живут меты”</span>
-          <span class="price-line"></span>
-          <span class="price-value">7000 р./25 минут</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">Научное шоу</span>
-          <span class="price-line"></span>
-          <span class="price-value">7000 р./час</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">Крио шоу</span>
-          <span class="price-line"></span>
-          <span class="price-value">4500 р./30 минут</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">Ростовая кукла</span>
-          <span class="price-line"></span>
-          <span class="price-value">5000 р./30 минут</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">Бьюти-бар (аэро-тату станция)</span>
-          <span class="price-line"></span>
-          <span class="price-value">6800 р./час</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">"Ты в танцах!"</span>
-          <span class="price-line"></span>
-          <span class="price-value">12000 р./25 минут</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. СЛАДКИЙ НАБОР -->
-  <div class="service-card service-card--reverse">
-    <div class="service-card__media">
-       <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-
-
-      <div class="service-card__slider">
-        <div class="service-card__track">
-          <img src="image/9. Сладкий стол/1. заглавная .webp" alt="Сладкий набор 1" class="service-card__image" />
-          <img src="image/9. Сладкий стол/5p_YVs4lL_fY-2LElxNKOz3NMj1EfZRDja-5yKWB7tbmueSJCiSXvHusMVylCVvuRDz_omftBLaHhiaVvdG1U11m.jpg" class="service-card__image" />
-          <img src="image/9. Сладкий стол/uBVfutC7CV7GKKBpSFzOPEWsz4pHDLzTiLMnVd4kAQs4Y2p56qE9eVBlnEYHcRiYAbxV7KH9rzVMT5_4SdQQBnkl.jpg" alt="Сладкий набор 3" class="service-card__image" />
-  
-        </div>
-      </div>
-
-        <button class="price-arrow price-arrow-next" type="button" aria-label="Следующий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M9 18L15 12L9 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-    </div>
-
-    <div class="service-card__content">
-      <h4 class="service-card__title">СЛАДКИЙ НАБОР</h4>
-
-      <div class="prices-list">
-        <div class="price-row">
-          <span class="price-name">Яблочный сок</span>
-          <span class="price-line"></span>
-          <span class="price-value">10 шт</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">Маленькие шоколадки</span>
-          <span class="price-line"></span>
-          <span class="price-value">10 шт</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">Конфетки драже</span>
-          <span class="price-line"></span>
-          <span class="price-value">10 шт</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">Попкорн</span>
-          <span class="price-line"></span>
-          <span class="price-value">10 шт</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">Пакетики маршмеллоу</span>
-          <span class="price-line"></span>
-          <span class="price-value">10 шт</span>
-        </div>
-
-        <div class="price-text">
-          <p class="price-name">Именные этикетки в стиль праздника</p>
-        </div>
-
-        <div class="price-sign">
-          <p class="text-sign">Стоимость: 4000 р.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. ФОТО И ВИДЕОСЪЁМКА -->
-  <div class="service-card">
-    <div class="service-card__media">
-       <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-
-      <div class="service-card__slider">
-        <div class="service-card__track">
-          <img src="image/10. Фото и видеосьемка/10. Фото и видеосьемка.PNG" alt="Фото и видеосъёмка 1" class="service-card__image" />
-          <img src="image/10. Фото и видеосьемка/10.б.jpg" alt="Фото и видеосъёмка 3" class="service-card__image" />
-          <img src="image/10. Фото и видеосьемка/10.г.jpg" alt="Фото и видеосъёмка 4" class="service-card__image" />
-          <img src="image/10. Фото и видеосьемка/10.д.jpg" alt="Фото и видеосъёмка 4" class="service-card__image" />
-        </div>
-      </div>
-
-        <button class="price-arrow price-arrow-next" type="button" aria-label="Следующий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M9 18L15 12L9 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-    </div>
-
-    <div class="service-card__content">
-      <h4 class="service-card__title">ФОТО И ВИДЕОСЪЁМКА</h4>
-
-      <div class="video-sign">
-        Если хочется сохранить драгоценные моменты на долгие годы.
-      </div>
-
-      <div class="prices-list">
-        <div class="price-row">
-          <span class="price-name">Фотограф</span>
-          <span class="price-line"></span>
-          <span class="price-value">4000 р./час</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">Мобильная съемка</span>
-          <span class="price-line"></span>
-          <span class="price-value">3500 р./час</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">Видеограф</span>
-          <span class="price-line"></span>
-          <span class="price-value">5000 р./час</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4. ФОТОЗОНА -->
-  <div class="service-card service-card--reverse">
-    <div class="service-card__media">
-       <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-
-      <div class="service-card__slider">
-        <div class="service-card__track">
-          <img src="image/11. Фотозоны/1-11.jpg" alt="Фотозона 1" class="service-card__image" />
-          <img src="image/11. Фотозоны/1-126.jpg" alt="Фотозона 2" class="service-card__image" />
-          <img src="image/11. Фотозоны/1-158.jpg" alt="Фотозона 3" class="service-card__image" />
-          <img src="image/11. Фотозоны/1-175.jpg" alt="Фотозона 4" class="service-card__image" />
-          <img src="image/11. Фотозоны/DSC_5265.jpg" alt="Фотозона 1" class="service-card__image" />
-          <img src="image/11. Фотозоны/DSC_7323.jpg" alt="Фотозона 2" class="service-card__image" />
-          <img src="image/11. Фотозоны/IMG_3620.jpg" alt="Фотозона 3" class="service-card__image" />
-          <img src="image/11. Фотозоны/IMG_6033.jpg" alt="Фотозона 4" class="service-card__image" />
-        </div>
-      </div>
-
-        <button class="price-arrow price-arrow-next" type="button" aria-label="Следующий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M9 18L15 12L9 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-    </div>
-
-    <div class="service-card__content">
-      <h4 class="service-card__title">ФОТОЗОНА</h4>
-
-      <div class="prices-list">
-        <div class="price-row">
-          <span class="price-name">Гирлянда из шаров 50-60 шт (2м)</span>
-          <span class="price-line"></span>
-          <span class="price-value">3000 р.</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">Фотозона тематическая</span>
-          <span class="price-line"></span>
-          <span class="price-value">8500 р.</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">Напольное покрытие</span>
-          <span class="price-line"></span>
-          <span class="price-value">2500 р.</span>
-        </div>
-
-        <div class="price-row">
-          <span class="price-name">Аренда неоновых цифр и фигурок</span>
-          <span class="price-line"></span>
-          <span class="price-value">от 1000 р.</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-      <!-- секция фотогалерея -->
-      <section class="photogallery container">
-  <h1 class="title-photogallery">ФОТОГАЛЕРЕЯ</h1>
-
-  <h3 class="title-photogallery-second">
-    Мы дарим эмоции,<br>
-    которые <span class="photogallery-slogan write">запомнятся</span> надолго!
-  </h3>
-
-  <div class="photogallery-slider">
-     <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-
-
-    <div class="photogallery-window">
-      <div class="photogallery-track">
-        <div class="photogallery-slide">
-          <div class="photogallery-card">
-            <img src="image/12. Фотогалерея/DSC_5086.jpg" alt="фото 1" class="photogallery-image" />
-          </div>
-          <div class="photogallery-card">
-            <img src="image/12. Фотогалерея/DSC_5125.jpg" alt="фото 2" class="photogallery-image" />
-          </div>
-        </div>
-
-        <div class="photogallery-slide">
-          <div class="photogallery-card">
-            <img src="image/12. Фотогалерея/IMG_6086.jpg" alt="фото 3" class="photogallery-image" />
-          </div>
-          <div class="photogallery-card">
-            <img src="image/12. Фотогалерея/IMG_6232.jpg" alt="фото 4" class="photogallery-image" />
-          </div>
-        </div>
-
-        <div class="photogallery-slide">
-          <div class="photogallery-card">
-            <img src="image/12. Фотогалерея/IMG_7053.jpg" alt="фото 5" class="photogallery-image" />
-          </div>
-          <div class="photogallery-card">
-            <img src="image/12. Фотогалерея/IMG_7075.jpg" alt="фото 6" class="photogallery-image" />
-          </div>
-        </div>
-
-        <div class="photogallery-slide">
-          <div class="photogallery-card">
-            <img src="image/12. Фотогалерея/IMG_8407.jpg" alt="фото 7" class="photogallery-image" />
-          </div>
-          <div class="photogallery-card">
-            <img src="image/12. Фотогалерея/photo_2026-04-02_22-17-40.jpg" alt="фото 8" class="photogallery-image" />
-          </div>
-        </div>
-      </div>
-    </div>
-
-        <button class="price-arrow price-arrow-next" type="button" aria-label="Следующий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M9 18L15 12L9 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-  </div>
-</section>
-      <!-- секция инстуркция -->
-      <section class="faq container">
-  <div class="faq-header">
-    <h3 class="faq-title">
-      Инструкция к счастливому
-      <span class="faq-slogan write">празднику!</span>
-    </h3>
-  </div>
-
-  <details class="faq-item">
-    <summary class="faq-question">
-      <span class="faq-question-text">Бронирование</span>
-      <span class="faq-icon"></span>
-    </summary>
-    <div class="faq-answer">
-      <p>
-        Бронирование студии осуществляется после внесения предоплаты в размере
-        3000 рублей. В случае отказа от проведения мероприятия по инициативе
-        заказчика, предоплата не возвращается. У вас есть возможность перенести
-        праздник на любую свободную дату в течение 30 дней с момента отказа.
-      </p>
-    </div>
-  </details>
-
-  <details class="faq-item">
-    <summary class="faq-question">
-      <span class="faq-question-text">Дополнительное время</span>
-      <span class="faq-icon"></span>
-    </summary>
-    <div class="faq-answer">
-      <p>
-        В день праздника мы будем вас ждать за 30 минут до начала праздника.
-        Если вы пришли раньше, просим вас подождать, так как между
-        мероприятиями производится уборка, дезинфекция и проветривание
-        помещения. Покинуть студию необходимо по окончании арендуемого времени.
-        Задержка более чем на 15 минут оплачивается как дополнительные полчаса.
-      </p>
-    </div>
-  </details>
-
-  <details class="faq-item">
-    <summary class="faq-question">
-      <span class="faq-question-text">Порча имущества</span>
-      <span class="faq-icon"></span>
-    </summary>
-    <div class="faq-answer">
-      <p>
-        Мы просим вас бережно относиться к нашему имуществу, использовать
-        игрушки по назначению и возрастной категории, соблюдать чистоту. Порча
-        имущества студии оплачивается по рыночной стоимости.
-      </p>
-    </div>
-  </details>
-
-  <details class="faq-item">
-    <summary class="faq-question">
-      <span class="faq-question-text">Ответственность</span>
-      <span class="faq-icon"></span>
-    </summary>
-    <div class="faq-answer">
-      <p>
-        Во время мероприятия ответственность за детей несут родители.
-      </p>
-    </div>
-  </details>
-
-  <details class="faq-item">
-    <summary class="faq-question">
-      <span class="faq-question-text">В стоимость аренды входит</span>
-      <span class="faq-icon"></span>
-    </summary>
-    <div class="faq-answer">
-      <p>
-        Небольшой холодильник для торта, микроволновка, термопот, кулер,
-        посуда для взрослых и детей, чай, салфетки.
-      </p>
-    </div>
-  </details>
-
-  <details class="faq-item">
-    <summary class="faq-question">
-      <span class="faq-question-text">Посуда</span>
-      <span class="faq-icon"></span>
-    </summary>
-    <div class="faq-answer">
-      <p>
-        Посуда включена в стоимость. Стеклянные тарелки, бокалы, стаканы,
-        чашки, графины, столовые приборы, раздаточные тарелки, а также ножи и
-        доски разделочные. Одноразовую посуду можно принести с собой.
-      </p>
-    </div>
-  </details>
-</section>
-      <!-- секция как нас найти -->
-      <section class="location container" id="address">
-  <h1 class="title-location">КАК НАС НАЙТИ?</h1>
-
-  <div class="location-top">
-    <div class="location-info">
-      <img src="image/метка.png" alt="иконка геолокации" class="location-info__icon" />
-      <p class="location-info__text">
-        г. Казань, метро Дубравная, <br> ул. Дубравная 2Д
-      </p>
-    </div>
-
-    <div class="location-info">
-      <img src="image/часы.png" alt="иконка часов" class="location-info__icon" />
-      <p class="location-info__text">с 10:00 до 21:00</p>
-    </div>
-  </div>
-
-  <div class="attention-sign">
-    <p class="attention-sign__text">
-      <strong>ВНИМАНИЕ!</strong><br />
-      ПРОСМОТРЫ ТОЛЬКО ПО ПРЕДВАРИТЕЛЬНОЙ ДОГОВОРЕННОСТИ!<br />
-      Рабочее время указано для консультаций, студия работает только на праздниках.<br />
-      Пожалуйста, не приходите, если нет договоренности.
-    </p>
-  </div>
-
-  <div class="location-map">
-    <iframe
-      class="location-map__frame"
-      src="https://yandex.ru/map-widget/v1/?um=constructor%3A0e149e215364eb279ca71c72860466d4759aa98d69054f8ae72fda583b4a6dab&amp;source=constructor"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
-  </div>
-
-  <div class="photo-steps">
-    <div class="step">
-      <img src="image/14.шаги/метро.jpg" alt="Станция метро Дубравная" class="step__image" />
-      <p class="step__text">1. Станция метро Дубравная</p>
-    </div>
-
-    <div class="step">
-      <img src="image/14.шаги/мечеть.jpg" alt="Мечеть" class="step__image" />
-      <p class="step__text">2. Проезжаете мимо мечети</p>
-    </div>
-
-    <div class="step">
-      <img src="image/14.шаги/дом.jpg" alt="Дом со студией" class="step__image" />
-      <p class="step__text">3. Студия находится с внешней стороны дома</p>
-    </div>
-
-    <div class="step">
-      <img src="image/14.шаги/парковка.jpg" alt="Парковка" class="step__image" />
-      <p class="step__text">4. Есть парковка</p>
-    </div>
-
-    <div class="step">
-      <img src="image/14.шаги/студия.jpg" alt="Вход в студию" class="step__image image--studio" />
-      <p class="step__text">5. Вход в студию</p>
-    </div>
-
-    <div class="location-badge">
-      <p class="location-badge__text">
-        <svg
-          width="42"
-          height="24"
-          viewBox="0 0 83 46"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M79.6875 22.9664H4.22938M4.22938 22.9664L31.2345 2.55078M4.22938 22.9664L31.2345 43.382"
-            stroke="white"
-            stroke-width="5.10391"
-            stroke-linecap="round"
-          />
-        </svg>
-        МЫ ЗДЕСЬ!
-      </p>
-    </div>
-  </div>
-</section>
-      <!-- секция отзывы -->
-      <section class="reviews" id="reviews">
-  <div class="container">
-    <h2 class="reviews-section-title">ОТЗЫВЫ</h2>
-
-    <div class="reviews-header">
-      <img
-        src="image/сердце фиолет.png"
-        alt="Фиолетовое сердце"
-        class="reviews-heart reviews-heart--left"
-      />
-
-      <div class="reviews-header-center">
-        <h3 class="title-reviews">
-          Отзывы наших счастливых
-          <span class="reviews-slogan write">гостей!</span>
-        </h3>
-
-        <div class="reviews-buttons">
-          <a href="https://yandex.ru/maps/org/tvoy_den/241201399797/reviews/?ll=49.226807%2C55.738997&tab=reviews&z=16.63" class="review_button button--yandex">
-            Яндекс. Карты
-          </a>
-
-          <a href="https://2gis.ru/kazan/firm/70000001034763752/tab/reviews?m=49.227709%2C55.738602%2F16" class="reviewbutton button--2gis">
-            2ГИС
-          </a>
-        </div>
-      </div>
-
-      <img
-        src="image/сердце розовое.png"
-        alt="Розовое сердце"
-        class="reviews-heart reviews-heart--right"
-      />
-    </div>
-  </div>
-
-  <div class="reviews-shell">
-    <div class="container">
-      <div class="reviews-panel">
-        <div class="dots-reviews">
-          <button class="dot active" type="button" aria-label="Слайд 1"></button>
-          <button class="dot" type="button" aria-label="Слайд 2"></button>
-          <button class="dot" type="button" aria-label="Слайд 3"></button>
-        </div>
-
-        <div class="reviews-slider">
-           <button class="price-arrow price-arrow-prev " type="button" aria-label="Предыдущий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-
-
-          <div class="reviews-window">
-            <div class="reviews-track">
+          <div class="price-list-window">
+            <div class="price-list-track">
               <!-- СЛАЙД 1 -->
-              <div class="reviews-slide">
-                <div class="review-card">
-                  <img src="image/13.Отзывы/1.jpg" alt="Отзыв 1" class="review" />
-                </div>
+              <article class="price-slide">
+                <div class="slider-price-list">
+                  <div class="content-block">
+                    <div class="slider-content-left">
+                      <div class="price-item">
+                        <div class="price-top">
+                          <h3 class="price-title">Феи и эльфы <br />“Долины Грёз”</h3>
+                          <div class="age">6+</div>
+                        </div>
 
-                <div class="review-card">
-                  <img src="image/13.Отзывы/2.jpg" alt="Отзыв 2" class="review" />
-                </div>
+                        <div class="video-block">
+                          <video class="video" controls poster="image/2. Пакеты/1. Феи.jpg">
+                            <source src="video/Пакет Феи и Эльфы.MOV--online-audio-convert.com.mp4" type="video/mp4" />
+                          </video>
 
-                <div class="review-card">
-                  <img src="image/13.Отзывы/3.jpg" alt="Отзыв 3" class="review" />
-                </div>
+                          <button
+                            class="play-button open-video"
+                            type="button"
+                            aria-label="Воспроизвести видео"
+                            data-video="video/Пакет Феи и Эльфы.MOV--online-audio-convert.com.mp4"
+                          >
+                            <svg
+                              width="197"
+                              height="197"
+                              viewBox="0 0 197 197"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z"
+                                fill="white"
+                              />
+                              <circle
+                                cx="98.2321"
+                                cy="98.2321"
+                                r="96.766"
+                                stroke="white"
+                                stroke-width="2.9323"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
 
-                <div class="review-card">
-                  <img src="image/13.Отзывы/4.jpg" alt="Отзыв 4" class="review" />
+                    <div class="slider-content-right">
+                      <div class="chips">
+                        <div class="sign-rent">Аренда зала на 3 ч</div>
+                        <div class="sign-programm">Программа с 2-мя героями на 1,5 ч</div>
+                      </div>
+
+                      <ul class="content-list">
+                        <li class="content-item">Фэнтази сказка с феей и эльфом.</li>
+                        <li class="content-item">Невероятный реквизит ручной работы.</li>
+                        <li class="content-item">Мастер класс "Подсвечник Долины Грез".</li>
+                        <li class="content-item">Фокусы, Танец световых крыльев, Коктейль из слез русалок.</li>
+                        <li class="content-item">Тематическая фотозона.</li>
+                      </ul>
+
+                      <div class="info-block">
+                        <div class="price-block">
+                          <div class="price-text-block">
+                            <div class="sign-price">Стоимость</div>
+
+                            <p class="price-text-1">
+                              <strong>В будни:</strong><br />
+                              до 15:00 - <span class="text-big">24300</span> руб.<br />
+                              в вечернее время - <span class="text-big">27300</span> руб.
+                            </p>
+
+                            <p class="price-text-2">
+                              <strong>В выходные и праздничные дни:</strong><br />
+                              <span class="text-big">29900</span> руб.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="add-info">
+                          <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
+                          <ul class="add-info-list">
+                            <li class="add-info-item">Сервировка стола <br /> (30 минут для подготовки к празднику)</li>
+                            <li class="add-info-item">Электронные пригласительные. <br /> (Подробности у администратора!)</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </article>
 
               <!-- СЛАЙД 2 -->
-              <div class="reviews-slide">
-                <div class="review-card">
-                  <img src="image/13.Отзывы/5.jpg" alt="Отзыв 5" class="review" />
-                </div>
+              <article class="price-slide">
+                <div class="slider-price-list">
+                  <div class="content-block">
+                    <div class="slider-content-left">
+                      <div class="price-item">
+                        <div class="price-top">
+                          <h3 class="price-title">Свит бэйби</h3>
+                          <div class="age">2+</div>
+                        </div>
 
-                <div class="review-card">
-                  <img src="image/13.Отзывы/6.jpg" alt="Отзыв 6" class="review" />
-                </div>
+                        <div class="video-block">
+                          <video class="video" controls poster="image/2. Пакеты/2. Sweet бэби.jpg">
+                            <source src="video.mp4" type="video/mp4" />
+                          </video>
 
-                <div class="review-card">
-                  <img src="image/13.Отзывы/7.jpg" alt="Отзыв 7" class="review" />
-                </div>
+                          <button
+                            class="play-button open-video"
+                            type="button"
+                            aria-label="Воспроизвести видео"
+                            data-video="video/video1.mp4"
+                          >
+                            <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
+                              <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
 
-                <div class="review-card">
-                  <img src="image/13.Отзывы/8.jpg" alt="Отзыв 8" class="review" />
+                    <div class="slider-content-right">
+                      <div class="chips">
+                        <div class="sign-rent">Аренда зала на 3 ч</div>
+                        <div class="sign-programm">Программа с 1 героем на 1,5 ч</div>
+                      </div>
+
+                      <ul class="content-list">
+                        <li class="content-item">На выбор челленджи или дискотека с лентами.</li>
+                        <li class="content-item">Фотозона базовая.</li>
+                      </ul>
+
+                      <div class="info-block">
+                        <div class="price-block">
+                          <div class="price-text-block">
+                            <div class="sign-price">Стоимость</div>
+
+                            <p class="price-text-1">
+                              <strong>В будни:</strong><br />
+                              до 15:00 - <span class="text-big">16600</span> руб.<br />
+                              в вечернее время - <span class="text-big">19500</span> руб.
+                            </p>
+
+                            <p class="price-text-2">
+                              <strong>В выходные и праздничные дни:</strong><br />
+                              <span class="text-big">21500</span> руб.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="add-info">
+                          <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
+                          <ul class="add-info-list">
+                            <li class="add-info-item">Сервировка стола <br /> (30 минут для подготовки к празднику)</li>
+                            <li class="add-info-item">Электронные пригласительные. <br /> (Подробности у администратора!)</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </article>
 
               <!-- СЛАЙД 3 -->
-              <div class="reviews-slide">
-                <div class="review-card">
-                  <img src="image/13.Отзывы/9.jpg" alt="Отзыв 9" class="review" />
-                </div>
+              <article class="price-slide">
+                <div class="slider-price-list">
+                  <div class="content-block">
+                    <div class="slider-content-left">
+                      <div class="price-item">
+                        <div class="price-top">
+                          <h3 class="price-title">Пати бум</h3>
+                          <div class="age">4+</div>
+                        </div>
 
-                <div class="review-card">
-                  <img src="image/13.Отзывы/10.jpg" alt="Отзыв 10" class="review" />
-                </div>
+                        <div class="video-block">
+                          <video class="video video--fix" controls poster="image/2. Пакеты/3. Пати бум.JPG">
+                            <source src="video/Пакет Пати Бум.MOV--online-audio-convert.com.mp4" type="video/mp4" />
+                          </video>
 
-                <div class="review-card">
-                  <img src="image/13.Отзывы/11.jpg" alt="Отзыв 11" class="review" />
-                </div>
+                          <button
+                            class="play-button open-video"
+                            type="button"
+                            aria-label="Воспроизвести видео"
+                            data-video="video/Пакет Пати Бум.MOV--online-audio-convert.com.mp4"
+                          >
+                            <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
+                              <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
 
-                <div class="review-card">
-                  <img src="image/13.Отзывы/12.jpg" alt="Отзыв 12" class="review" />
+                    <div class="slider-content-right">
+                      <div class="chips">
+                        <div class="sign-rent">Аренда зала на 3,5 ч</div>
+                        <div class="sign-programm">Анимация с героем на 2 ч</div>
+                      </div>
+
+                      <ul class="content-list">
+                        <li class="content-item">Бьюти бокс на встречу гостей.</li>
+                        <li class="content-item">Челленджи или дискотека с лентами.</li>
+                        <li class="content-item">На выбор 6 шоу-программ.</li>
+                        <li class="content-item">Тематическая фотозона.</li>
+                      </ul>
+
+                      <div class="info-block">
+                        <div class="price-block">
+                          <div class="price-text-block">
+                            <div class="sign-price">Стоимость</div>
+
+                            <p class="price-text-1">
+                              <strong>В будни:</strong><br />
+                              до 15:00 - <span class="text-big">25500</span> руб.<br />
+                              в вечернее время - <span class="text-big">30000</span> руб.
+                            </p>
+
+                            <p class="price-text-2">
+                              <strong>В выходные и праздничные дни:</strong><br />
+                              <span class="text-big">33000</span> руб.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="add-info">
+                          <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
+                          <ul class="add-info-list">
+                            <li class="add-info-item">Сервировка стола <br /> (30 минут для подготовки к празднику)</li>
+                            <li class="add-info-item">Электронные пригласительные. <br /> (Подробности у администратора!)</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </article>
+
+              <!-- СЛАЙД 4 -->
+              <article class="price-slide">
+                <div class="slider-price-list">
+                  <div class="content-block">
+                    <div class="slider-content-left">
+                      <div class="price-item">
+                        <div class="price-top">
+                          <h3 class="price-title">Лайт</h3>
+                          <div class="age">1+</div>
+                        </div>
+
+                        <div class="video-block">
+                          <video class="video video--fix-2" controls poster="image/2. Пакеты/4. Лайт.jpg">
+                            <source src="video.mp4" type="video/mp4" />
+                          </video>
+
+                          <button
+                            class="play-button open-video"
+                            type="button"
+                            aria-label="Воспроизвести видео"
+                            data-video="video/video1.mp4"
+                          >
+                            <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
+                              <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="slider-content-right">
+                      <div class="chips">
+                        <div class="sign-rent">Аренда зала на 3 ч</div>
+                        <div class="sign-programm">Анимация с героем на 1 ч</div>
+                      </div>
+
+                      <ul class="content-list">
+                        <li class="content-item">Сопровождение администратора.</li>
+                        <li class="content-item">Мыльные пузырики или фигурки из шариков.</li>
+                        <li class="content-item">Фотозона базовая.</li>
+                      </ul>
+
+                      <div class="info-block">
+                        <div class="price-block">
+                          <div class="price-text-block">
+                            <div class="sign-price">Стоимость</div>
+
+                            <p class="price-text-1">
+                              <strong>В будни:</strong><br />
+                              до 15:00 - <span class="text-big">13600</span> руб.<br />
+                              в вечернее время - <span class="text-big">16000</span> руб.
+                            </p>
+
+                            <p class="price-text-2">
+                              <strong>В выходные и праздничные дни:</strong><br />
+                              <span class="text-big">17600</span> руб.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="add-info">
+                          <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
+                          <ul class="add-info-list">
+                            <li class="add-info-item">Сервировка стола <br /> (30 минут для подготовки к празднику)</li>
+                            <li class="add-info-item">Электронные пригласительные. <br /> (Подробности у администратора!)</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- СЛАЙД 5 -->
+              <article class="price-slide">
+                <div class="slider-price-list">
+                  <div class="content-block">
+                    <div class="slider-content-left">
+                      <div class="price-item">
+                        <div class="price-top">
+                          <h3 class="price-title">Время ЧЕ</h3>
+                          <div class="age">10+</div>
+                        </div>
+
+                        <div class="video-block">
+                          <video class="video" controls poster="image/2. Пакеты/5. Время Че.JPG">
+                            <source src="video.mp4" type="video/mp4" />
+                          </video>
+
+                          <button
+                            class="play-button open-video"
+                            type="button"
+                            aria-label="Воспроизвести видео"
+                            data-video="video/video1.mp4"
+                          >
+                            <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
+                              <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="slider-content-right">
+                      <div class="chips">
+                        <div class="sign-rent">Аренда зала на 3 ч</div>
+                        <div class="sign-programm">Программа с 2-мя героями на 1,5 ч</div>
+                      </div>
+
+                      <ul class="content-list">
+                        <li class="content-item">10 трендовых челленджей из соцсетей.</li>
+                        <li class="content-item">Энергичные командные игры.</li>
+                        <li class="content-item">Веселая атмосфера и море позитива.</li>
+                        <li class="content-item">Фотозона базовая.</li>
+                      </ul>
+
+                      <div class="info-block">
+                        <div class="price-block">
+                          <div class="price-text-block">
+                            <div class="sign-price">Стоимость</div>
+
+                            <p class="price-text-1">
+                              <strong>В будни:</strong><br />
+                              до 15:00 - <span class="text-big">21300</span> руб.<br />
+                              в вечернее время - <span class="text-big">23600</span> руб.
+                            </p>
+
+                            <p class="price-text-2">
+                              <strong>В выходные и праздничные дни:</strong><br />
+                              <span class="text-big">25900</span> руб.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="add-info">
+                          <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
+                          <ul class="add-info-list">
+                            <li class="add-info-item">Сервировка стола <br /> (30 минут для подготовки к празднику)</li>
+                            <li class="add-info-item">Электронные пригласительные. <br /> (Подробности у администратора!)</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- СЛАЙД 6 -->
+              <article class="price-slide">
+                <div class="slider-price-list">
+                  <div class="content-block">
+                    <div class="slider-content-left">
+                      <div class="price-item">
+                        <div class="price-top">
+                          <h3 class="price-title">В тренде</h3>
+                          <div class="age">6+</div>
+                        </div>
+
+                        <div class="video-block">
+                          <video class="video" controls poster="image/2. Пакеты/6. В тренде.jpg">
+                            <source src="video/Пакет В тренде.MOV--online-audio-convert.com.mp4" type="video/mp4" />
+                          </video>
+
+                          <button
+                            class="play-button open-video"
+                            type="button"
+                            aria-label="Воспроизвести видео"
+                            data-video="video/Пакет В тренде.MOV--online-audio-convert.com.mp4"
+                          >
+                            <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
+                              <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="slider-content-right">
+                      <div class="chips">
+                        <div class="sign-rent">Аренда зала на 3 ч</div>
+                        <div class="sign-programm">Анимация с героем на 2 часа</div>
+                      </div>
+
+                      <ul class="content-list">
+                        <li class="content-item">3 вида челленджей.</li>
+                        <li class="content-item">Фольгированная дискотека с лентами.</li>
+                        <li class="content-item">Фотозона базовая.</li>
+                      </ul>
+
+                      <div class="info-block">
+                        <div class="price-block">
+                          <div class="price-text-block">
+                            <div class="sign-price">Стоимость</div>
+
+                            <p class="price-text-1">
+                              <strong>В будни:</strong><br />
+                              до 15:00 - <span class="text-big">19500</span> руб.<br />
+                              в вечернее время - <span class="text-big">22900</span> руб.
+                            </p>
+
+                            <p class="price-text-2">
+                              <strong>В выходные и праздничные дни:</strong><br />
+                              <span class="text-big">25200</span> руб.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="add-info">
+                          <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
+                          <ul class="add-info-list">
+                            <li class="add-info-item">Сервировка стола <br /> (30 минут для подготовки к празднику)</li>
+                            <li class="add-info-item">Электронные пригласительные. <br /> (Подробности у администратора!)</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- СЛАЙД 7 -->
+              <article class="price-slide">
+                <div class="slider-price-list">
+                  <div class="content-block">
+                    <div class="slider-content-left">
+                      <div class="price-item">
+                        <div class="price-top">
+                          <h3 class="price-title">Веселая ферма</h3>
+                          <div class="age">1+</div>
+                        </div>
+
+                        <div class="video-block">
+                          <video class="video" controls poster="image/2. Пакеты/7. Веселая ферма.jpg">
+                            <source src="video/Пакет ферма.MOV--online-audio-convert.com.mp4" type="video/mp4" />
+                          </video>
+
+                          <button
+                            class="play-button open-video"
+                            type="button"
+                            aria-label="Воспроизвести видео"
+                            data-video="video/Пакет ферма.MOV--online-audio-convert.com.mp4"
+                          >
+                            <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
+                              <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="slider-content-right">
+                      <div class="chips">
+                        <div class="sign-rent">Аренда зала на 3 ч</div>
+                        <div class="sign-programm">Программа с 2-мя героями на 1,5 ч</div>
+                      </div>
+
+                      <ul class="content-list">
+                        <li class="content-item">Познакомимся с садовыми инструментами.</li>
+                        <li class="content-item">Вырастим урожай: от семечки до сбора овощей.</li>
+                        <li class="content-item">Поваляемся на сеновале и соберем стоги сена.</li>
+                        <li class="content-item">Отправимся пасти животных на поле.</li>
+                        <li class="content-item">Тематическая фотозона.</li>
+                      </ul>
+
+                      <div class="info-block">
+                        <div class="price-block">
+                          <div class="price-text-block">
+                            <div class="sign-price">Стоимость</div>
+
+                            <p class="price-text-1">
+                              <strong>В будни:</strong><br />
+                              до 15:00 - <span class="text-big">18300</span> руб.<br />
+                              в вечернее время - <span class="text-big">20300</span> руб.
+                            </p>
+
+                            <p class="price-text-2">
+                              <strong>В выходные и праздничные дни:</strong><br />
+                              <span class="text-big">21300</span> руб.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="add-info">
+                          <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
+                          <ul class="add-info-list">
+                            <li class="add-info-item">Сервировка стола <br /> (30 минут для подготовки к празднику)</li>
+                            <li class="add-info-item">Электронные пригласительные. <br /> (Подробности у администратора!)</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- секция дополнительные услуги -->
+      <section class="additional-services container" id="additional">
+        <h1 class="title-additional-services">ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ</h1>
+
+        <!-- 1. ШОУ-ПРОГРАММЫ -->
+        <div class="service-card">
+          <div class="service-card__media">
+            <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M15 18L9 12L15 6"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <div class="service-card__slider">
+              <div class="service-card__track">
+                <img src="image/3. Допуслуги/1. Мыльное шоуу.JPG" alt="Шоу-программы 1" class="service-card__image image--soup" />
+                <img src="image/3. Допуслуги/2. Тесла.jpg" alt="Шоу-программы 2" class="service-card__image image--tesla" />
+                <img src="image/3. Допуслуги/3. Там, где живут мечты.jpg" alt="Шоу-программы 3" class="service-card__image image--dreams" />
+                <img src="image/3. Допуслуги/4. Шоколадный pop it.jpg" alt="Шоу-программы 4" class="service-card__image image--chocolate" />
+                <img src="image/3. Допуслуги/5. Научное шоу.jpg" alt="Шоу-программы 5" class="service-card__image image--science" />
+                <img src="image/3. Допуслуги/6. крио шоу.png" alt="Шоу-программы 6" class="service-card__image image--krio" />
+                <img src="image/3. Допуслуги/6. ростовая кукла.jpg" alt="Шоу-программы 7" class="service-card__image image--doll" />
+                <img src="image/3. Допуслуги/7. Бьюти бар.jpg" alt="Шоу-программы 8" class="service-card__image image--beauty" />
+                <img src="image/3. Допуслуги/8. Ты в танцах.jpg" alt="Шоу-программы 9" class="service-card__image image--dance" />
+              </div>
+            </div>
+
+            <button class="price-arrow price-arrow-next" type="button" aria-label="Следующий слайд">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="service-card__content">
+            <h4 class="service-card__title">ШОУ-ПРОГРАММЫ</h4>
+
+            <div class="prices-list">
+              <div class="price-row">
+                <span class="price-name">Мыльное шоу</span>
+                <span class="price-line"></span>
+                <span class="price-value">7000 р./25 минут</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">Тесла шоу</span>
+                <span class="price-line"></span>
+                <span class="price-value">8000 р./25 минут</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">“Там, где живут меты”</span>
+                <span class="price-line"></span>
+                <span class="price-value">7000 р./25 минут</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">Научное шоу</span>
+                <span class="price-line"></span>
+                <span class="price-value">7000 р./час</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">Крио шоу</span>
+                <span class="price-line"></span>
+                <span class="price-value">4500 р./30 минут</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">Ростовая кукла</span>
+                <span class="price-line"></span>
+                <span class="price-value">5000 р./30 минут</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">Бьюти-бар (аэро-тату станция)</span>
+                <span class="price-line"></span>
+                <span class="price-value">6800 р./час</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">"Ты в танцах!"</span>
+                <span class="price-line"></span>
+                <span class="price-value">12000 р./25 минут</span>
               </div>
             </div>
           </div>
-
-        <button class="price-arrow price-arrow-next arrow" type="button" aria-label="Следующий слайд">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M9 18L15 12L9 6"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ОТЗЫВЫ МОБИЛЬНЫЕ -->
- <!-- ОТЗЫВЫ МОБИЛЬНЫЕ -->
-<section class="reviews-mobile">
-  <div class="container">
-    <h2 class="reviews-section-title">ОТЗЫВЫ</h2>
+        <!-- 2. СЛАДКИЙ НАБОР -->
+        <div class="service-card service-card--reverse">
+          <div class="service-card__media">
+            <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M15 18L9 12L15 6"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
 
-    <div class="reviews-header-mobile">
-      <img src="image/сердце фиолет.png" alt="" class="reviews-heart-mobile reviews-heart-mobile--left" />
+            <div class="service-card__slider">
+              <div class="service-card__track">
+                <img src="image/9. Сладкий стол/1. заглавная .webp" alt="Сладкий набор 1" class="service-card__image" />
+                <img src="image/9. Сладкий стол/5p_YVs4lL_fY-2LElxNKOz3NMj1EfZRDja-5yKWB7tbmueSJCiSXvHusMVylCVvuRDz_omftBLaHhiaVvdG1U11m.jpg" alt="Сладкий набор 2" class="service-card__image" />
+                <img src="image/9. Сладкий стол/uBVfutC7CV7GKKBpSFzOPEWsz4pHDLzTiLMnVd4kAQs4Y2p56qE9eVBlnEYHcRiYAbxV7KH9rzVMT5_4SdQQBnkl.jpg" alt="Сладкий набор 3" class="service-card__image" />
+              </div>
+            </div>
 
-      <div class="reviews-header-mobile-center">
-        <h3 class="title-reviews-mobile">
-          Отзывы наших счастливых
-          <span class="reviews-slogan write">гостей!</span>
+            <button class="price-arrow price-arrow-next" type="button" aria-label="Следующий слайд">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="service-card__content">
+            <h4 class="service-card__title">СЛАДКИЙ НАБОР</h4>
+
+            <div class="prices-list">
+              <div class="price-row">
+                <span class="price-name">Яблочный сок</span>
+                <span class="price-line"></span>
+                <span class="price-value">10 шт</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">Маленькие шоколадки</span>
+                <span class="price-line"></span>
+                <span class="price-value">10 шт</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">Конфетки драже</span>
+                <span class="price-line"></span>
+                <span class="price-value">10 шт</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">Попкорн</span>
+                <span class="price-line"></span>
+                <span class="price-value">10 шт</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">Пакетики маршмеллоу</span>
+                <span class="price-line"></span>
+                <span class="price-value">10 шт</span>
+              </div>
+
+              <div class="price-text">
+                <p class="price-name">Именные этикетки в стиль праздника</p>
+              </div>
+
+              <div class="price-sign">
+                <p class="text-sign">Стоимость: 4000 р.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. ФОТО И ВИДЕОСЪЁМКА -->
+        <div class="service-card">
+          <div class="service-card__media">
+            <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M15 18L9 12L15 6"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <div class="service-card__slider">
+              <div class="service-card__track">
+                <img src="image/10. Фото и видеосьемка/10. Фото и видеосьемка.PNG" alt="Фото и видеосъёмка 1" class="service-card__image" />
+                <img src="image/10. Фото и видеосьемка/10.б.jpg" alt="Фото и видеосъёмка 2" class="service-card__image" />
+                <img src="image/10. Фото и видеосьемка/10.г.jpg" alt="Фото и видеосъёмка 3" class="service-card__image" />
+                <img src="image/10. Фото и видеосьемка/10.д.jpg" alt="Фото и видеосъёмка 4" class="service-card__image" />
+              </div>
+            </div>
+
+            <button class="price-arrow price-arrow-next" type="button" aria-label="Следующий слайд">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="service-card__content">
+            <h4 class="service-card__title">ФОТО И ВИДЕОСЪЁМКА</h4>
+
+            <div class="video-sign">
+              Если хочется сохранить драгоценные моменты на долгие годы.
+            </div>
+
+            <div class="prices-list">
+              <div class="price-row">
+                <span class="price-name">Фотограф</span>
+                <span class="price-line"></span>
+                <span class="price-value">4000 р./час</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">Мобильная съемка</span>
+                <span class="price-line"></span>
+                <span class="price-value">3500 р./час</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">Видеограф</span>
+                <span class="price-line"></span>
+                <span class="price-value">5000 р./час</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. ФОТОЗОНА -->
+        <div class="service-card service-card--reverse">
+          <div class="service-card__media">
+            <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M15 18L9 12L15 6"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <div class="service-card__slider">
+              <div class="service-card__track">
+                <img src="image/11. Фотозоны/1-11.jpg" alt="Фотозона 1" class="service-card__image" />
+                <img src="image/11. Фотозоны/1-126.jpg" alt="Фотозона 2" class="service-card__image" />
+                <img src="image/11. Фотозоны/1-158.jpg" alt="Фотозона 3" class="service-card__image" />
+                <img src="image/11. Фотозоны/1-175.jpg" alt="Фотозона 4" class="service-card__image" />
+                <img src="image/11. Фотозоны/DSC_5265.jpg" alt="Фотозона 5" class="service-card__image" />
+                <img src="image/11. Фотозоны/DSC_7323.jpg" alt="Фотозона 6" class="service-card__image" />
+                <img src="image/11. Фотозоны/IMG_3620.jpg" alt="Фотозона 7" class="service-card__image" />
+                <img src="image/11. Фотозоны/IMG_6033.jpg" alt="Фотозона 8" class="service-card__image" />
+              </div>
+            </div>
+
+            <button class="price-arrow price-arrow-next" type="button" aria-label="Следующий слайд">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="service-card__content">
+            <h4 class="service-card__title">ФОТОЗОНА</h4>
+
+            <div class="prices-list">
+              <div class="price-row">
+                <span class="price-name">Гирлянда из шаров 50-60 шт (2м)</span>
+                <span class="price-line"></span>
+                <span class="price-value">3000 р.</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">Фотозона тематическая</span>
+                <span class="price-line"></span>
+                <span class="price-value">8500 р.</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">Напольное покрытие</span>
+                <span class="price-line"></span>
+                <span class="price-value">2500 р.</span>
+              </div>
+
+              <div class="price-row">
+                <span class="price-name">Аренда неоновых цифр и фигурок</span>
+                <span class="price-line"></span>
+                <span class="price-value">от 1000 р.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- секция фотогалерея -->
+      <section class="photogallery container">
+        <h1 class="title-photogallery">ФОТОГАЛЕРЕЯ</h1>
+
+        <h3 class="title-photogallery-second">
+          Мы дарим эмоции,<br />
+          которые <span class="photogallery-slogan write">запомнятся</span> надолго!
         </h3>
 
-        <div class="reviews-buttons-mobile">
-          <a href="https://go.2gis.com/your-link" class="button--2gis">2ГИС</a>
-          <a href="https://yandex.ru/maps/org/..." class="button--yandex">Яндекс. Карты</a>
-        </div>
-      </div>
-
-      <img src="image/сердце розовое.png" alt="" class="reviews-heart-mobile reviews-heart-mobile--right" />
-    </div>
-
-    <div class="reviews-shell-mobile">
-      <div class="reviews-panel-mobile">
-        <div class="dots-reviews-mobile">
-          <button class="dot active" type="button" aria-label="Слайд 1"></button>
-          <button class="dot" type="button" aria-label="Слайд 2"></button>
-          <button class="dot" type="button" aria-label="Слайд 3"></button>
-          <button class="dot" type="button" aria-label="Слайд 4"></button>
-          <button class="dot" type="button" aria-label="Слайд 5"></button>
-          <button class="dot" type="button" aria-label="Слайд 6"></button>
-          <button class="dot" type="button" aria-label="Слайд 7"></button>
-          <button class="dot" type="button" aria-label="Слайд 8"></button>
-          <button class="dot" type="button" aria-label="Слайд 9"></button>
-          <button class="dot" type="button" aria-label="Слайд 10"></button>
-          <button class="dot" type="button" aria-label="Слайд 11"></button>
-          <button class="dot" type="button" aria-label="Слайд 12"></button>
-        </div>
-
-        <div class="reviews-slider-mobile">
-          <button class="price-arrow price-arrow-prev reviews-mobile-prev" type="button" aria-label="Предыдущий отзыв">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M11 4L6 9L11 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <div class="photogallery-slider">
+          <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M15 18L9 12L15 6"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </button>
 
-          <div class="reviews-window-mobile">
-            <div class="reviews-track-mobile">
-              <div class="reviews-slide-mobile">
-                <img src="image/13.Отзывы/1.jpg" alt="Отзыв 1" class="review-mobile" />
+          <div class="photogallery-window">
+            <div class="photogallery-track">
+              <div class="photogallery-slide">
+                <div class="photogallery-card">
+                  <img src="image/12. Фотогалерея/DSC_5086.jpg" alt="фото 1" class="photogallery-image" />
+                </div>
+                <div class="photogallery-card">
+                  <img src="image/12. Фотогалерея/DSC_5125.jpg" alt="фото 2" class="photogallery-image" />
+                </div>
               </div>
-              <div class="reviews-slide-mobile">
-                <img src="image/13.Отзывы/2.jpg" alt="Отзыв 2" class="review-mobile" />
+
+              <div class="photogallery-slide">
+                <div class="photogallery-card">
+                  <img src="image/12. Фотогалерея/IMG_6086.jpg" alt="фото 3" class="photogallery-image" />
+                </div>
+                <div class="photogallery-card">
+                  <img src="image/12. Фотогалерея/IMG_6232.jpg" alt="фото 4" class="photogallery-image" />
+                </div>
               </div>
-              <div class="reviews-slide-mobile">
-                <img src="image/13.Отзывы/3.jpg" alt="Отзыв 3" class="review-mobile" />
+
+              <div class="photogallery-slide">
+                <div class="photogallery-card">
+                  <img src="image/12. Фотогалерея/IMG_7053.jpg" alt="фото 5" class="photogallery-image" />
+                </div>
+                <div class="photogallery-card">
+                  <img src="image/12. Фотогалерея/IMG_7075.jpg" alt="фото 6" class="photogallery-image" />
+                </div>
               </div>
-              <div class="reviews-slide-mobile">
-                <img src="image/13.Отзывы/4.jpg" alt="Отзыв 4" class="review-mobile" />
-              </div>
-              <div class="reviews-slide-mobile">
-                <img src="image/13.Отзывы/5.jpg" alt="Отзыв 5" class="review-mobile" />
-              </div>
-              <div class="reviews-slide-mobile">
-                <img src="image/13.Отзывы/6.jpg" alt="Отзыв 6" class="review-mobile" />
-              </div>
-              <div class="reviews-slide-mobile">
-                <img src="image/13.Отзывы/7.jpg" alt="Отзыв 7" class="review-mobile" />
-              </div>
-              <div class="reviews-slide-mobile">
-                <img src="image/13.Отзывы/8.jpg" alt="Отзыв 8" class="review-mobile" />
-              </div>
-              <div class="reviews-slide-mobile">
-                <img src="image/13.Отзывы/9.jpg" alt="Отзыв 9" class="review-mobile" />
-              </div>
-              <div class="reviews-slide-mobile">
-                <img src="image/13.Отзывы/10.jpg" alt="Отзыв 10" class="review-mobile" />
-              </div>
-              <div class="reviews-slide-mobile">
-                <img src="image/13.Отзывы/11.jpg" alt="Отзыв 11" class="review-mobile" />
-              </div>
-              <div class="reviews-slide-mobile">
-                <img src="image/13.Отзывы/12.jpg" alt="Отзыв 12" class="review-mobile" />
+
+              <div class="photogallery-slide">
+                <div class="photogallery-card">
+                  <img src="image/12. Фотогалерея/IMG_8407.jpg" alt="фото 7" class="photogallery-image" />
+                </div>
+                <div class="photogallery-card">
+                  <img src="image/12. Фотогалерея/photo_2026-04-02_22-17-40.jpg" alt="фото 8" class="photogallery-image" />
+                </div>
               </div>
             </div>
           </div>
 
-          <button class="price-arrow price-arrow-next reviews-mobile-next" type="button" aria-label="Следующий отзыв">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7 4L12 9L7 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <button class="price-arrow price-arrow-next" type="button" aria-label="Следующий слайд">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M9 18L15 12L9 6"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </button>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
+
+      <!-- секция инструкция -->
+      <section class="faq container">
+        <div class="faq-header">
+          <h3 class="faq-title">
+            Инструкция к счастливому
+            <span class="faq-slogan write">празднику!</span>
+          </h3>
+        </div>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span class="faq-question-text">Бронирование</span>
+            <span class="faq-icon"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Бронирование студии осуществляется после внесения предоплаты в размере
+              3000 рублей. В случае отказа от проведения мероприятия по инициативе
+              заказчика, предоплата не возвращается. У вас есть возможность перенести
+              праздник на любую свободную дату в течение 30 дней с момента отказа.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span class="faq-question-text">Дополнительное время</span>
+            <span class="faq-icon"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              В день праздника мы будем вас ждать за 30 минут до начала праздника.
+              Если вы пришли раньше, просим вас подождать, так как между
+              мероприятиями производится уборка, дезинфекция и проветривание
+              помещения. Покинуть студию необходимо по окончании арендуемого времени.
+              Задержка более чем на 15 минут оплачивается как дополнительные полчаса.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span class="faq-question-text">Порча имущества</span>
+            <span class="faq-icon"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Мы просим вас бережно относиться к нашему имуществу, использовать
+              игрушки по назначению и возрастной категории, соблюдать чистоту. Порча
+              имущества студии оплачивается по рыночной стоимости.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span class="faq-question-text">Ответственность</span>
+            <span class="faq-icon"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Во время мероприятия ответственность за детей несут родители.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span class="faq-question-text">В стоимость аренды входит</span>
+            <span class="faq-icon"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Небольшой холодильник для торта, микроволновка, термопот, кулер,
+              посуда для взрослых и детей, чай, салфетки.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span class="faq-question-text">Посуда</span>
+            <span class="faq-icon"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Посуда включена в стоимость. Стеклянные тарелки, бокалы, стаканы,
+              чашки, графины, столовые приборы, раздаточные тарелки, а также ножи и
+              доски разделочные. Одноразовую посуду можно принести с собой.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <!-- секция как нас найти -->
+      <section class="location container" id="address">
+        <h1 class="title-location">КАК НАС НАЙТИ?</h1>
+
+        <div class="location-top">
+          <div class="location-info">
+            <img src="image/метка.png" alt="иконка геолокации" class="location-info__icon" />
+            <p class="location-info__text">
+              г. Казань, метро Дубравная, <br /> ул. Дубравная 2Д
+            </p>
+          </div>
+
+          <div class="location-info">
+            <img src="image/часы.png" alt="иконка часов" class="location-info__icon" />
+            <p class="location-info__text">с 10:00 до 21:00</p>
+          </div>
+        </div>
+
+        <div class="attention-sign">
+          <p class="attention-sign__text">
+            <strong>ВНИМАНИЕ!</strong><br />
+            ПРОСМОТРЫ ТОЛЬКО ПО ПРЕДВАРИТЕЛЬНОЙ ДОГОВОРЕННОСТИ!<br />
+            Рабочее время указано для консультаций, студия работает только на праздниках.<br />
+            Пожалуйста, не приходите, если нет договоренности.
+          </p>
+        </div>
+
+        <div class="location-map">
+          <iframe
+            class="location-map__frame"
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A0e149e215364eb279ca71c72860466d4759aa98d69054f8ae72fda583b4a6dab&amp;source=constructor"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div class="photo-steps">
+          <div class="step">
+            <img src="image/14.шаги/метро.jpg" alt="Станция метро Дубравная" class="step__image" />
+            <p class="step__text">1. Станция метро Дубравная</p>
+          </div>
+
+          <div class="step">
+            <img src="image/14.шаги/мечеть.jpg" alt="Мечеть" class="step__image" />
+            <p class="step__text">2. Проезжаете мимо мечети</p>
+          </div>
+
+          <div class="step">
+            <img src="image/14.шаги/дом.jpg" alt="Дом со студией" class="step__image" />
+            <p class="step__text">3. Студия находится с внешней стороны дома</p>
+          </div>
+
+          <div class="step">
+            <img src="image/14.шаги/парковка.jpg" alt="Парковка" class="step__image" />
+            <p class="step__text">4. Есть парковка</p>
+          </div>
+
+          <div class="step">
+            <img src="image/14.шаги/студия.jpg" alt="Вход в студию" class="step__image image--studio" />
+            <p class="step__text">5. Вход в студию</p>
+          </div>
+
+          <div class="location-badge">
+            <p class="location-badge__text">
+              <svg
+                width="42"
+                height="24"
+                viewBox="0 0 83 46"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M79.6875 22.9664H4.22938M4.22938 22.9664L31.2345 2.55078M4.22938 22.9664L31.2345 43.382"
+                  stroke="white"
+                  stroke-width="5.10391"
+                  stroke-linecap="round"
+                />
+              </svg>
+              МЫ ЗДЕСЬ!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- секция отзывы -->
+      <section class="reviews" id="reviews">
+        <div class="container">
+          <h2 class="reviews-section-title">ОТЗЫВЫ</h2>
+
+          <div class="reviews-header">
+            <img
+              src="image/сердце фиолет.png"
+              alt="Фиолетовое сердце"
+              class="reviews-heart reviews-heart--left"
+            />
+
+            <div class="reviews-header-center">
+              <h3 class="title-reviews">
+                Отзывы наших счастливых
+                <span class="reviews-slogan write">гостей!</span>
+              </h3>
+
+              <div class="reviews-buttons">
+                <a href="https://yandex.ru/maps/org/tvoy_den/241201399797/reviews/?ll=49.226807%2C55.738997&tab=reviews&z=16.63" class="review_button button--yandex">
+                  Яндекс. Карты
+                </a>
+
+                <a href="https://2gis.ru/kazan/firm/70000001034763752/tab/reviews?m=49.227709%2C55.738602%2F16" class="reviewbutton button--2gis">
+                  2ГИС
+                </a>
+              </div>
+            </div>
+
+            <img
+              src="image/сердце розовое.png"
+              alt="Розовое сердце"
+              class="reviews-heart reviews-heart--right"
+            />
+          </div>
+        </div>
+
+        <div class="reviews-shell">
+          <div class="container">
+            <div class="reviews-panel">
+              <div class="dots-reviews">
+                <button class="dot active" type="button" aria-label="Слайд 1"></button>
+                <button class="dot" type="button" aria-label="Слайд 2"></button>
+                <button class="dot" type="button" aria-label="Слайд 3"></button>
+              </div>
+
+              <div class="reviews-slider">
+                <button class="price-arrow price-arrow-prev" type="button" aria-label="Предыдущий слайд">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M15 18L9 12L15 6"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+
+                <div class="reviews-window">
+                  <div class="reviews-track">
+                    <!-- СЛАЙД 1 -->
+                    <div class="reviews-slide">
+                      <div class="review-card">
+                        <img src="image/13.Отзывы/1.jpg" alt="Отзыв 1" class="review" />
+                      </div>
+
+                      <div class="review-card">
+                        <img src="image/13.Отзывы/2.jpg" alt="Отзыв 2" class="review" />
+                      </div>
+
+                      <div class="review-card">
+                        <img src="image/13.Отзывы/3.jpg" alt="Отзыв 3" class="review" />
+                      </div>
+
+                      <div class="review-card">
+                        <img src="image/13.Отзывы/4.jpg" alt="Отзыв 4" class="review" />
+                      </div>
+                    </div>
+
+                    <!-- СЛАЙД 2 -->
+                    <div class="reviews-slide">
+                      <div class="review-card">
+                        <img src="image/13.Отзывы/5.jpg" alt="Отзыв 5" class="review" />
+                      </div>
+
+                      <div class="review-card">
+                        <img src="image/13.Отзывы/6.jpg" alt="Отзыв 6" class="review" />
+                      </div>
+
+                      <div class="review-card">
+                        <img src="image/13.Отзывы/7.jpg" alt="Отзыв 7" class="review" />
+                      </div>
+
+                      <div class="review-card">
+                        <img src="image/13.Отзывы/8.jpg" alt="Отзыв 8" class="review" />
+                      </div>
+                    </div>
+
+                    <!-- СЛАЙД 3 -->
+                    <div class="reviews-slide">
+                      <div class="review-card">
+                        <img src="image/13.Отзывы/9.jpg" alt="Отзыв 9" class="review" />
+                      </div>
+
+                      <div class="review-card">
+                        <img src="image/13.Отзывы/10.jpg" alt="Отзыв 10" class="review" />
+                      </div>
+
+                      <div class="review-card">
+                        <img src="image/13.Отзывы/11.jpg" alt="Отзыв 11" class="review" />
+                      </div>
+
+                      <div class="review-card">
+                        <img src="image/13.Отзывы/12.jpg" alt="Отзыв 12" class="review" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="price-arrow price-arrow-next arrow" type="button" aria-label="Следующий слайд">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M9 18L15 12L9 6"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ОТЗЫВЫ МОБИЛЬНЫЕ -->
+      <section class="reviews-mobile">
+        <div class="container">
+          <h2 class="reviews-section-title">ОТЗЫВЫ</h2>
+
+          <div class="reviews-header-mobile">
+            <img src="image/сердце фиолет.png" alt="" class="reviews-heart-mobile reviews-heart-mobile--left" />
+
+            <div class="reviews-header-mobile-center">
+              <h3 class="title-reviews-mobile">
+                Отзывы наших счастливых
+                <span class="reviews-slogan write">гостей!</span>
+              </h3>
+
+              <div class="reviews-buttons-mobile">
+                <a href="https://go.2gis.com/your-link" class="button--2gis">2ГИС</a>
+                <a href="https://yandex.ru/maps/org/..." class="button--yandex">Яндекс. Карты</a>
+              </div>
+            </div>
+
+            <img src="image/сердце розовое.png" alt="" class="reviews-heart-mobile reviews-heart-mobile--right" />
+          </div>
+
+          <div class="reviews-shell-mobile">
+            <div class="reviews-panel-mobile">
+              <div class="dots-reviews-mobile">
+                <button class="dot active" type="button" aria-label="Слайд 1"></button>
+                <button class="dot" type="button" aria-label="Слайд 2"></button>
+                <button class="dot" type="button" aria-label="Слайд 3"></button>
+                <button class="dot" type="button" aria-label="Слайд 4"></button>
+                <button class="dot" type="button" aria-label="Слайд 5"></button>
+                <button class="dot" type="button" aria-label="Слайд 6"></button>
+                <button class="dot" type="button" aria-label="Слайд 7"></button>
+                <button class="dot" type="button" aria-label="Слайд 8"></button>
+                <button class="dot" type="button" aria-label="Слайд 9"></button>
+                <button class="dot" type="button" aria-label="Слайд 10"></button>
+                <button class="dot" type="button" aria-label="Слайд 11"></button>
+                <button class="dot" type="button" aria-label="Слайд 12"></button>
+              </div>
+
+              <div class="reviews-slider-mobile">
+                <button class="price-arrow price-arrow-prev reviews-mobile-prev" type="button" aria-label="Предыдущий отзыв">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 4L6 9L11 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+
+                <div class="reviews-window-mobile">
+                  <div class="reviews-track-mobile">
+                    <div class="reviews-slide-mobile">
+                      <img src="image/13.Отзывы/1.jpg" alt="Отзыв 1" class="review-mobile" />
+                    </div>
+                    <div class="reviews-slide-mobile">
+                      <img src="image/13.Отзывы/2.jpg" alt="Отзыв 2" class="review-mobile" />
+                    </div>
+                    <div class="reviews-slide-mobile">
+                      <img src="image/13.Отзывы/3.jpg" alt="Отзыв 3" class="review-mobile" />
+                    </div>
+                    <div class="reviews-slide-mobile">
+                      <img src="image/13.Отзывы/4.jpg" alt="Отзыв 4" class="review-mobile" />
+                    </div>
+                    <div class="reviews-slide-mobile">
+                      <img src="image/13.Отзывы/5.jpg" alt="Отзыв 5" class="review-mobile" />
+                    </div>
+                    <div class="reviews-slide-mobile">
+                      <img src="image/13.Отзывы/6.jpg" alt="Отзыв 6" class="review-mobile" />
+                    </div>
+                    <div class="reviews-slide-mobile">
+                      <img src="image/13.Отзывы/7.jpg" alt="Отзыв 7" class="review-mobile" />
+                    </div>
+                    <div class="reviews-slide-mobile">
+                      <img src="image/13.Отзывы/8.jpg" alt="Отзыв 8" class="review-mobile" />
+                    </div>
+                    <div class="reviews-slide-mobile">
+                      <img src="image/13.Отзывы/9.jpg" alt="Отзыв 9" class="review-mobile" />
+                    </div>
+                    <div class="reviews-slide-mobile">
+                      <img src="image/13.Отзывы/10.jpg" alt="Отзыв 10" class="review-mobile" />
+                    </div>
+                    <div class="reviews-slide-mobile">
+                      <img src="image/13.Отзывы/11.jpg" alt="Отзыв 11" class="review-mobile" />
+                    </div>
+                    <div class="reviews-slide-mobile">
+                      <img src="image/13.Отзывы/12.jpg" alt="Отзыв 12" class="review-mobile" />
+                    </div>
+                  </div>
+                </div>
+
+                <button class="price-arrow price-arrow-next reviews-mobile-next" type="button" aria-label="Следующий отзыв">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 4L12 9L7 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
     <!-- футер -->
     <footer class="footer">
-  <div class="container footer-inner">
-    <div class="footer-left">
-      <div class="footer-logos">
-        <img src="image/балаган логотип.svg" alt="логотип балаган" class="footer-logo footer-logo-balagan" />
-        <img src="image/твой день логотип.svg" alt="логотип твой день" class="footer-logo footer-logo-day" />
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="footer-logos">
+            <img src="image/балаган логотип.svg" alt="логотип балаган" class="footer-logo footer-logo-balagan" />
+            <img src="image/твой день логотип.svg" alt="логотип твой день" class="footer-logo footer-logo-day" />
+          </div>
+
+          <div class="footer-links">
+            <a href="" class="footer-link" hidden>Политика конфиденциальности</a>
+            <a href="offer.html" class="footer-link">Договор оферты</a>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <a href="https://vk.com/yourday_kzn" class="footer-social footer-social-vk" aria-label="ВКонтакте">
+            <img src="icons/иконка вк.svg" alt="ВК" class="footer-social-icon" />
+          </a>
+
+          <button class="footer-booking-button open-modal" type="button">
+            <svg
+              class="footer-booking-icon"
+              width="37"
+              height="52"
+              viewBox="0 0 37 52"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M34.9252 42.1122C34.0594 41.1797 29.7854 36.6439 28.9483 35.9155C28.111 35.1873 27.4694 34.7594 26.3991 35.6031C25.3289 36.4468 22.4816 38.1812 21.6215 38.6902C20.7615 39.1989 20.1178 39.0658 19.2516 38.1335C18.3859 37.201 15.3896 34.8085 12.6327 29.6086C10.4886 25.5604 9.57887 21.1968 9.34409 19.8774C9.10931 18.5579 9.84715 18.1698 10.5609 17.806C11.1982 17.4877 12.0431 16.9094 12.7839 16.4588C13.5248 16.0079 13.8555 15.618 14.4512 15.0126C15.0473 14.4074 15.0892 13.7042 15.0122 13.0593C14.9353 12.4143 14.6511 6.24837 14.5156 3.73387C14.3832 1.28424 13.4206 1.25715 12.7901 0.977649C12.1956 0.725481 11.4877 0.460322 10.7857 0.204431C9.69866 -0.158849 8.51458 -0.0318712 7.51935 0.554708C6.18684 1.30267 2.57792 2.96506 0.758213 8.3641C-1.0615 13.7631 0.946535 20.3518 1.22409 21.2755C1.50164 22.1992 4.65632 35.7884 13.594 44.3833C15.2545 45.9779 16.9943 47.4799 18.8065 48.8835C21.04 50.643 23.3733 51.3542 25.2796 51.7324C27.4032 52.1521 32.3933 51.3452 34.1339 49.1032C35.8747 46.8618 36.6136 44.6635 36.4972 44.1082C36.3808 43.5529 35.788 43.0532 34.9223 42.1207L34.9252 42.1122Z"
+                fill="white"
+              />
+            </svg>
+
+            <span class="footer-booking-text">ЗАБРОНИРОВАТЬ</span>
+          </button>
+        </div>
       </div>
+    </footer>
 
-      <div class="footer-links">
-        <a href="" class="footer-link" hidden>Политика конфиденциальности</a>
-        <a href="offer.html" class="footer-link">Договор оферты</a>
+    <!-- ФУТЕР МОБИЛКА -->
+    <footer class="footer-mobile">
+      <div class="container">
+        <div class="footer-mobile-inner">
+          <div class="footer-mobile-logos">
+            <img
+              src="image/балаган логотип.svg"
+              alt="логотип балаган"
+              class="footer-mobile-logo footer-mobile-logo-balagan"
+            />
+            <img
+              src="image/твой день логотип.svg"
+              alt="логотип твой день"
+              class="footer-mobile-logo footer-mobile-logo-day"
+            />
+          </div>
+
+          <div class="footer-mobile-links">
+            <a href="offer.html" class="footer-mobile-link">Договор оферты</a>
+          </div>
+
+          <div class="footer-mobile-socials">
+            <a
+              href="https://max.ru/u/f9LHodD0cOJWDXlfQP_b83EdN4VKzNkR4BSoYPe0M-LM2IZvOeE4PMUziQY"
+              class="footer-mobile-social footer-mobile-social-messenger"
+              aria-label="Мессенджер"
+            >
+              <img src="icons/макс иконка.svg" alt="мессенджер МАКС" class="footer-mobile-social-icon" />
+            </a>
+
+            <a
+              href="https://vk.com/yourday_kzn"
+              class="footer-mobile-social footer-mobile-social-vk"
+              aria-label="ВКонтакте"
+            >
+              <img src="icons/иконка вк.svg" alt="ВК" class="footer-mobile-social-icon" />
+            </a>
+          </div>
+
+          <button class="footer-mobile-booking-button open-modal" type="button">
+            <svg
+              class="footer-mobile-booking-icon"
+              width="37"
+              height="52"
+              viewBox="0 0 37 52"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M34.9252 42.1122C34.0594 41.1797 29.7854 36.6439 28.9483 35.9155C28.111 35.1873 27.4694 34.7594 26.3991 35.6031C25.3289 36.4468 22.4816 38.1812 21.6215 38.6902C20.7615 39.1989 20.1178 39.0658 19.2516 38.1335C18.3859 37.201 15.3896 34.8085 12.6327 29.6086C10.4886 25.5604 9.57887 21.1968 9.34409 19.8774C9.10931 18.5579 9.84715 18.1698 10.5609 17.806C11.1982 17.4877 12.0431 16.9094 12.7839 16.4588C13.5248 16.0079 13.8555 15.618 14.4512 15.0126C15.0473 14.4074 15.0892 13.7042 15.0122 13.0593C14.9353 12.4143 14.6511 6.24837 14.5156 3.73387C14.3832 1.28424 13.4206 1.25715 12.7901 0.977649C12.1956 0.725481 11.4877 0.460322 10.7857 0.204431C9.69866 -0.158849 8.51458 -0.0318712 7.51935 0.554708C6.18684 1.30267 2.57792 2.96506 0.758213 8.3641C-1.0615 13.7631 0.946535 20.3518 1.22409 21.2755C1.50164 22.1992 4.65632 35.7884 13.594 44.3833C15.2545 45.9779 16.9943 47.4799 18.8065 48.8835C21.04 50.643 23.3733 51.3542 25.2796 51.7324C27.4032 52.1521 32.3933 51.3452 34.1339 49.1032C35.8747 46.8618 36.6136 44.6635 36.4972 44.1082C36.3808 43.5529 35.788 43.0532 34.9223 42.1207L34.9252 42.1122Z"
+                fill="white"
+              />
+            </svg>
+
+            <span class="footer-mobile-booking-text">ЗАБРОНИРОВАТЬ</span>
+          </button>
+        </div>
       </div>
-    </div>
+    </footer>
 
-    <div class="footer-right">
-
-
-      <a href="https://vk.com/yourday_kzn" class="footer-social footer-social-vk" aria-label="ВКонтакте">
-        <img src="icons/иконка вк.svg" alt="ВК" class="footer-social-icon" />
-      </a>
-
-      <button class="footer-booking-button open-modal" type="button">
-        <svg
-          class="footer-booking-icon"
-          width="37"
-          height="52"
-          viewBox="0 0 37 52"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M34.9252 42.1122C34.0594 41.1797 29.7854 36.6439 28.9483 35.9155C28.111 35.1873 27.4694 34.7594 26.3991 35.6031C25.3289 36.4468 22.4816 38.1812 21.6215 38.6902C20.7615 39.1989 20.1178 39.0658 19.2516 38.1335C18.3859 37.201 15.3896 34.8085 12.6327 29.6086C10.4886 25.5604 9.57887 21.1968 9.34409 19.8774C9.10931 18.5579 9.84715 18.1698 10.5609 17.806C11.1982 17.4877 12.0431 16.9094 12.7839 16.4588C13.5248 16.0079 13.8555 15.618 14.4512 15.0126C15.0473 14.4074 15.0892 13.7042 15.0122 13.0593C14.9353 12.4143 14.6511 6.24837 14.5156 3.73387C14.3832 1.28424 13.4206 1.25715 12.7901 0.977649C12.1956 0.725481 11.4877 0.460322 10.7857 0.204431C9.69866 -0.158849 8.51458 -0.0318712 7.51935 0.554708C6.18684 1.30267 2.57792 2.96506 0.758213 8.3641C-1.0615 13.7631 0.946535 20.3518 1.22409 21.2755C1.50164 22.1992 4.65632 35.7884 13.594 44.3833C15.2545 45.9779 16.9943 47.4799 18.8065 48.8835C21.04 50.643 23.3733 51.3542 25.2796 51.7324C27.4032 52.1521 32.3933 51.3452 34.1339 49.1032C35.8747 46.8618 36.6136 44.6635 36.4972 44.1082C36.3808 43.5529 35.788 43.0532 34.9223 42.1207L34.9252 42.1122Z"
-            fill="white"
-          />
-        </svg>
-
-        <span class="footer-booking-text">ЗАБРОНИРОВАТЬ</span>
-      </button>
-    </div>
-  </div>
-</footer>
-<!-- 
-ФУТЕР МОБИЛКА -->
-<footer class="footer-mobile">
-  <div class="container">
-    <div class="footer-mobile-inner">
-      <div class="footer-mobile-logos">
-        <img
-          src="image/балаган логотип.svg"
-          alt="логотип балаган"
-          class="footer-mobile-logo footer-mobile-logo-balagan"
-        />
-        <img
-          src="image/твой день логотип.svg"
-          alt="логотип твой день"
-          class="footer-mobile-logo footer-mobile-logo-day"
-        />
-      </div>
-
-      <div class="footer-mobile-links">
-        <a href="offer.html" class="footer-mobile-link">Договор оферты</a>
-      </div>
-
-      <div class="footer-mobile-socials">
-  
-
-        <a
-          href="https://max.ru/u/f9LHodD0cOJWDXlfQP_b83EdN4VKzNkR4BSoYPe0M-LM2IZvOeE4PMUziQY"
-          class="footer-mobile-social footer-mobile-social-messenger"
-          aria-label="Мессенджер"
-        >
-          <img src="icons/макс иконка.svg" alt="мессенджер МАКС" class="footer-mobile-social-icon" />
+    <!-- окно -->
+    <div class="modal" id="bookingModal">
+      <div class="modal-content">
+        <a href="tel:+79063298381" class="modal-btn modal-btn--call">
+          Позвонить +7 906-329-83-81
         </a>
 
-        <a
-          href="https://vk.com/yourday_kzn"
-          class="footer-mobile-social footer-mobile-social-vk"
-          aria-label="ВКонтакте"
-        >
-          <img src="icons/иконка вк.svg" alt="ВК" class="footer-mobile-social-icon" />
-        </a>
+        <button class="modal-btn modal-btn--cancel" id="closeModal">
+          Отменить
+        </button>
       </div>
-
-      <button class="footer-mobile-booking-button open-modal" type="button">
-        <svg
-          class="footer-mobile-booking-icon"
-          width="37"
-          height="52"
-          viewBox="0 0 37 52"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M34.9252 42.1122C34.0594 41.1797 29.7854 36.6439 28.9483 35.9155C28.111 35.1873 27.4694 34.7594 26.3991 35.6031C25.3289 36.4468 22.4816 38.1812 21.6215 38.6902C20.7615 39.1989 20.1178 39.0658 19.2516 38.1335C18.3859 37.201 15.3896 34.8085 12.6327 29.6086C10.4886 25.5604 9.57887 21.1968 9.34409 19.8774C9.10931 18.5579 9.84715 18.1698 10.5609 17.806C11.1982 17.4877 12.0431 16.9094 12.7839 16.4588C13.5248 16.0079 13.8555 15.618 14.4512 15.0126C15.0473 14.4074 15.0892 13.7042 15.0122 13.0593C14.9353 12.4143 14.6511 6.24837 14.5156 3.73387C14.3832 1.28424 13.4206 1.25715 12.7901 0.977649C12.1956 0.725481 11.4877 0.460322 10.7857 0.204431C9.69866 -0.158849 8.51458 -0.0318712 7.51935 0.554708C6.18684 1.30267 2.57792 2.96506 0.758213 8.3641C-1.0615 13.7631 0.946535 20.3518 1.22409 21.2755C1.50164 22.1992 4.65632 35.7884 13.594 44.3833C15.2545 45.9779 16.9943 47.4799 18.8065 48.8835C21.04 50.643 23.3733 51.3542 25.2796 51.7324C27.4032 52.1521 32.3933 51.3452 34.1339 49.1032C35.8747 46.8618 36.6136 44.6635 36.4972 44.1082C36.3808 43.5529 35.788 43.0532 34.9223 42.1207L34.9252 42.1122Z"
-            fill="white"
-          />
-        </svg>
-
-        <span class="footer-mobile-booking-text">ЗАБРОНИРОВАТЬ</span>
-      </button>
     </div>
-  </div>
-</footer>
 
-<!-- окно -->
- <div class="modal" id="bookingModal">
-  <div class="modal-content">
-    
-    <a href="tel:+79063298381" class="modal-btn modal-btn--call">
-      Позвонить +7 906-329-83-81
-    </a>
+    <!-- Видео-обзор -->
+    <div class="video-modal" id="videoModal">
+      <div class="video-modal-content">
+        <button class="video-close" id="closeVideo">✕</button>
 
-    <button class="modal-btn modal-btn--cancel" id="closeModal">
-      Отменить
-    </button>
-
-  </div>
-</div>
-
-<!-- Видео-обзор -->
- <div class="video-modal" id="videoModal">
-  <div class="video-modal-content">
-
-    <button class="video-close" id="closeVideo">✕</button>
-
-    <video id="studioVideo" controls>
-      <source src="video/Обзор студии.mp4--online-audio-convert.com.mp4" type="video/mp4">
-    </video>
-
-  </div>
-</div>
-
-
+        <video id="studioVideo" controls>
+          <source src="video/Обзор студии.mp4--online-audio-convert.com.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
   </body>
 </html>
-
