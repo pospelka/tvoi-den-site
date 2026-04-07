@@ -1236,12 +1236,13 @@ h1 {
   position: relative;
   background: var(--color-light);
   border-radius: 20px;
-  padding: clamp(28px, 3vw, 40px) clamp(18px, 3vw, 40px) clamp(18px, 2vw, 25px);
+  padding: clamp(28px, 3vw, 40px) clamp(18px, 3vw, 40px) clamp(15px, 1vw, 18px);
   box-shadow: 7px 7px 0 0 #c8abff;
   width: fit-content;
   max-width: clamp(260px, 30vw, 420px);
   box-sizing: border-box;
 }
+
 
 .sign-price {
   position: absolute;
@@ -1267,6 +1268,10 @@ h1 {
 
 .price-text-1 {
   margin-bottom: 10px;
+}
+
+.price-text-2 {
+  margin-bottom: 0px;
 }
 
 .text-big {
@@ -1304,6 +1309,70 @@ h1 {
 
 .add-info-item + .add-info-item {
   margin-top: 8px;
+}
+
+
+/* Иконка ХИТ только для слайда "Свит бэйби" */
+.price-slide--sweet-baby .slider-content-right {
+  position: relative;
+}
+
+.price-hit-badge {
+  position: absolute;
+  top: 40px;
+  right: 0px;
+  width: clamp(160px, 12vw, 175px);
+  height: auto;
+  display: block;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* мобильная версия */
+@media (max-width: 435px) {
+  .price-slide--sweet-baby .slider-content-right {
+    position: relative;
+  }
+
+  .price-hit-badge {
+    top: 95px;
+    right: 8px;
+    width: 90px;
+  }
+}
+
+
+/* ПОД КЛЮЧ — только для Пати бум */
+.price-slide--party-boom .slider-content-right {
+  position: relative;
+}
+
+.price-key-badge {
+  position: absolute;
+  top: 120px;
+  right: 60px;
+  width: clamp(120px, 11vw, 150px);
+  height: auto;
+  display: block;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* мобильная версия */
+@media (max-width: 435px) {
+  .price-slide--party-boom .slider-content-right {
+    position: relative;
+  }
+
+  .price-key-badge {
+    top: 75px;
+    right: 11px;
+    width: clamp(70px, 23vw, 90px);
+  }
+
+
 }
 
 /* ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ */
@@ -3158,7 +3227,7 @@ body {
     display: flex;
     align-items: center;
     margin: 0;
-    gap: 0;
+    gap: 4px;
   }
 
   .price-list-arrows .price-arrow-prev {
