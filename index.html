@@ -7,12 +7,64 @@
       name="description"
       content="Твой День — студия детских праздников в Казани у метро Дубравная. Аренда зала, аниматоры, шоу-программы, фотозоны и организация дня рождения под ключ."
     />
-    <link rel="stylesheet" href="css/style.css" />
     <title>Твой День</title>
+
+    <!-- Preload шрифтов -->
+    <link rel="preload" href="fonts/gogol_regular.woff" as="font" type="font/woff" crossorigin />
+    <link
+      rel="preload"
+      href="fonts/MontserratAlternates-Regular.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/MontserratAlternates-SemiBold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/MontserratAlternates-Bold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/MontserratAlternates-ExtraBold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+
+    <!-- Preload критичных изображений первого экрана -->
+    <link
+      rel="preload"
+      as="image"
+      href="image/Логотип твой день большой.svg"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="image/Фото главная.webp"
+      media="(min-width: 436px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="image/фото мобильное.webp"
+      media="(max-width: 435px)"
+      fetchpriority="high"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <script src="tvoi-den.js/script.js" defer></script>
-
     <!-- хеддер -->
     <!-- ДЕСКТОПНЫЙ ХЕДЕР -->
     <header class="header desktop-header" id="siteHeader">
@@ -23,11 +75,17 @@
               src="image/балаган логотип.svg"
               alt="логотип балаган"
               class="logo-balagan"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
             />
             <img
               src="image/твой день логотип.svg"
               alt="логотип твой день"
               class="logo-tvoi-den"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
             />
           </div>
 
@@ -49,6 +107,8 @@
                   src="icons/макс иконка.svg"
                   alt="иконка мессенджера"
                   class="header-contact-icon"
+                  loading="eager"
+                  decoding="async"
                 />
               </a>
               <a href="tel:+79063298381" class="header-phone">+7 906 329-83-81</a>
@@ -68,11 +128,17 @@
             src="image/балаган логотип.svg"
             alt="логотип балаган"
             class="mobile-header__logo-balagan"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
           />
           <img
             src="image/твой день логотип.svg"
             alt="логотип твой день"
             class="mobile-header__logo-day"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
           />
         </div>
 
@@ -124,6 +190,22 @@
     </div>
 
     <main>
+      <h1
+        style="
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        "
+      >
+        Твой День — студия детских праздников в Казани
+      </h1>
+
       <!-- секция главный экран -->
       <section class="first" id="first">
         <div class="first_container">
@@ -131,13 +213,26 @@
             src="image/Логотип твой день большой.svg"
             alt="Логотип студии"
             class="logo-studio"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
           />
-          <img src="image/Фото главная.jpg" alt="Баннер" class="banner banner-desktop" />
+          <img
+            src="image/Фото главная.webp"
+            alt="Баннер"
+            class="banner banner-desktop"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
 
           <img
-            src="image/фото мобильное.jpg"
+            src="image/фото мобильное.webp"
             alt="Баннер"
             class="banner banner-mobile"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
           />
         </div>
 
@@ -149,24 +244,21 @@
         </div>
 
         <button class="button_book open-modal" id="openModal" type="button">
-          <div class="button-content">
+          <span class="button-content">
             <img
               src="icons/иконка звонка.svg"
               alt="иконка звонка"
               class="call-icon"
+              loading="eager"
+              decoding="async"
             />
-            <p class="button_book_text">Забронировать</p>
-          </div>
+            <span class="button_book_text">Забронировать</span>
+          </span>
         </button>
 
         <div class="card" hidden>
-          <button type="button">
-            <a href="">Позвонить +7 906-329-83-81</a>
-          </button>
-
-          <button type="button">
-            <a href="">Отменить</a>
-          </button>
+          <a href="tel:+79063298381">Позвонить +7 906-329-83-81</a>
+          <button type="button">Отменить</button>
         </div>
 
         <div class="sign-cookie" id="cookieBanner">
@@ -182,10 +274,11 @@
               </button>
 
               <img
-                src="image/печенье.png"
+                src="image/печенье.webp"
                 alt="печенька"
                 class="sign-cookie_image"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -195,8 +288,8 @@
       <!-- секция слоган -->
       <section class="slogan">
         <div class="slogan-wrap">
-          <img src="image/торт.png" alt="тортик" class="cake" loading="lazy" />
-          <img src="image/подарок.png" alt="подарок" class="gift" loading="lazy" />
+          <img src="image/торт.webp" alt="тортик" class="cake" loading="lazy" decoding="async" />
+          <img src="image/подарок.webp" alt="подарок" class="gift" loading="lazy" decoding="async" />
 
           <div class="slogan-content">
             <p class="slogan-text">
@@ -211,18 +304,19 @@
 
       <!-- секция почему мы -->
       <section class="why-we">
-        <h3 class="title-why-we">
+        <h2 class="title-why-we">
           Почему <span class="write">у нас</span>, а не дома?
-        </h3>
+        </h2>
 
         <ul class="why-we-list">
           <li class="why-we-item">
             <div class="circle">
               <img
-                src="image/швабра.png"
+                src="image/швабра.webp"
                 alt="иконка швабры"
                 class="why-we-image"
                 loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -235,10 +329,11 @@
           <li class="why-we-item">
             <div class="circle">
               <img
-                src="image/шарики.png"
+                src="image/шарики.webp"
                 alt="иконка шариков"
                 class="why-we-image"
                 loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -251,10 +346,11 @@
           <li class="why-we-item">
             <div class="circle">
               <img
-                src="image/рукопожатие.png"
+                src="image/рукопожатие.webp"
                 alt="иконка рукопожатия"
                 class="why-we-image"
                 loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -270,7 +366,7 @@
       <section class="studio-overview" id="interior">
         <div class="container">
           <div class="studio-overview-top">
-            <h1 class="title-studio-overview">ОБЗОР СТУДИИ</h1>
+            <h2 class="title-studio-overview">ОБЗОР СТУДИИ</h2>
 
             <button class="button-studio-overview open-video" type="button">
               <span class="button-studio-overview-text">Видео-обзор студии</span>
@@ -353,6 +449,7 @@
                   alt="Фото студии 1"
                   class="studio-overview-image"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div class="studio-overview-info">
                   <span class="number-studio-overview">01</span>
@@ -368,6 +465,7 @@
                   alt="Фото студии 2"
                   class="studio-overview-image"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div class="studio-overview-info">
                   <span class="number-studio-overview">02</span>
@@ -383,6 +481,7 @@
                   alt="Фото студии 3"
                   class="studio-overview-image"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div class="studio-overview-info">
                   <span class="number-studio-overview">03</span>
@@ -398,6 +497,7 @@
                   alt="Фото студии 4"
                   class="studio-overview-image"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div class="studio-overview-info">
                   <span class="number-studio-overview">04</span>
@@ -413,6 +513,7 @@
                   alt="Фото студии 5"
                   class="studio-overview-image"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div class="studio-overview-info">
                   <span class="number-studio-overview">05</span>
@@ -428,6 +529,7 @@
                   alt="Фото студии 6"
                   class="studio-overview-image"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div class="studio-overview-info">
                   <span class="number-studio-overview">06</span>
@@ -490,6 +592,7 @@
                   alt="Фото студии 1"
                   class="studio-overview-mobile-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </article>
 
@@ -499,6 +602,7 @@
                   alt="Фото студии 2"
                   class="studio-overview-mobile-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </article>
 
@@ -508,6 +612,7 @@
                   alt="Фото студии 3"
                   class="studio-overview-mobile-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </article>
 
@@ -517,6 +622,7 @@
                   alt="Фото студии 4"
                   class="studio-overview-mobile-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </article>
 
@@ -526,6 +632,7 @@
                   alt="Фото студии 5"
                   class="studio-overview-mobile-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </article>
 
@@ -535,6 +642,7 @@
                   alt="Фото студии 6"
                   class="studio-overview-mobile-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </article>
             </div>
@@ -569,7 +677,7 @@
       <section class="rules-section" id="rules">
         <div class="rules-content">
           <div class="rules-top">
-            <h1 class="title-rules">ПРАВИЛА АРЕНДЫ</h1>
+            <h2 class="title-rules">ПРАВИЛА АРЕНДЫ</h2>
             <div class="rules-sign">Обязательно к прочтению</div>
           </div>
           <div class="rules">
@@ -696,14 +804,14 @@
 
                         <div class="video-block">
                           <video class="video" controls preload="none" poster="image/2. Пакеты/1. Феи.webp">
-                            <source src="video/Пакет Феи и Эльфы.MOV--online-audio-convert.com.mp4" type="video/mp4" />
+                            <source src="video/Пакет феи и эльфы.mp4" type="video/mp4" />
                           </video>
 
                           <button
                             class="play-button open-video"
                             type="button"
                             aria-label="Воспроизвести видео"
-                            data-video="video/Пакет Феи и Эльфы.MOV--online-audio-convert.com.mp4"
+                            data-video="video/Пакет феи и эльфы.mp4"
                           >
                             <svg
                               width="197"
@@ -776,172 +884,171 @@
               </article>
 
               <!-- СЛАЙД 2 -->
-              <!-- СЛАЙД 2 -->
-<article class="price-slide price-slide--sweet-baby">
-  <div class="slider-price-list">
-    <div class="content-block">
-      <div class="slider-content-left">
-        <div class="price-item">
-          <div class="price-top">
-            <h3 class="price-title">Свит бэйби</h3>
-            <div class="age">2+</div>
-          </div>
+              <article class="price-slide price-slide--sweet-baby">
+                <div class="slider-price-list">
+                  <div class="content-block">
+                    <div class="slider-content-left">
+                      <div class="price-item">
+                        <div class="price-top">
+                          <h3 class="price-title">Свит бэйби</h3>
+                          <div class="age">2+</div>
+                        </div>
 
-          <div class="video-block">
-            <video class="video" controls preload="none" poster="image/2. Пакеты/2. Sweet бэби.webp">
-              <source src="video.mp4" type="video/mp4" />
-            </video>
+                        <div class="video-block">
+                          <video class="video" controls preload="none" poster="image/2. Пакеты/2. Sweet бэби.webp">
+                            <source src="video.mp4" type="video/mp4" />
+                          </video>
 
-            <button
-              class="play-button open-video"
-              type="button"
-              aria-label="Воспроизвести видео"
-              data-video="video/video1.mp4"
-            >
-              <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
-                <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
+                          <!-- <button
+                            class="play-button open-video"
+                            type="button"
+                            aria-label="Воспроизвести видео"
+                            data-video="video/video1.mp4"
+                          >
+                            <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
+                              <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
+                            </svg>
+                          </button> -->
+                        </div>
+                      </div>
+                    </div>
 
-      <div class="slider-content-right">
-        <div class="chips">
-          <div class="sign-rent">Аренда зала на 3 ч</div>
-          <div class="sign-programm">Программа с 1 героем на 2 ч</div>
-        </div>
+                    <div class="slider-content-right">
+                      <div class="chips">
+                        <div class="sign-rent">Аренда зала на 3 ч</div>
+                        <div class="sign-programm">Программа с 1 героем на 2 ч</div>
+                      </div>
 
-        <img
-          src="image/хит.png"
-          alt="Хит"
-          class="price-hit-badge"
-          loading="lazy"
-        />
+                      <img
+                        src="image/хит.webp"
+                        alt="Хит"
+                        class="price-hit-badge"
+                        loading="lazy"
+                        decoding="async"
+                      />
 
-        <ul class="content-list">
-          <li class="content-item">На выбор челленджи или дискотека с лентами.</li>
-          <li class="content-item">Фотозона базовая.</li>
-          <li class="content-item">Сопровождение администратора.</li>
-        </ul>
+                      <ul class="content-list">
+                        <li class="content-item">На выбор челленджи или дискотека с лентами.</li>
+                        <li class="content-item">Фотозона базовая.</li>
+                        <li class="content-item">Сопровождение администратора.</li>
+                      </ul>
 
-        <div class="info-block">
-          <div class="price-block">
-            <div class="price-text-block">
-              <div class="sign-price">Стоимость</div>
+                      <div class="info-block">
+                        <div class="price-block">
+                          <div class="price-text-block">
+                            <div class="sign-price">Стоимость</div>
 
-              <p class="price-text-1">
-                <strong>В будни:</strong><br />
-                до 15:00 - <span class="text-big">16600</span> руб.<br />
-                в вечернее время - <span class="text-big">19500</span> руб.
-              </p>
+                            <p class="price-text-1">
+                              <strong>В будни:</strong><br />
+                              до 15:00 - <span class="text-big">16600</span> руб.<br />
+                              в вечернее время - <span class="text-big">19500</span> руб.
+                            </p>
 
-              <p class="price-text-2">
-                <strong>В выходные и праздничные дни:</strong><br />
-                <span class="text-big">21500</span> руб.
-              </p>
-            </div>
-          </div>
+                            <p class="price-text-2">
+                              <strong>В выходные и праздничные дни:</strong><br />
+                              <span class="text-big">21500</span> руб.
+                            </p>
+                          </div>
+                        </div>
 
-          <div class="add-info">
-            <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
-            <ul class="add-info-list">
-              <li class="add-info-item">Сервировка стола <br /> (30 минут для подготовки к празднику)</li>
-              <li class="add-info-item">Электронные пригласительные. <br /> (Подробности у администратора!)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
+                        <div class="add-info">
+                          <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
+                          <ul class="add-info-list">
+                            <li class="add-info-item">Сервировка стола <br /> (30 минут для подготовки к празднику)</li>
+                            <li class="add-info-item">Электронные пригласительные. <br /> (Подробности у администратора!)</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
 
-              
               <!-- СЛАЙД 3 -->
-<article class="price-slide price-slide--party-boom">
-  <div class="slider-price-list">
-    <div class="content-block">
-      <div class="slider-content-left">
-        <div class="price-item">
-          <div class="price-top">
-            <h3 class="price-title">Пати бум</h3>
-            <div class="age">4+</div>
-          </div>
+              <article class="price-slide price-slide--party-boom">
+                <div class="slider-price-list">
+                  <div class="content-block">
+                    <div class="slider-content-left">
+                      <div class="price-item">
+                        <div class="price-top">
+                          <h3 class="price-title">Пати бум</h3>
+                          <div class="age">4+</div>
+                        </div>
 
-          <div class="video-block">
-            <video class="video video--fix" controls preload="none" poster="image/2. Пакеты/3. Пати бум.webp">
-              <source src="video/Пакет Пати Бум.MOV--online-audio-convert.com.mp4" type="video/mp4" />
-            </video>
+                        <div class="video-block">
+                          <video class="video video--fix" controls preload="none" poster="image/2. Пакеты/3. Пати бум.webp">
+                            <source src="video/Пакет Пати Бум.mp4" type="video/mp4" />
+                          </video>
 
-            <button
-              class="play-button open-video"
-              type="button"
-              aria-label="Воспроизвести видео"
-              data-video="video/Пакет Пати Бум.MOV--online-audio-convert.com.mp4"
-            >
-              <svg width="197" height="197" viewBox="0 0 197 197" fill="none">
-                <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
-                <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
+                          <button
+                            class="play-button open-video"
+                            type="button"
+                            aria-label="Воспроизвести видео"
+                            data-video="video/Пакет Пати Бум.mp4"
+                          >
+                            <svg width="197" height="197" viewBox="0 0 197 197" fill="none">
+                              <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
+                              <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
 
-      <div class="slider-content-right">
-        <div class="chips">
-          <div class="sign-rent">Аренда зала на 3,5 ч</div>
-          <div class="sign-programm">Насыщенная программа на 3 ч</div>
-        </div>
+                    <div class="slider-content-right">
+                      <div class="chips">
+                        <div class="sign-rent">Аренда зала на 3,5 ч</div>
+                        <div class="sign-programm">Насыщенная программа на 3 ч</div>
+                      </div>
 
-        <!-- ИКОНКА -->
-        <img
-          src="/image/под ключ.png"
-          alt="Под ключ"
-          class="price-key-badge"
-          loading="lazy"
-        />
+                      <img
+                        src="image/под ключ.webp"
+                        alt="Под ключ"
+                        class="price-key-badge"
+                        loading="lazy"
+                        decoding="async"
+                      />
 
-        <ul class="content-list">
-          <li class="content-item">Бьюти бокс на встречу гостей.</li>
-          <li class="content-item">На выбор 6 шоу-программ.</li>
-          <li class="content-item">Челленджи или дискотека с лентами.</li>
-          <li class="content-item">Анимация с любимым героем на 2 часа.</li>
-          <li class="content-item">Тематическая фотозона.</li>
-          <li class="content-item">Сопровождение администратора.</li>
-        </ul>
+                      <ul class="content-list">
+                        <li class="content-item">Бьюти бокс на встречу гостей.</li>
+                        <li class="content-item">На выбор 6 шоу-программ.</li>
+                        <li class="content-item">Челленджи или дискотека с лентами.</li>
+                        <li class="content-item">Анимация с любимым героем на 2 часа.</li>
+                        <li class="content-item">Тематическая фотозона.</li>
+                        <li class="content-item">Сопровождение администратора.</li>
+                      </ul>
 
-        <div class="info-block">
-          <div class="price-block">
-            <div class="price-text-block">
-              <div class="sign-price">Стоимость</div>
+                      <div class="info-block">
+                        <div class="price-block">
+                          <div class="price-text-block">
+                            <div class="sign-price">Стоимость</div>
 
-              <p class="price-text-1">
-                <strong>В будни:</strong><br />
-                до 15:00 - <span class="text-big">31000</span> руб.<br />
-                в вечернее время - <span class="text-big">35500</span> руб.
-              </p>
+                            <p class="price-text-1">
+                              <strong>В будни:</strong><br />
+                              до 15:00 - <span class="text-big">31000</span> руб.<br />
+                              в вечернее время - <span class="text-big">35500</span> руб.
+                            </p>
 
-              <p class="price-text-2">
-                <strong>В выходные и праздничные дни:</strong><br />
-                <span class="text-big">38500</span> руб.
-              </p>
-            </div>
-          </div>
+                            <p class="price-text-2">
+                              <strong>В выходные и праздничные дни:</strong><br />
+                              <span class="text-big">38500</span> руб.
+                            </p>
+                          </div>
+                        </div>
 
-          <div class="add-info">
-            <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
-            <ul class="add-info-list">
-              <li class="add-info-item">Сервировка стола <br /> (30 минут для подготовки к празднику)</li>
-              <li class="add-info-item">Электронные пригласительные. <br /> (Подробности у администратора!)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
+                        <div class="add-info">
+                          <p class="add-info-title"><strong>Также в пакет входит:</strong></p>
+                          <ul class="add-info-list">
+                            <li class="add-info-item">Сервировка стола <br /> (30 минут для подготовки к празднику)</li>
+                            <li class="add-info-item">Электронные пригласительные. <br /> (Подробности у администратора!)</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
 
               <!-- СЛАЙД 4 -->
               <article class="price-slide">
@@ -959,7 +1066,7 @@
                             <source src="video.mp4" type="video/mp4" />
                           </video>
 
-                          <button
+                          <!-- <button
                             class="play-button open-video"
                             type="button"
                             aria-label="Воспроизвести видео"
@@ -969,7 +1076,7 @@
                               <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
                               <circle cx="98.2321" cy="98.2321" r="96.766" stroke="white" stroke-width="2.9323"/>
                             </svg>
-                          </button>
+                          </button> -->
                         </div>
                       </div>
                     </div>
@@ -1030,14 +1137,14 @@
 
                         <div class="video-block">
                           <video class="video" controls preload="none" poster="image/2. Пакеты/5. Время Че.webp">
-                            <source src="video.mp4" type="video/mp4" />
+                            <source src="video/Пакет Время че.mp4" type="video/mp4" />
                           </video>
 
                           <button
                             class="play-button open-video"
                             type="button"
                             aria-label="Воспроизвести видео"
-                            data-video="video/video1.mp4"
+                            data-video="video/Пакет Время че.mp4"
                           >
                             <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
@@ -1106,14 +1213,14 @@
 
                         <div class="video-block">
                           <video class="video" controls preload="none" poster="image/2. Пакеты/6. В тренде.webp">
-                            <source src="video/Пакет В тренде.MOV--online-audio-convert.com.mp4" type="video/mp4" />
+                            <source src="video/Пакет в тренде.mp4" type="video/mp4" />
                           </video>
 
                           <button
                             class="play-button open-video"
                             type="button"
                             aria-label="Воспроизвести видео"
-                            data-video="video/Пакет В тренде.MOV--online-audio-convert.com.mp4"
+                            data-video="video/Пакет в тренде.mp4"
                           >
                             <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
@@ -1181,14 +1288,14 @@
 
                         <div class="video-block">
                           <video class="video" controls preload="none" poster="image/2. Пакеты/7. Веселая ферма.webp">
-                            <source src="video/2025-06-29 17-15-59 (1).MOV--online-audio-convert.com.mp4" type="video/mp4" />
+                            <source src="video/Пакет ферма.mp4" type="video/mp4" />
                           </video>
 
                           <button
                             class="play-button open-video"
                             type="button"
                             aria-label="Воспроизвести видео"
-                            data-video="video/2025-06-29 17-15-59 (1).MOV--online-audio-convert.com.mp4"
+                            data-video="video/Пакет ферма.mp4"
                           >
                             <svg width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M142.957 91.1516C147.844 93.9732 147.844 101.027 142.957 103.849L82.4783 138.766C77.5911 141.588 71.4821 138.061 71.4821 132.418L71.4821 62.5828C71.4821 56.9396 77.5911 53.4126 82.4783 56.2342L142.957 91.1516Z" fill="white"/>
@@ -1270,16 +1377,16 @@
 
             <div class="service-card__slider">
               <div class="service-card__track">
-                <img src="image/3. Допуслуги/3. Там, где живут мечты.webp" alt="Шоу-программы 3" class="service-card__image image--dreams" loading="lazy" />
-                <img src="image/3. Допуслуги/2. Тесла.webp" alt="Шоу-программы 2" class="service-card__image image--tesla" loading="lazy" />
-                <img src="image/3. Допуслуги/1. Мыльное шоу.webp" alt="Шоу-программы 1" class="service-card__image image--soup" loading="lazy" />
-                <img src="image/3. Допуслуги/4. Шоколадный pop.webp" alt="Шоу-программы 4" class="service-card__image image--chocolate" loading="lazy" />
-                <img src="image/3. Допуслуги/5.Мороженое.webp" alt="Шоу-программы 4" class="service-card__image image--icecream" loading="lazy" />
-                <img src="image/3. Допуслуги/6. Научное шоу.webp" alt="Шоу-программы 5" class="service-card__image image--science" loading="lazy" />
-                <img src="image/3. Допуслуги/7. крио шоу.webp" alt="Шоу-программы 6" class="service-card__image image--krio" loading="lazy" />
-                <img src="image/3. Допуслуги/8. ростовая кукла.webp" alt="Шоу-программы 7" class="service-card__image image--doll" loading="lazy" />
-                <img src="image/3. Допуслуги/9. Бьюти бар.webp" alt="Шоу-программы 8" class="service-card__image image--beauty" loading="lazy" />
-                <img src="image/3. Допуслуги/10. Ты в танцах.webp" alt="Шоу-программы 9" class="service-card__image image--dance" loading="lazy" />
+                <img src="image/3. Допуслуги/3. Там, где живут мечты.webp" alt="Шоу-программы 3" class="service-card__image image--dreams" loading="lazy" decoding="async" />
+                <img src="image/3. Допуслуги/2. Тесла.webp" alt="Шоу-программы 2" class="service-card__image image--tesla" loading="lazy" decoding="async" />
+                <img src="image/3. Допуслуги/1. Мыльное шоу.webp" alt="Шоу-программы 1" class="service-card__image image--soup" loading="lazy" decoding="async" />
+                <img src="image/3. Допуслуги/4. Шоколадный pop.webp" alt="Шоу-программы 4" class="service-card__image image--chocolate" loading="lazy" decoding="async" />
+                <img src="image/3. Допуслуги/5.Мороженое.webp" alt="Шоу-программы 5" class="service-card__image image--icecream" loading="lazy" decoding="async" />
+                <img src="image/3. Допуслуги/6. Научное шоу.webp" alt="Шоу-программы 6" class="service-card__image image--science" loading="lazy" decoding="async" />
+                <img src="image/3. Допуслуги/7. крио шоу.webp" alt="Шоу-программы 7" class="service-card__image image--krio" loading="lazy" decoding="async" />
+                <img src="image/3. Допуслуги/8. ростовая кукла.webp" alt="Шоу-программы 8" class="service-card__image image--doll" loading="lazy" decoding="async" />
+                <img src="image/3. Допуслуги/9. Бьюти бар.webp" alt="Шоу-программы 9" class="service-card__image image--beauty" loading="lazy" decoding="async" />
+                <img src="image/3. Допуслуги/10. Ты в танцах.webp" alt="Шоу-программы 10" class="service-card__image image--dance" loading="lazy" decoding="async" />
               </div>
             </div>
 
@@ -1300,7 +1407,6 @@
             <h4 class="service-card__title">ШОУ-ПРОГРАММЫ</h4>
 
             <div class="prices-list">
-
               <div class="price-row">
                 <span class="price-name">“Там, где живут мечты”</span>
                 <span class="price-line"></span>
@@ -1381,9 +1487,9 @@
 
             <div class="service-card__slider">
               <div class="service-card__track">
-                <img src="image/9. Сладкий стол/1.webp" alt="Сладкий набор 1" class="service-card__image" loading="lazy" />
-                <img src="image/9. Сладкий стол/2.webp" alt="Сладкий набор 2" class="service-card__image" loading="lazy" />
-                <img src="image/9. Сладкий стол/3.webp" alt="Сладкий набор 3" class="service-card__image" loading="lazy" />
+                <img src="image/9. Сладкий стол/1.webp" alt="Сладкий набор 1" class="service-card__image" loading="lazy" decoding="async" />
+                <img src="image/9. Сладкий стол/2.webp" alt="Сладкий набор 2" class="service-card__image" loading="lazy" decoding="async" />
+                <img src="image/9. Сладкий стол/3.webp" alt="Сладкий набор 3" class="service-card__image" loading="lazy" decoding="async" />
               </div>
             </div>
 
@@ -1462,10 +1568,10 @@
 
             <div class="service-card__slider">
               <div class="service-card__track">
-                <img src="image/10. Фото и видеосьемка/фото 1.webp" alt="Фото и видеосъёмка 1" class="service-card__image" loading="lazy" />
-                <img src="image/10. Фото и видеосьемка/фото 3.webp" alt="Фото и видеосъёмка 2" class="service-card__image" loading="lazy" />
-                <img src="image/10. Фото и видеосьемка/фото 4.webp" alt="Фото и видеосъёмка 3" class="service-card__image" loading="lazy" />
-                <img src="image/10. Фото и видеосьемка/фото 5.webp" alt="Фото и видеосъёмка 4" class="service-card__image" loading="lazy" />
+                <img src="image/10. Фото и видеосьемка/фото 1.webp" alt="Фото и видеосъёмка 1" class="service-card__image" loading="lazy" decoding="async" />
+                <img src="image/10. Фото и видеосьемка/фото 3.webp" alt="Фото и видеосъёмка 2" class="service-card__image" loading="lazy" decoding="async" />
+                <img src="image/10. Фото и видеосьемка/фото 4.webp" alt="Фото и видеосъёмка 3" class="service-card__image" loading="lazy" decoding="async" />
+                <img src="image/10. Фото и видеосьемка/фото 5.webp" alt="Фото и видеосъёмка 4" class="service-card__image" loading="lazy" decoding="async" />
               </div>
             </div>
 
@@ -1528,14 +1634,14 @@
 
             <div class="service-card__slider">
               <div class="service-card__track">
-                <img src="image/11. Фотозоны/1-11.webp" alt="Фотозона 1" class="service-card__image" loading="lazy" />
-                <img src="image/11. Фотозоны/1-126.webp" alt="Фотозона 2" class="service-card__image" loading="lazy" />
-                <img src="image/11. Фотозоны/1-158.webp" alt="Фотозона 3" class="service-card__image" loading="lazy" />
-                <img src="image/11. Фотозоны/1-175.webp" alt="Фотозона 4" class="service-card__image" loading="lazy" />
-                <img src="image/11. Фотозоны/DSC_5265.webp" alt="Фотозона 5" class="service-card__image" loading="lazy" />
-                <img src="image/11. Фотозоны/DSC_7323.webp" alt="Фотозона 6" class="service-card__image" loading="lazy" />
-                <img src="image/11. Фотозоны/IMG_3620.webp" alt="Фотозона 7" class="service-card__image" loading="lazy" />
-                <img src="image/11. Фотозоны/IMG_6033.webp" alt="Фотозона 8" class="service-card__image" loading="lazy" />
+                <img src="image/11. Фотозоны/1-11.webp" alt="Фотозона 1" class="service-card__image" loading="lazy" decoding="async" />
+                <img src="image/11. Фотозоны/1-126.webp" alt="Фотозона 2" class="service-card__image" loading="lazy" decoding="async" />
+                <img src="image/11. Фотозоны/1-158.webp" alt="Фотозона 3" class="service-card__image" loading="lazy" decoding="async" />
+                <img src="image/11. Фотозоны/1-175.webp" alt="Фотозона 4" class="service-card__image" loading="lazy" decoding="async" />
+                <img src="image/11. Фотозоны/DSC_5265.webp" alt="Фотозона 5" class="service-card__image" loading="lazy" decoding="async" />
+                <img src="image/11. Фотозоны/DSC_7323.webp" alt="Фотозона 6" class="service-card__image" loading="lazy" decoding="async" />
+                <img src="image/11. Фотозоны/IMG_3620.webp" alt="Фотозона 7" class="service-card__image" loading="lazy" decoding="async" />
+                <img src="image/11. Фотозоны/IMG_6033.webp" alt="Фотозона 8" class="service-card__image" loading="lazy" decoding="async" />
               </div>
             </div>
 
@@ -1610,37 +1716,37 @@
             <div class="photogallery-track">
               <div class="photogallery-slide">
                 <div class="photogallery-card">
-                  <img src="image/12. Фотогалерея/DSC_5086.webp" alt="фото 1" class="photogallery-image" loading="lazy" />
+                  <img src="image/12. Фотогалерея/DSC_5086.webp" alt="фото 1" class="photogallery-image" loading="lazy" decoding="async" />
                 </div>
                 <div class="photogallery-card">
-                  <img src="image/12. Фотогалерея/DSC_5125.webp" alt="фото 2" class="photogallery-image" loading="lazy" />
-                </div>
-              </div>
-
-              <div class="photogallery-slide">
-                <div class="photogallery-card">
-                  <img src="image/12. Фотогалерея/IMG_6086.webp" alt="фото 3" class="photogallery-image" loading="lazy" />
-                </div>
-                <div class="photogallery-card">
-                  <img src="image/12. Фотогалерея/IMG_6232.webp" alt="фото 4" class="photogallery-image" loading="lazy" />
+                  <img src="image/12. Фотогалерея/DSC_5125.webp" alt="фото 2" class="photogallery-image" loading="lazy" decoding="async" />
                 </div>
               </div>
 
               <div class="photogallery-slide">
                 <div class="photogallery-card">
-                  <img src="image/12. Фотогалерея/IMG_7053.webp" alt="фото 5" class="photogallery-image" loading="lazy" />
+                  <img src="image/12. Фотогалерея/IMG_6086.webp" alt="фото 3" class="photogallery-image" loading="lazy" decoding="async" />
                 </div>
                 <div class="photogallery-card">
-                  <img src="image/12. Фотогалерея/IMG_7075.webp" alt="фото 6" class="photogallery-image" loading="lazy" />
+                  <img src="image/12. Фотогалерея/IMG_6232.webp" alt="фото 4" class="photogallery-image" loading="lazy" decoding="async" />
                 </div>
               </div>
 
               <div class="photogallery-slide">
                 <div class="photogallery-card">
-                  <img src="image/12. Фотогалерея/IMG_8407.webp" alt="фото 7" class="photogallery-image" loading="lazy" />
+                  <img src="image/12. Фотогалерея/IMG_7053.webp" alt="фото 5" class="photogallery-image" loading="lazy" decoding="async" />
                 </div>
                 <div class="photogallery-card">
-                  <img src="image/12. Фотогалерея/photo_2026-04-02_22-17-40.webp" alt="фото 8" class="photogallery-image" loading="lazy" />
+                  <img src="image/12. Фотогалерея/IMG_7075.webp" alt="фото 6" class="photogallery-image" loading="lazy" decoding="async" />
+                </div>
+              </div>
+
+              <div class="photogallery-slide">
+                <div class="photogallery-card">
+                  <img src="image/12. Фотогалерея/IMG_8407.webp" alt="фото 7" class="photogallery-image" loading="lazy" decoding="async" />
+                </div>
+                <div class="photogallery-card">
+                  <img src="image/12. Фотогалерея/photo_2026-04-02_22-17-40.webp" alt="фото 8" class="photogallery-image" loading="lazy" decoding="async" />
                 </div>
               </div>
             </div>
@@ -1760,14 +1866,14 @@
 
         <div class="location-top">
           <div class="location-info">
-            <img src="image/метка.png" alt="иконка геолокации" class="location-info__icon" loading="lazy" />
+            <img src="image/метка.webp" alt="иконка геолокации" class="location-info__icon" loading="lazy" decoding="async" />
             <p class="location-info__text">
               г. Казань, метро Дубравная, <br /> ул. Дубравная 2Д
             </p>
           </div>
 
           <div class="location-info">
-            <img src="image/часы.png" alt="иконка часов" class="location-info__icon" loading="lazy" />
+            <img src="image/часы.webp" alt="иконка часов" class="location-info__icon" loading="lazy" decoding="async" />
             <p class="location-info__text">с 10:00 до 21:00</p>
           </div>
         </div>
@@ -1793,27 +1899,27 @@
 
         <div class="photo-steps">
           <div class="step">
-            <img src="image/14.шаги/метро.webp" alt="Станция метро Дубравная" class="step__image" loading="lazy" />
+            <img src="image/14.шаги/метро.webp" alt="Станция метро Дубравная" class="step__image" loading="lazy" decoding="async" />
             <p class="step__text">1. Станция метро Дубравная</p>
           </div>
 
           <div class="step">
-            <img src="image/14.шаги/мечеть.webp" alt="Мечеть" class="step__image" loading="lazy" />
+            <img src="image/14.шаги/мечеть.webp" alt="Мечеть" class="step__image" loading="lazy" decoding="async" />
             <p class="step__text">2. Проезжаете мимо мечети</p>
           </div>
 
           <div class="step">
-            <img src="image/14.шаги/дом.webp" alt="Дом со студией" class="step__image" loading="lazy" />
+            <img src="image/14.шаги/дом.webp" alt="Дом со студией" class="step__image" loading="lazy" decoding="async" />
             <p class="step__text">3. Студия находится с внешней стороны дома</p>
           </div>
 
           <div class="step">
-            <img src="image/14.шаги/парковка.webp" alt="Парковка" class="step__image" loading="lazy" />
+            <img src="image/14.шаги/парковка.webp" alt="Парковка" class="step__image" loading="lazy" decoding="async" />
             <p class="step__text">4. Есть парковка</p>
           </div>
 
           <div class="step">
-            <img src="image/14.шаги/студия.webp" alt="Вход в студию" class="step__image image--studio" loading="lazy" />
+            <img src="image/14.шаги/студия.webp" alt="Вход в студию" class="step__image image--studio" loading="lazy" decoding="async" />
             <p class="step__text">5. Вход в студию</p>
           </div>
 
@@ -1846,10 +1952,11 @@
 
           <div class="reviews-header">
             <img
-              src="image/сердце фиолет.png"
+              src="image/сердце фиолет.webp"
               alt="Фиолетовое сердце"
               class="reviews-heart reviews-heart--left"
               loading="lazy"
+              decoding="async"
             />
 
             <div class="reviews-header-center">
@@ -1870,10 +1977,11 @@
             </div>
 
             <img
-              src="image/сердце розовое.png"
+              src="image/сердце розовое.webp"
               alt="Розовое сердце"
               class="reviews-heart reviews-heart--right"
               loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -1902,60 +2010,57 @@
 
                 <div class="reviews-window">
                   <div class="reviews-track">
-                    <!-- СЛАЙД 1 -->
                     <div class="reviews-slide">
                       <div class="review-card">
-                        <img src="image/13.Отзывы/1.webp" alt="Отзыв 1" class="review" loading="lazy" />
+                        <img src="image/13.Отзывы/1.webp" alt="Отзыв 1" class="review" loading="lazy" decoding="async" />
                       </div>
 
                       <div class="review-card">
-                        <img src="image/13.Отзывы/2.webp" alt="Отзыв 2" class="review" loading="lazy" />
+                        <img src="image/13.Отзывы/2.webp" alt="Отзыв 2" class="review" loading="lazy" decoding="async" />
                       </div>
 
                       <div class="review-card">
-                        <img src="image/13.Отзывы/3.webp" alt="Отзыв 3" class="review" loading="lazy" />
+                        <img src="image/13.Отзывы/3.webp" alt="Отзыв 3" class="review" loading="lazy" decoding="async" />
                       </div>
 
                       <div class="review-card">
-                        <img src="image/13.Отзывы/4.webp" alt="Отзыв 4" class="review" loading="lazy" />
+                        <img src="image/13.Отзывы/4.webp" alt="Отзыв 4" class="review" loading="lazy" decoding="async" />
                       </div>
                     </div>
 
-                    <!-- СЛАЙД 2 -->
                     <div class="reviews-slide">
                       <div class="review-card">
-                        <img src="image/13.Отзывы/5.webp" alt="Отзыв 5" class="review" loading="lazy" />
+                        <img src="image/13.Отзывы/5.webp" alt="Отзыв 5" class="review" loading="lazy" decoding="async" />
                       </div>
 
                       <div class="review-card">
-                        <img src="image/13.Отзывы/6.webp" alt="Отзыв 6" class="review" loading="lazy" />
+                        <img src="image/13.Отзывы/6.webp" alt="Отзыв 6" class="review" loading="lazy" decoding="async" />
                       </div>
 
                       <div class="review-card">
-                        <img src="image/13.Отзывы/7.webp" alt="Отзыв 7" class="review" loading="lazy" />
+                        <img src="image/13.Отзывы/7.webp" alt="Отзыв 7" class="review" loading="lazy" decoding="async" />
                       </div>
 
                       <div class="review-card">
-                        <img src="image/13.Отзывы/8.webp" alt="Отзыв 8" class="review" loading="lazy" />
+                        <img src="image/13.Отзывы/8.webp" alt="Отзыв 8" class="review" loading="lazy" decoding="async" />
                       </div>
                     </div>
 
-                    <!-- СЛАЙД 3 -->
                     <div class="reviews-slide">
                       <div class="review-card">
-                        <img src="image/13.Отзывы/9.webp" alt="Отзыв 9" class="review" loading="lazy" />
+                        <img src="image/13.Отзывы/9.webp" alt="Отзыв 9" class="review" loading="lazy" decoding="async" />
                       </div>
 
                       <div class="review-card">
-                        <img src="image/13.Отзывы/10.webp" alt="Отзыв 10" class="review" loading="lazy" />
+                        <img src="image/13.Отзывы/10.webp" alt="Отзыв 10" class="review" loading="lazy" decoding="async" />
                       </div>
 
                       <div class="review-card">
-                        <img src="image/13.Отзывы/11.webp" alt="Отзыв 11" class="review" loading="lazy" />
+                        <img src="image/13.Отзывы/11.webp" alt="Отзыв 11" class="review" loading="lazy" decoding="async" />
                       </div>
 
                       <div class="review-card">
-                        <img src="image/13.Отзывы/12.webp" alt="Отзыв 12" class="review" loading="lazy" />
+                        <img src="image/13.Отзывы/12.webp" alt="Отзыв 12" class="review" loading="lazy" decoding="async" />
                       </div>
                     </div>
                   </div>
@@ -1984,7 +2089,7 @@
           <h2 class="reviews-section-title">ОТЗЫВЫ</h2>
 
           <div class="reviews-header-mobile">
-            <img src="image/сердце фиолет.png" alt="" class="reviews-heart-mobile reviews-heart-mobile--left" loading="lazy" />
+            <img src="image/сердце фиолет.webp" alt="" class="reviews-heart-mobile reviews-heart-mobile--left" loading="lazy" decoding="async" />
 
             <div class="reviews-header-mobile-center">
               <h3 class="title-reviews-mobile">
@@ -1998,7 +2103,7 @@
               </div>
             </div>
 
-            <img src="image/сердце розовое.png" alt="" class="reviews-heart-mobile reviews-heart-mobile--right" loading="lazy" />
+            <img src="image/сердце розовое.webp" alt="" class="reviews-heart-mobile reviews-heart-mobile--right" loading="lazy" decoding="async" />
           </div>
 
           <div class="reviews-shell-mobile">
@@ -2028,40 +2133,40 @@
                 <div class="reviews-window-mobile">
                   <div class="reviews-track-mobile">
                     <div class="reviews-slide-mobile">
-                      <img src="image/13.Отзывы/1.webp" alt="Отзыв 1" class="review-mobile" loading="lazy" />
+                      <img src="image/13.Отзывы/1.webp" alt="Отзыв 1" class="review-mobile" loading="lazy" decoding="async" />
                     </div>
                     <div class="reviews-slide-mobile">
-                      <img src="image/13.Отзывы/2.webp" alt="Отзыв 2" class="review-mobile" loading="lazy" />
+                      <img src="image/13.Отзывы/2.webp" alt="Отзыв 2" class="review-mobile" loading="lazy" decoding="async" />
                     </div>
                     <div class="reviews-slide-mobile">
-                      <img src="image/13.Отзывы/3.webp" alt="Отзыв 3" class="review-mobile" loading="lazy" />
+                      <img src="image/13.Отзывы/3.webp" alt="Отзыв 3" class="review-mobile" loading="lazy" decoding="async" />
                     </div>
                     <div class="reviews-slide-mobile">
-                      <img src="image/13.Отзывы/4.webp" alt="Отзыв 4" class="review-mobile" loading="lazy" />
+                      <img src="image/13.Отзывы/4.webp" alt="Отзыв 4" class="review-mobile" loading="lazy" decoding="async" />
                     </div>
                     <div class="reviews-slide-mobile">
-                      <img src="image/13.Отзывы/5.webp" alt="Отзыв 5" class="review-mobile" loading="lazy" />
+                      <img src="image/13.Отзывы/5.webp" alt="Отзыв 5" class="review-mobile" loading="lazy" decoding="async" />
                     </div>
                     <div class="reviews-slide-mobile">
-                      <img src="image/13.Отзывы/6.webp" alt="Отзыв 6" class="review-mobile" loading="lazy" />
+                      <img src="image/13.Отзывы/6.webp" alt="Отзыв 6" class="review-mobile" loading="lazy" decoding="async" />
                     </div>
                     <div class="reviews-slide-mobile">
-                      <img src="image/13.Отзывы/7.webp" alt="Отзыв 7" class="review-mobile" loading="lazy" />
+                      <img src="image/13.Отзывы/7.webp" alt="Отзыв 7" class="review-mobile" loading="lazy" decoding="async" />
                     </div>
                     <div class="reviews-slide-mobile">
-                      <img src="image/13.Отзывы/8.webp" alt="Отзыв 8" class="review-mobile" loading="lazy" />
+                      <img src="image/13.Отзывы/8.webp" alt="Отзыв 8" class="review-mobile" loading="lazy" decoding="async" />
                     </div>
                     <div class="reviews-slide-mobile">
-                      <img src="image/13.Отзывы/9.webp" alt="Отзыв 9" class="review-mobile" loading="lazy" />
+                      <img src="image/13.Отзывы/9.webp" alt="Отзыв 9" class="review-mobile" loading="lazy" decoding="async" />
                     </div>
                     <div class="reviews-slide-mobile">
-                      <img src="image/13.Отзывы/10.webp" alt="Отзыв 10" class="review-mobile" loading="lazy" />
+                      <img src="image/13.Отзывы/10.webp" alt="Отзыв 10" class="review-mobile" loading="lazy" decoding="async" />
                     </div>
                     <div class="reviews-slide-mobile">
-                      <img src="image/13.Отзывы/11.webp" alt="Отзыв 11" class="review-mobile" loading="lazy" />
+                      <img src="image/13.Отзывы/11.webp" alt="Отзыв 11" class="review-mobile" loading="lazy" decoding="async" />
                     </div>
                     <div class="reviews-slide-mobile">
-                      <img src="image/13.Отзывы/12.webp" alt="Отзыв 12" class="review-mobile" loading="lazy" />
+                      <img src="image/13.Отзывы/12.webp" alt="Отзыв 12" class="review-mobile" loading="lazy" decoding="async" />
                     </div>
                   </div>
                 </div>
@@ -2078,16 +2183,14 @@
       </section>
     </main>
 
-    <!-- ОБЩАЯ ОБЕРТКА ДЛЯ ЯКОРЯ -->
     <div id="footer">
-
       <!-- футер десктоп -->
       <footer class="footer">
         <div class="container footer-inner">
           <div class="footer-left">
             <div class="footer-logos">
-              <img src="image/балаган логотип.svg" alt="логотип балаган" class="footer-logo footer-logo-balagan" loading="lazy" />
-              <img src="image/твой день логотип.svg" alt="логотип твой день" class="footer-logo footer-logo-day" loading="lazy" />
+              <img src="image/балаган логотип.svg" alt="логотип балаган" class="footer-logo footer-logo-balagan" loading="lazy" decoding="async" />
+              <img src="image/твой день логотип.svg" alt="логотип твой день" class="footer-logo footer-logo-day" loading="lazy" decoding="async" />
             </div>
 
             <div class="footer-links">
@@ -2098,7 +2201,7 @@
 
           <div class="footer-right">
             <a href="https://vk.com/yourday_kzn" class="footer-social footer-social-vk" aria-label="ВКонтакте">
-              <img src="icons/иконка вк.svg" alt="ВК" class="footer-social-icon" loading="lazy" />
+              <img src="icons/иконка вк.svg" alt="ВК" class="footer-social-icon" loading="lazy" decoding="async" />
             </a>
 
             <button class="footer-booking-button open-modal" type="button">
@@ -2118,12 +2221,14 @@
                 alt="логотип балаган"
                 class="footer-mobile-logo footer-mobile-logo-balagan"
                 loading="lazy"
+                decoding="async"
               />
               <img
                 src="image/твой день логотип.svg"
                 alt="логотип твой день"
                 class="footer-mobile-logo footer-mobile-logo-day"
                 loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -2136,14 +2241,14 @@
                 href="https://max.ru/u/f9LHodD0cOJWDXlfQP_b83EdN4VKzNkR4BSoYPe0M-LM2IZvOeE4PMUziQY"
                 class="footer-mobile-social"
               >
-                <img src="icons/макс иконка.svg" alt="мессенджер" loading="lazy" />
+                <img src="icons/макс иконка.svg" alt="мессенджер" loading="lazy" decoding="async" />
               </a>
 
               <a
                 href="https://vk.com/yourday_kzn"
                 class="footer-mobile-social"
               >
-                <img src="icons/иконка вк.svg" alt="ВК" loading="lazy" />
+                <img src="icons/иконка вк.svg" alt="ВК" loading="lazy" decoding="async" />
               </a>
             </div>
 
@@ -2153,7 +2258,6 @@
           </div>
         </div>
       </footer>
-
     </div>
 
     <!-- окно -->
@@ -2175,9 +2279,11 @@
         <button class="video-close" id="closeVideo">✕</button>
 
         <video id="studioVideo" controls preload="none">
-          <source src="video/Обзор студии.mp4--online-audio-convert.com.mp4" type="video/mp4" />
+          <source src="video/Обзор студии.mp4" type="video/mp4" />
         </video>
       </div>
     </div>
+
+    <script src="tvoi-den.js/script.js" defer></script>
   </body>
 </html>

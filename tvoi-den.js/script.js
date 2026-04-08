@@ -1,224 +1,235 @@
-// ХЕДДЕР
-const header = document.getElementById('siteHeader');
+document.addEventListener('DOMContentLoaded', () => {
+  const qs = (selector, root = document) => root.querySelector(selector);
+  const qsa = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 
-if (header) {
-  function toggleHeaderOnScroll() {
-    if (window.scrollY > 10) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+  /* =========================
+     ХЕДДЕР
+  ========================= */
+  const header = document.getElementById('siteHeader');
+
+  if (header) {
+    let ticking = false;
+
+    const updateHeaderOnScroll = () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeaderOnScroll);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    updateHeaderOnScroll();
   }
 
-  window.addEventListener('scroll', toggleHeaderOnScroll);
-  toggleHeaderOnScroll();
-}
+  /* =========================
+     ВСПЛЫВАЮЩЕЕ ОКНО
+  ========================= */
+  const modal = document.getElementById('bookingModal');
+  const closeModalBtn = document.getElementById('closeModal');
+  const openModalBtns = qsa('.open-modal');
 
-
-// ВСПЛЫВАЮЩЕЕ ОКНО
-const openBtns = document.querySelectorAll('.open-modal');
-const modal = document.getElementById('bookingModal');
-const closeBtn = document.getElementById('closeModal');
-
-if (modal && closeBtn && openBtns.length) {
-  openBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
+  if (modal && closeModalBtn && openModalBtns.length) {
+    const openModal = () => {
       modal.classList.add('active');
-    });
-  });
+    };
 
-  closeBtn.addEventListener('click', () => {
-    modal.classList.remove('active');
-  });
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
+    const closeModal = () => {
       modal.classList.remove('active');
-    }
-  });
-}
+    };
 
+    openModalBtns.forEach((btn) => {
+      btn.addEventListener('click', openModal);
+    });
 
-// ВИДЕО (универсально: кнопка + play внутри карточек)
+    closeModalBtn.addEventListener('click', closeModal);
 
-const videoButtons = document.querySelectorAll('.open-video');
-const videoModal = document.getElementById('videoModal');
-const closeVideo = document.getElementById('closeVideo');
-const video = document.getElementById('studioVideo');
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  }
 
-if (videoButtons.length && videoModal && closeVideo && video) {
+  /* =========================
+     ВИДЕО-МОДАЛКА
+  ========================= */
+  const videoModal = document.getElementById('videoModal');
+  const closeVideoBtn = document.getElementById('closeVideo');
+  const modalVideo = document.getElementById('studioVideo');
+  const openVideoBtns = qsa('.open-video');
 
-  videoButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const videoSrc = btn.dataset.video;
+  if (videoModal && closeVideoBtn && modalVideo && openVideoBtns.length) {
+    const defaultVideoSrc = qs('source', modalVideo)?.getAttribute('src') || modalVideo.getAttribute('src') || '';
 
-      // если у кнопки есть своё видео — подставляем
-      if (videoSrc) {
-        video.src = videoSrc;
+    const stopVideo = () => {
+      modalVideo.pause();
+      modalVideo.currentTime = 0;
+    };
+
+    const closeVideoModal = () => {
+      videoModal.classList.remove('active');
+      stopVideo();
+    };
+
+    const openVideoModal = (src = '') => {
+      const targetSrc = src || defaultVideoSrc;
+
+      if (targetSrc && modalVideo.getAttribute('src') !== targetSrc) {
+        modalVideo.setAttribute('src', targetSrc);
+        modalVideo.load();
       }
 
       videoModal.classList.add('active');
-      video.play();
-    });
-  });
 
-  closeVideo.addEventListener('click', () => {
-    videoModal.classList.remove('active');
-    video.pause();
-    video.currentTime = 0;
-  });
-
-  videoModal.addEventListener('click', (e) => {
-    if (e.target === videoModal) {
-      videoModal.classList.remove('active');
-      video.pause();
-      video.currentTime = 0;
-    }
-  });
-}
-
-
-// ОБЗОР СТУДИИ
-const studioSection = document.querySelector('.studio-overview');
-
-if (studioSection) {
-  const studioTrack = studioSection.querySelector('.container-studio-overview');
-  const studioSlides = studioSection.querySelectorAll('.content');
-  const studioPrev = studioSection.querySelector('.price-arrow-prev');
-  const studioNext = studioSection.querySelector('.price-arrow-next');
-  const studioDots = studioSection.querySelectorAll('.dots-studio-overview .dot');
-
-  let currentStudioSlide = 0;
-
-  function updateStudioSlider() {
-    if (!studioTrack) return;
-
-    // движение
-    studioTrack.style.transform = `translateX(-${currentStudioSlide * 100}%)`;
-
-    // точки
-    studioDots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === currentStudioSlide);
-    });
-
-    // 🔥 логика стрелок
-    if (studioPrev && studioNext) {
-      // первая страница
-      if (currentStudioSlide === 0) {
-        studioPrev.style.display = 'none';
-        studioNext.style.display = 'flex';
+      const playPromise = modalVideo.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
       }
-      // последняя страница
-      else if (currentStudioSlide === studioSlides.length - 1) {
-        studioPrev.style.display = 'flex';
-        studioNext.style.display = 'none';
-      }
-      // середина
-      else {
-        studioPrev.style.display = 'flex';
-        studioNext.style.display = 'flex';
-      }
-    }
-  }
+    };
 
-  if (studioPrev && studioNext && studioSlides.length) {
-    studioNext.addEventListener('click', () => {
-      if (currentStudioSlide < studioSlides.length - 1) {
-        currentStudioSlide++;
-        updateStudioSlider();
-      }
-    });
-
-    studioPrev.addEventListener('click', () => {
-      if (currentStudioSlide > 0) {
-        currentStudioSlide--;
-        updateStudioSlider();
-      }
-    });
-
-    studioDots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        currentStudioSlide = index;
-        updateStudioSlider();
+    openVideoBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        openVideoModal(btn.dataset.video || '');
       });
     });
 
-    updateStudioSlider();
-  }
-}
+    closeVideoBtn.addEventListener('click', closeVideoModal);
 
-
-// ПРАЙС-ПАКЕТЫ
-const priceSection = document.querySelector('.price-list');
-
-if (priceSection) {
-  const priceTrack = priceSection.querySelector('.price-list-track');
-  const priceSlides = priceSection.querySelectorAll('.price-slide');
-  const pricePrev = priceSection.querySelector('.price-arrow-prev');
-  const priceNext = priceSection.querySelector('.price-arrow-next');
-  const priceDots = priceSection.querySelectorAll('.dots-price-list .dot');
-  const priceWindow = priceSection.querySelector('.price-list-window');
-
-  let currentPriceSlide = 0;
-
-  function updatePriceSlider() {
-    if (!priceTrack) return;
-
-    priceTrack.style.transform = `translateX(-${currentPriceSlide * 100}%)`;
-
-    priceDots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === currentPriceSlide);
-    });
-
-    if (pricePrev && priceNext) {
-      if (currentPriceSlide === 0) {
-        pricePrev.style.display = 'none';
-        priceNext.style.display = 'flex';
-      } else if (currentPriceSlide === priceSlides.length - 1) {
-        pricePrev.style.display = 'flex';
-        priceNext.style.display = 'none';
-      } else {
-        pricePrev.style.display = 'flex';
-        priceNext.style.display = 'flex';
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) {
+        closeVideoModal();
       }
+    });
+  }
+
+  /* =========================
+     УНИВЕРСАЛЬНЫЙ СЛАЙДЕР
+  ========================= */
+  function createSlider({
+    root,
+    trackSelector,
+    slideSelector,
+    prevSelector,
+    nextSelector,
+    dotsSelector,
+    loop = false,
+    hideEdges = true,
+    onChange = null,
+  }) {
+    if (!root) return null;
+
+    const track = qs(trackSelector, root);
+    const slides = qsa(slideSelector, root);
+    const prevBtn = qs(prevSelector, root);
+    const nextBtn = qs(nextSelector, root);
+    const dots = dotsSelector ? qsa(dotsSelector, root) : [];
+
+    if (!track || !slides.length) return null;
+
+    let currentIndex = 0;
+
+    const update = () => {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      if (dots.length) {
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+      }
+
+      if (prevBtn && nextBtn && hideEdges) {
+        if (loop) {
+          prevBtn.style.display = 'flex';
+          nextBtn.style.display = 'flex';
+        } else if (currentIndex === 0) {
+          prevBtn.style.display = 'none';
+          nextBtn.style.display = 'flex';
+        } else if (currentIndex === slides.length - 1) {
+          prevBtn.style.display = 'flex';
+          nextBtn.style.display = 'none';
+        } else {
+          prevBtn.style.display = 'flex';
+          nextBtn.style.display = 'flex';
+        }
+      }
+
+      if (typeof onChange === 'function') {
+        onChange(currentIndex, slides);
+      }
+    };
+
+    const next = () => {
+      if (loop) {
+        currentIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
+      } else if (currentIndex < slides.length - 1) {
+        currentIndex += 1;
+      }
+      update();
+    };
+
+    const prev = () => {
+      if (loop) {
+        currentIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
+      } else if (currentIndex > 0) {
+        currentIndex -= 1;
+      }
+      update();
+    };
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', next);
     }
-  }
 
-  if (pricePrev && priceNext && priceSlides.length) {
-    priceNext.addEventListener('click', () => {
-      if (currentPriceSlide < priceSlides.length - 1) {
-        currentPriceSlide++;
-        updatePriceSlider();
-      }
-    });
+    if (prevBtn) {
+      prevBtn.addEventListener('click', prev);
+    }
 
-    pricePrev.addEventListener('click', () => {
-      if (currentPriceSlide > 0) {
-        currentPriceSlide--;
-        updatePriceSlider();
-      }
-    });
-
-    priceDots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        currentPriceSlide = index;
-        updatePriceSlider();
+    if (dots.length) {
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentIndex = index;
+          update();
+        });
       });
-    });
+    }
 
-    updatePriceSlider();
+    update();
+
+    return {
+      update,
+      next,
+      prev,
+      getIndex: () => currentIndex,
+      setIndex: (index) => {
+        if (index >= 0 && index < slides.length) {
+          currentIndex = index;
+          update();
+        }
+      },
+      getSlidesCount: () => slides.length,
+    };
   }
 
-  // SWIPE ДЛЯ МОБИЛКИ
-  if (priceWindow) {
+  /* =========================
+     СВАЙП
+  ========================= */
+  function addSwipe({
+    element,
+    onSwipeLeft,
+    onSwipeRight,
+    minDistance = 40,
+  }) {
+    if (!element) return;
+
     let startX = 0;
     let startY = 0;
-    let endX = 0;
-    let endY = 0;
 
-    const minSwipeDistance = 40;
-
-    priceWindow.addEventListener(
+    element.addEventListener(
       'touchstart',
       (e) => {
         const touch = e.changedTouches[0];
@@ -228,376 +239,234 @@ if (priceSection) {
       { passive: true }
     );
 
-    priceWindow.addEventListener(
+    element.addEventListener(
       'touchend',
       (e) => {
         const touch = e.changedTouches[0];
-        endX = touch.clientX;
-        endY = touch.clientY;
+        const endX = touch.clientX;
+        const endY = touch.clientY;
 
         const diffX = endX - startX;
         const diffY = endY - startY;
 
-        // если жест больше вертикальный — ничего не делаем
         if (Math.abs(diffY) > Math.abs(diffX)) return;
 
-        // свайп влево -> следующий слайд
-        if (diffX < -minSwipeDistance && currentPriceSlide < priceSlides.length - 1) {
-          currentPriceSlide++;
-          updatePriceSlider();
+        if (diffX < -minDistance && typeof onSwipeLeft === 'function') {
+          onSwipeLeft();
         }
 
-        // свайп вправо -> предыдущий слайд
-        if (diffX > minSwipeDistance && currentPriceSlide > 0) {
-          currentPriceSlide--;
-          updatePriceSlider();
+        if (diffX > minDistance && typeof onSwipeRight === 'function') {
+          onSwipeRight();
         }
       },
       { passive: true }
     );
   }
-}
 
+  /* =========================
+     ОБЗОР СТУДИИ — ДЕСКТОП
+  ========================= */
+  const studioSection = qs('.studio-overview');
 
+  createSlider({
+    root: studioSection,
+    trackSelector: '.container-studio-overview',
+    slideSelector: '.content',
+    prevSelector: '.slider-studio-overview .price-arrow-prev',
+    nextSelector: '.slider-studio-overview .price-arrow-next',
+    dotsSelector: '.dots-studio-overview .dot',
+    loop: false,
+    hideEdges: true,
+  });
 
-// ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ
-document.querySelectorAll('.service-card').forEach((card) => {
-  const track = card.querySelector('.service-card__track');
-  const slides = card.querySelectorAll('.service-card__image');
-  const prevBtn = card.querySelector('.price-arrow-prev');
-  const nextBtn = card.querySelector('.price-arrow-next');
+  /* =========================
+     ПРАЙС-ПАКЕТЫ
+  ========================= */
+  const priceSection = qs('.price-list');
+  const priceSlider = createSlider({
+    root: priceSection,
+    trackSelector: '.price-list-track',
+    slideSelector: '.price-slide',
+    prevSelector: '.price-list-arrows .price-arrow-prev',
+    nextSelector: '.price-list-arrows .price-arrow-next',
+    dotsSelector: '.dots-price-list .dot',
+    loop: false,
+    hideEdges: true,
+  });
 
-  let currentIndex = 0;
-  const totalSlides = slides.length;
+  if (priceSection && priceSlider) {
+    const priceWindow = qs('.price-list-window', priceSection);
 
-  if (!track || !slides.length || !prevBtn || !nextBtn) return;
-
-  function updateSlider() {
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-    if (currentIndex === 0) {
-      prevBtn.style.display = 'none';
-      nextBtn.style.display = 'flex';
-    } else if (currentIndex === totalSlides - 1) {
-      prevBtn.style.display = 'flex';
-      nextBtn.style.display = 'none';
-    } else {
-      prevBtn.style.display = 'flex';
-      nextBtn.style.display = 'flex';
-    }
+    addSwipe({
+      element: priceWindow,
+      onSwipeLeft: () => priceSlider.next(),
+      onSwipeRight: () => priceSlider.prev(),
+    });
   }
 
-  nextBtn.addEventListener('click', () => {
-    if (currentIndex < totalSlides - 1) {
-      currentIndex++;
-      updateSlider();
-    }
+  /* =========================
+     ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ
+  ========================= */
+  qsa('.service-card').forEach((card) => {
+    createSlider({
+      root: card,
+      trackSelector: '.service-card__track',
+      slideSelector: '.service-card__image',
+      prevSelector: '.service-card__media .price-arrow-prev',
+      nextSelector: '.service-card__media .price-arrow-next',
+      loop: false,
+      hideEdges: true,
+    });
   });
 
-  prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateSlider();
-    }
+  /* =========================
+     ФОТОГАЛЕРЕЯ
+  ========================= */
+  const photogallerySlider = qs('.photogallery-slider');
+
+  createSlider({
+    root: photogallerySlider,
+    trackSelector: '.photogallery-track',
+    slideSelector: '.photogallery-slide',
+    prevSelector: '.price-arrow-prev',
+    nextSelector: '.price-arrow-next',
+    loop: false,
+    hideEdges: true,
   });
 
-  updateSlider();
+  /* =========================
+     ОТЗЫВЫ — ДЕСКТОП
+  ========================= */
+  const reviewsSection = qs('.reviews');
+
+  createSlider({
+    root: reviewsSection,
+    trackSelector: '.reviews-track',
+    slideSelector: '.reviews-slide',
+    prevSelector: '.reviews-slider .price-arrow-prev',
+    nextSelector: '.reviews-slider .price-arrow-next',
+    dotsSelector: '.dots-reviews .dot',
+    loop: true,
+    hideEdges: false,
+  });
+
+  /* =========================
+     ОТЗЫВЫ — МОБИЛЬНЫЕ
+  ========================= */
+  const reviewsMobileSection = qs('.reviews-mobile');
+
+  const reviewsMobileSlider = createSlider({
+    root: reviewsMobileSection,
+    trackSelector: '.reviews-track-mobile',
+    slideSelector: '.reviews-slide-mobile',
+    prevSelector: '.reviews-mobile-prev',
+    nextSelector: '.reviews-mobile-next',
+    dotsSelector: '.dots-reviews-mobile .dot',
+    loop: false,
+    hideEdges: true,
+  });
+
+  if (reviewsMobileSection && reviewsMobileSlider) {
+    const reviewsMobileWindow = qs('.reviews-window-mobile', reviewsMobileSection);
+
+    addSwipe({
+      element: reviewsMobileWindow,
+      onSwipeLeft: () => reviewsMobileSlider.next(),
+      onSwipeRight: () => reviewsMobileSlider.prev(),
+    });
+  }
+
+  /* =========================
+     МОБИЛЬНОЕ МЕНЮ
+  ========================= */
+  const mobileBurger = qs('.mobile-burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileMenuClose = qs('.mobile-menu-close');
+  const mobileMenuLinks = qsa('.mobile-menu-link');
+
+  if (mobileBurger && mobileMenu && mobileMenuClose) {
+    const openMenu = () => {
+      mobileMenu.classList.add('is-open');
+      document.body.classList.add('menu-open');
+      mobileBurger.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.remove('is-open');
+      document.body.classList.remove('menu-open');
+      mobileBurger.setAttribute('aria-expanded', 'false');
+    };
+
+    mobileBurger.addEventListener('click', openMenu);
+    mobileMenuClose.addEventListener('click', closeMenu);
+
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        closeMenu();
+      }
+    });
+
+    mobileMenuLinks.forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+  }
+
+  /* =========================
+     ОБЗОР СТУДИИ — МОБИЛЬНАЯ ВЕРСИЯ
+  ========================= */
+  const studioOverviewMobile = qs('.studio-overview-mobile');
+
+  if (studioOverviewMobile) {
+    const mobileTrack = qs('.studio-overview-mobile-track', studioOverviewMobile);
+    const mobileSlides = qsa('.studio-overview-mobile-slide', studioOverviewMobile);
+    const nextButton = qs('.studio-overview-mobile-arrow', studioOverviewMobile);
+    const dots = qsa('.dots-studio-overview-mobile .dot', studioOverviewMobile);
+    const number = qs('.number-studio-overview-mobile', studioOverviewMobile);
+    const text = qs('.text-studio-overview-mobile', studioOverviewMobile);
+
+    const slideTexts = [
+      'Студия площадью 120 кв.м светлая и стильная, разделена на две зоны — обеденный зал и зал для игр.',
+      'Два обеденных стола на 26 персон для Ваших душевных бесед и теплых праздников.',
+      'В студии есть кухня с разнообразной посудой, которой можно свободно пользоваться на празднике.',
+      'Двухэтажный игровой домик с горкой разделен на две зоны: комнату юных модниц и комнату супергероев.',
+      'У нас имеется аккуратная и ухоженная туалетная комната, поддерживаемая в чистоте и порядке.',
+      'В зоне для девочек – стильная гримерка с костюмами и деревянные игрушки для игры в салон красоты.',
+    ];
+
+    if (mobileTrack && mobileSlides.length) {
+      let currentIndex = 0;
+
+      const updateStudioOverviewMobile = () => {
+        mobileTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+
+        if (number) {
+          number.textContent = String(currentIndex + 1).padStart(2, '0');
+        }
+
+        if (text) {
+          text.textContent = slideTexts[currentIndex] || '';
+        }
+      };
+
+      if (nextButton) {
+        nextButton.addEventListener('click', () => {
+          currentIndex = currentIndex === mobileSlides.length - 1 ? 0 : currentIndex + 1;
+          updateStudioOverviewMobile();
+        });
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentIndex = index;
+          updateStudioOverviewMobile();
+        });
+      });
+
+      updateStudioOverviewMobile();
+    }
+  }
 });
-
-
-
-// ФОТОГАЛЕРЕЯ
-const photogallerySlider = document.querySelector('.photogallery-slider');
-
-if (photogallerySlider) {
-  const galleryTrack = photogallerySlider.querySelector('.photogallery-track');
-  const gallerySlides = photogallerySlider.querySelectorAll('.photogallery-slide');
-  const galleryPrev = photogallerySlider.querySelector('.price-arrow-prev');
-  const galleryNext = photogallerySlider.querySelector('.price-arrow-next');
-
-  let galleryIndex = 0;
-  const lastGallerySlide = gallerySlides.length - 1;
-
-  function updateGallerySlider() {
-    if (!galleryTrack) return;
-
-    galleryTrack.style.transform = `translateX(-${galleryIndex * 100}%)`;
-
-    if (galleryPrev && galleryNext) {
-      if (galleryIndex === 0) {
-        galleryPrev.style.display = 'none';
-        galleryNext.style.display = 'flex';
-      } else if (galleryIndex === lastGallerySlide) {
-        galleryPrev.style.display = 'flex';
-        galleryNext.style.display = 'none';
-      } else {
-        galleryPrev.style.display = 'flex';
-        galleryNext.style.display = 'flex';
-      }
-    }
-  }
-
-  if (galleryNext) {
-    galleryNext.addEventListener('click', () => {
-      if (galleryIndex < lastGallerySlide) {
-        galleryIndex += 1;
-        updateGallerySlider();
-      }
-    });
-  }
-
-  if (galleryPrev) {
-    galleryPrev.addEventListener('click', () => {
-      if (galleryIndex > 0) {
-        galleryIndex -= 1;
-        updateGallerySlider();
-      }
-    });
-  }
-
-  updateGallerySlider();
-}
-
-
-// ОТЗЫВЫ
-const reviewsSection = document.querySelector('.reviews');
-
-if (reviewsSection) {
-  const reviewsTrack = reviewsSection.querySelector('.reviews-track');
-  const reviewsSlides = reviewsSection.querySelectorAll('.reviews-slide');
-  const reviewsPrev = reviewsSection.querySelector('.price-arrow-prev');
-  const reviewsNext = reviewsSection.querySelector('.price-arrow-next');
-  const reviewsDots = reviewsSection.querySelectorAll('.dots-reviews .dot');
-
-  let reviewsIndex = 0;
-
-  function updateReviewsSlider() {
-    if (!reviewsTrack) return;
-
-    reviewsTrack.style.transform = `translateX(-${reviewsIndex * 100}%)`;
-
-    reviewsDots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === reviewsIndex);
-    });
-  }
-
-  if (reviewsPrev && reviewsNext && reviewsSlides.length) {
-    reviewsNext.addEventListener('click', () => {
-      reviewsIndex = reviewsIndex === reviewsSlides.length - 1 ? 0 : reviewsIndex + 1;
-      updateReviewsSlider();
-    });
-
-    reviewsPrev.addEventListener('click', () => {
-      reviewsIndex = reviewsIndex === 0 ? reviewsSlides.length - 1 : reviewsIndex - 1;
-      updateReviewsSlider();
-    });
-
-    reviewsDots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        reviewsIndex = index;
-        updateReviewsSlider();
-      });
-    });
-
-    updateReviewsSlider();
-  }
-}
-
-
-
-// ОТЗЫВЫ МОБИЛЬНЫЕ
-const reviewsMobileSection = document.querySelector('.reviews-mobile');
-
-if (reviewsMobileSection) {
-  const reviewsMobileTrack = reviewsMobileSection.querySelector('.reviews-track-mobile');
-  const reviewsMobileSlides = reviewsMobileSection.querySelectorAll('.reviews-slide-mobile');
-  const reviewsMobilePrev = reviewsMobileSection.querySelector('.reviews-mobile-prev');
-  const reviewsMobileNext = reviewsMobileSection.querySelector('.reviews-mobile-next');
-  const reviewsMobileDots = reviewsMobileSection.querySelectorAll('.dots-reviews-mobile .dot');
-  const reviewsMobileWindow = reviewsMobileSection.querySelector('.reviews-window-mobile');
-
-  let reviewsMobileIndex = 0;
-  let startX = 0;
-  let startY = 0;
-  const minSwipeDistance = 40;
-
-  function updateMobileReviewsSlider() {
-    if (!reviewsMobileTrack) return;
-
-    reviewsMobileTrack.style.transform = `translateX(-${reviewsMobileIndex * 100}%)`;
-
-    reviewsMobileDots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === reviewsMobileIndex);
-    });
-
-    if (reviewsMobilePrev && reviewsMobileNext) {
-      if (reviewsMobileIndex === 0) {
-        reviewsMobilePrev.style.display = 'none';
-        reviewsMobileNext.style.display = 'flex';
-      } else if (reviewsMobileIndex === reviewsMobileSlides.length - 1) {
-        reviewsMobilePrev.style.display = 'flex';
-        reviewsMobileNext.style.display = 'none';
-      } else {
-        reviewsMobilePrev.style.display = 'flex';
-        reviewsMobileNext.style.display = 'flex';
-      }
-    }
-  }
-
-  if (reviewsMobilePrev && reviewsMobileNext && reviewsMobileSlides.length) {
-    reviewsMobileNext.addEventListener('click', () => {
-      if (reviewsMobileIndex < reviewsMobileSlides.length - 1) {
-        reviewsMobileIndex++;
-        updateMobileReviewsSlider();
-      }
-    });
-
-    reviewsMobilePrev.addEventListener('click', () => {
-      if (reviewsMobileIndex > 0) {
-        reviewsMobileIndex--;
-        updateMobileReviewsSlider();
-      }
-    });
-
-    reviewsMobileDots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        reviewsMobileIndex = index;
-        updateMobileReviewsSlider();
-      });
-    });
-
-    if (reviewsMobileWindow) {
-      reviewsMobileWindow.addEventListener(
-        'touchstart',
-        (e) => {
-          const touch = e.changedTouches[0];
-          startX = touch.clientX;
-          startY = touch.clientY;
-        },
-        { passive: true }
-      );
-
-      reviewsMobileWindow.addEventListener(
-        'touchend',
-        (e) => {
-          const touch = e.changedTouches[0];
-          const endX = touch.clientX;
-          const endY = touch.clientY;
-
-          const diffX = endX - startX;
-          const diffY = endY - startY;
-
-          if (Math.abs(diffY) > Math.abs(diffX)) return;
-
-          if (diffX < -minSwipeDistance && reviewsMobileIndex < reviewsMobileSlides.length - 1) {
-            reviewsMobileIndex++;
-            updateMobileReviewsSlider();
-          }
-
-          if (diffX > minSwipeDistance && reviewsMobileIndex > 0) {
-            reviewsMobileIndex--;
-            updateMobileReviewsSlider();
-          }
-        },
-        { passive: true }
-      );
-    }
-
-    updateMobileReviewsSlider();
-  }
-}
-
-// МОБИЛЬНОЕ МЕНЮ
-const mobileBurger = document.querySelector('.mobile-burger');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileMenuClose = document.querySelector('.mobile-menu-close');
-const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-
-if (mobileBurger && mobileMenu && mobileMenuClose) {
-  mobileBurger.addEventListener('click', () => {
-    mobileMenu.classList.add('is-open');
-    document.body.classList.add('menu-open');
-    mobileBurger.setAttribute('aria-expanded', 'true');
-  });
-
-  mobileMenuClose.addEventListener('click', () => {
-    mobileMenu.classList.remove('is-open');
-    document.body.classList.remove('menu-open');
-    mobileBurger.setAttribute('aria-expanded', 'false');
-  });
-
-  mobileMenu.addEventListener('click', (e) => {
-    if (e.target === mobileMenu) {
-      mobileMenu.classList.remove('is-open');
-      document.body.classList.remove('menu-open');
-      mobileBurger.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  mobileMenuLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('is-open');
-      document.body.classList.remove('menu-open');
-      mobileBurger.setAttribute('aria-expanded', 'false');
-    });
-  });
-}
-
-
-
-// ОБЗОР СТУДИИ — МОБИЛЬНАЯ ВЕРСИЯ
-const studioOverviewMobile = document.querySelector('.studio-overview-mobile');
-
-if (studioOverviewMobile) {
-  const track = studioOverviewMobile.querySelector('.studio-overview-mobile-track');
-  const slides = studioOverviewMobile.querySelectorAll('.studio-overview-mobile-slide');
-  const nextButton = studioOverviewMobile.querySelector('.studio-overview-mobile-arrow');
-  const dots = studioOverviewMobile.querySelectorAll('.dots-studio-overview-mobile .dot');
-  const number = studioOverviewMobile.querySelector('.number-studio-overview-mobile');
-  const text = studioOverviewMobile.querySelector('.text-studio-overview-mobile');
-
-  const slideTexts = [
-    'Студия площадью 120 кв.м светлая и стильная, разделена на две зоны — обеденный зал и зал для игр.',
-    'Два обеденных стола на 26 персон для Ваших душевных бесед и теплых праздников.',
-    'В студии есть кухня с разнообразной посудой, которой можно свободно пользоваться на празднике.',
-    'Двухэтажный игровой домик с горкой разделен на две зоны: комнату юных модниц и комнату супергероев.',
-    'У нас имеется аккуратная и ухоженная туалетная комната, поддерживаемая в чистоте и порядке.',
-    'В зоне для девочек – стильная гримерка с костюмами и деревянные игрушки для игры в салон красоты.'
-  ];
-
-  let currentIndex = 0;
-
-  function updateStudioOverviewMobile() {
-    if (!track) return;
-
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === currentIndex);
-    });
-
-    if (number) {
-      number.textContent = String(currentIndex + 1).padStart(2, '0');
-    }
-
-    if (text) {
-      text.textContent = slideTexts[currentIndex];
-    }
-  }
-
-  if (nextButton && slides.length) {
-    nextButton.addEventListener('click', () => {
-      currentIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
-      updateStudioOverviewMobile();
-    });
-  }
-
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      currentIndex = index;
-      updateStudioOverviewMobile();
-    });
-  });
-
-  updateStudioOverviewMobile();
-}
