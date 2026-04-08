@@ -729,6 +729,8 @@ h1 {
 
 .title-studio-overview {
   margin: 0;
+  font-size: 48px;
+  font-family: var(--font-family-base);
 }
 
 .studio-overview-top {
@@ -3442,7 +3444,7 @@ h1 {
     margin: 0 auto 12px;
     padding: 8px 14px;
     border-radius: 999px;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.2;
     max-width: 300px;
     text-align: left;

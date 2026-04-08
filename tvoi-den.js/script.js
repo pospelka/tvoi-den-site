@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeVideoBtn = document.getElementById('closeVideo');
   const modalVideo = document.getElementById('studioVideo');
   const openVideoBtns = qsa('.open-video');
+  const pageVideos = qsa('.video');
 
   if (videoModal && closeVideoBtn && modalVideo && openVideoBtns.length) {
     const modalVideoSource = qs('source', modalVideo);
@@ -70,7 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
       modalVideo.getAttribute('src') ||
       '';
 
-    const stopVideo = () => {
+    const stopAllPageVideos = () => {
+      pageVideos.forEach((video) => {
+        if (video && typeof video.pause === 'function') {
+          video.pause();
+        }
+      });
+    };
+
+    const stopModalVideo = () => {
       modalVideo.pause();
       modalVideo.currentTime = 0;
     };
@@ -92,20 +101,36 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
+    const prepareVideoForIOS = () => {
+      modalVideo.muted = false;
+      modalVideo.defaultMuted = false;
+      modalVideo.volume = 1;
+
+      modalVideo.removeAttribute('muted');
+      modalVideo.removeAttribute('autoplay');
+
+      // На iPhone лучше явно задать inline-режим
+      modalVideo.setAttribute('playsinline', '');
+      modalVideo.setAttribute('webkit-playsinline', '');
+    };
+
     const closeVideoModal = () => {
       videoModal.classList.remove('active');
-      stopVideo();
+      stopModalVideo();
     };
 
     const openVideoModal = (src = '') => {
+      stopAllPageVideos();
       setVideoSrc(src);
+      prepareVideoForIOS();
+
       modalVideo.currentTime = 0;
       videoModal.classList.add('active');
 
-      /* ВАЖНО:
-         НЕ запускаем modalVideo.play() автоматически.
-         На iPhone это часто ломает звук.
-         Пользователь сам нажимает play в controls. */
+      // ВАЖНО:
+      // не запускаем modalVideo.play() автоматически,
+      // потому что на iPhone это часто приводит к проблемам со звуком.
+      // Пользователь сам нажимает play в стандартных controls.
     };
 
     openVideoBtns.forEach((btn) => {
