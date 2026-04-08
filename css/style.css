@@ -909,6 +909,9 @@ h1 {
 
 .title-rules {
   margin: 0;
+  font-size: 48px;
+  font-family: var(--font-family-base);
+  font-weight: 900;
 }
 
 .rule {
@@ -3967,7 +3970,8 @@ h1 {
   }
 
   .reviews-mobile-prev {
-    display: none;
+    display: flex;
+    left: -8px;
   }
 
   .reviews-mobile-next {

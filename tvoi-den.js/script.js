@@ -64,11 +64,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const openVideoBtns = qsa('.open-video');
 
   if (videoModal && closeVideoBtn && modalVideo && openVideoBtns.length) {
-    const defaultVideoSrc = qs('source', modalVideo)?.getAttribute('src') || modalVideo.getAttribute('src') || '';
+    const modalVideoSource = qs('source', modalVideo);
+    const defaultVideoSrc =
+      modalVideoSource?.getAttribute('src') ||
+      modalVideo.getAttribute('src') ||
+      '';
 
     const stopVideo = () => {
       modalVideo.pause();
       modalVideo.currentTime = 0;
+    };
+
+    const setVideoSrc = (src) => {
+      const targetSrc = src || defaultVideoSrc;
+      if (!targetSrc) return;
+
+      if (modalVideoSource) {
+        if (modalVideoSource.getAttribute('src') !== targetSrc) {
+          modalVideoSource.setAttribute('src', targetSrc);
+          modalVideo.load();
+        }
+      } else {
+        if (modalVideo.getAttribute('src') !== targetSrc) {
+          modalVideo.setAttribute('src', targetSrc);
+          modalVideo.load();
+        }
+      }
     };
 
     const closeVideoModal = () => {
@@ -77,19 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const openVideoModal = (src = '') => {
-      const targetSrc = src || defaultVideoSrc;
-
-      if (targetSrc && modalVideo.getAttribute('src') !== targetSrc) {
-        modalVideo.setAttribute('src', targetSrc);
-        modalVideo.load();
-      }
-
+      setVideoSrc(src);
+      modalVideo.currentTime = 0;
       videoModal.classList.add('active');
 
-      const playPromise = modalVideo.play();
-      if (playPromise && typeof playPromise.catch === 'function') {
-        playPromise.catch(() => {});
-      }
+      /* ВАЖНО:
+         НЕ запускаем modalVideo.play() автоматически.
+         На iPhone это часто ломает звук.
+         Пользователь сам нажимает play в controls. */
     };
 
     openVideoBtns.forEach((btn) => {
