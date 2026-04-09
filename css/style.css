@@ -2366,7 +2366,7 @@ h1 {
     display: grid;
     grid-template-columns: 118px 1fr 44px;
     align-items: center;
-    column-gap: 45px;
+    column-gap: 25px;
   }
 
   .mobile-header__logos {
