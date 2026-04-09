@@ -58,96 +58,92 @@ document.addEventListener('DOMContentLoaded', () => {
   /* =========================
      ВИДЕО-МОДАЛКА
   ========================= */
-  const videoModal = document.getElementById('videoModal');
-  const closeVideoBtn = document.getElementById('closeVideo');
-  const modalVideo = document.getElementById('studioVideo');
-  const openVideoBtns = qsa('.open-video');
-  const pageVideos = qsa('.video');
+  /* =========================
+   ВИДЕО-МОДАЛКА
+========================= */
+const videoModal = document.getElementById('videoModal');
+const closeVideoBtn = document.getElementById('closeVideo');
+const modalVideo = document.getElementById('studioVideo');
+const openVideoBtns = qsa('.open-video');
+const cardVideos = qsa('.price-list .video-block video');
 
-  if (videoModal && closeVideoBtn && modalVideo && openVideoBtns.length) {
-    const modalVideoSource = qs('source', modalVideo);
-    const defaultVideoSrc =
-      modalVideoSource?.getAttribute('src') ||
-      modalVideo.getAttribute('src') ||
-      '';
+if (videoModal && closeVideoBtn && modalVideo) {
+  const modalVideoSource = qs('source', modalVideo);
+  const defaultVideoSrc =
+    modalVideoSource?.getAttribute('src') ||
+    modalVideo.getAttribute('src') ||
+    '';
 
-    const stopAllPageVideos = () => {
-      pageVideos.forEach((video) => {
-        if (video && typeof video.pause === 'function') {
-          video.pause();
-        }
-      });
-    };
+  const stopVideo = () => {
+    modalVideo.pause();
+    modalVideo.currentTime = 0;
+  };
 
-    const stopModalVideo = () => {
-      modalVideo.pause();
-      modalVideo.currentTime = 0;
-    };
+  const setVideoSrc = (src) => {
+    const targetSrc = src || defaultVideoSrc;
+    if (!targetSrc) return;
 
-    const setVideoSrc = (src) => {
-      const targetSrc = src || defaultVideoSrc;
-      if (!targetSrc) return;
-
-      if (modalVideoSource) {
-        if (modalVideoSource.getAttribute('src') !== targetSrc) {
-          modalVideoSource.setAttribute('src', targetSrc);
-          modalVideo.load();
-        }
-      } else {
-        if (modalVideo.getAttribute('src') !== targetSrc) {
-          modalVideo.setAttribute('src', targetSrc);
-          modalVideo.load();
-        }
+    if (modalVideoSource) {
+      if (modalVideoSource.getAttribute('src') !== targetSrc) {
+        modalVideoSource.setAttribute('src', targetSrc);
+        modalVideo.load();
       }
-    };
+    } else {
+      if (modalVideo.getAttribute('src') !== targetSrc) {
+        modalVideo.setAttribute('src', targetSrc);
+        modalVideo.load();
+      }
+    }
+  };
 
-    const prepareVideoForIOS = () => {
-      modalVideo.muted = false;
-      modalVideo.defaultMuted = false;
-      modalVideo.volume = 1;
+  const openVideoModal = (src = '') => {
+    setVideoSrc(src);
+    modalVideo.currentTime = 0;
+    videoModal.classList.add('active');
 
-      modalVideo.removeAttribute('muted');
-      modalVideo.removeAttribute('autoplay');
+    const playPromise = modalVideo.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {});
+    }
+  };
 
-      // На iPhone лучше явно задать inline-режим
-      modalVideo.setAttribute('playsinline', '');
-      modalVideo.setAttribute('webkit-playsinline', '');
-    };
+  const closeVideoModal = () => {
+    videoModal.classList.remove('active');
+    stopVideo();
+  };
 
-    const closeVideoModal = () => {
-      videoModal.classList.remove('active');
-      stopModalVideo();
-    };
+  openVideoBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openVideoModal(btn.dataset.video || '');
+    });
+  });
 
-    const openVideoModal = (src = '') => {
-      stopAllPageVideos();
-      setVideoSrc(src);
-      prepareVideoForIOS();
+  cardVideos.forEach((video) => {
+    const source = qs('source', video);
+    const src = source?.getAttribute('src') || video.getAttribute('src') || '';
 
-      modalVideo.currentTime = 0;
-      videoModal.classList.add('active');
-
-      // ВАЖНО:
-      // не запускаем modalVideo.play() автоматически,
-      // потому что на iPhone это часто приводит к проблемам со звуком.
-      // Пользователь сам нажимает play в стандартных controls.
-    };
-
-    openVideoBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        openVideoModal(btn.dataset.video || '');
-      });
+    video.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openVideoModal(src);
     });
 
-    closeVideoBtn.addEventListener('click', closeVideoModal);
-
-    videoModal.addEventListener('click', (e) => {
-      if (e.target === videoModal) {
-        closeVideoModal();
-      }
+    video.addEventListener('play', () => {
+      video.pause();
+      video.currentTime = 0;
     });
-  }
+  });
 
+  closeVideoBtn.addEventListener('click', closeVideoModal);
+
+  videoModal.addEventListener('click', (e) => {
+    if (e.target === videoModal) {
+      closeVideoModal();
+    }
+  });
+}
   /* =========================
      УНИВЕРСАЛЬНЫЙ СЛАЙДЕР
   ========================= */

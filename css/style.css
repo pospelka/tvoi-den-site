@@ -2304,51 +2304,46 @@ h1 {
 .video-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
+  z-index: 9999;
+  display: none;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease;
-  z-index: 4000;
+  background: rgba(0, 0, 0, 0.82);
+  padding: 16px;
 }
 
 .video-modal.active {
-  opacity: 1;
-  pointer-events: all;
+  display: flex;
 }
 
 .video-modal-content {
   position: relative;
-  width: fit-content;
-  max-width: 90vw;
-  max-height: 85vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: min(100%, 430px);
+  max-height: 90vh;
 }
 
-.video-modal video {
+#studioVideo {
   display: block;
-  max-width: 90vw;
-  max-height: 85vh;
-  width: auto;
-  height: auto;
+  width: 100%;
+  max-height: 90vh;
   border-radius: 20px;
+  background: #000;
 }
 
 .video-close {
   position: absolute;
-  top: -40px;
+  top: -44px;
   right: 0;
-  background: none;
+  width: 40px;
+  height: 40px;
   border: none;
-  font-size: 30px;
-  color: white;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
   cursor: pointer;
+  z-index: 2;
 }
 
 /* =========================
