@@ -1513,6 +1513,10 @@ h1 {
   min-width: 0;
 }
 
+.price-list-button{
+  cursor: none;
+}
+
 .price-name {
   font-family: var(--font-family-base);
   font-size: clamp(14px, 1.35vw, 18px);
