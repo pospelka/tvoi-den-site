@@ -352,7 +352,6 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: clamp(8px, 1vw, 15px);
-  flex: 1 1 auto;
   min-width: 0;
 }
 
@@ -402,20 +401,27 @@ h1 {
 }
 
 /* Компактный хедер при скролле */
-
 .header.scrolled {
   padding: 14px 0;
   border-radius: 0 0 34px 34px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* ВАЖНО:
+   делаем 3 колонки:
+   левая одинаковой ширины с правой,
+   меню всегда в центре */
 .header.scrolled .header-inner {
-  gap: 24px;
+  grid-template-columns: 220px 1fr 220px;
+  align-items: center;
+  gap: 16px;
 }
 
 .header.scrolled .header-logo {
-  min-width: auto;
+  min-width: 0;
   gap: 0;
+  justify-self: start;
+  align-self: center;
 }
 
 .header.scrolled .logo-balagan {
@@ -431,7 +437,12 @@ h1 {
 }
 
 .header.scrolled .header-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 16px;
+  min-width: 0;
+  margin: 0;
 }
 
 .header.scrolled .header-item {
@@ -439,13 +450,16 @@ h1 {
 }
 
 .header.scrolled .header-contacts {
-  min-width: auto;
-  justify-content: center;
+  min-width: 0;
+  width: 220px;
+  justify-self: end;
+  align-items: flex-end;
 }
 
 .header.scrolled .number {
   gap: 10px;
   font-size: 16px;
+  justify-content: flex-end;
 }
 
 .header.scrolled .header-contact-icon {
