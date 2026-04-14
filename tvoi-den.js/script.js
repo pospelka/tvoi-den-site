@@ -507,3 +507,37 @@ if (videoModal && closeVideoBtn && modalVideo) {
     }
   }
 });
+
+
+
+
+/* =========================
+   ПОДАРОК НА ГЛАВНОМ ЭКРАНЕ
+========================= */
+
+const giftTrigger = document.getElementById('giftTrigger');
+const giftPopup = document.getElementById('giftPopup');
+const giftPopupClose = document.getElementById('giftPopupClose');
+const giftPopupOverlay = document.getElementById('giftPopupOverlay');
+
+if (giftTrigger && giftPopup && giftPopupClose && giftPopupOverlay) {
+  const openGiftPopup = () => {
+    giftPopup.hidden = false;
+    document.body.classList.add('popup-open');
+  };
+
+  const closeGiftPopup = () => {
+    giftPopup.hidden = true;
+    document.body.classList.remove('popup-open');
+  };
+
+  giftTrigger.addEventListener('click', openGiftPopup);
+  giftPopupClose.addEventListener('click', closeGiftPopup);
+  giftPopupOverlay.addEventListener('click', closeGiftPopup);
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !giftPopup.hidden) {
+      closeGiftPopup();
+    }
+  });
+}

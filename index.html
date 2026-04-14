@@ -282,6 +282,42 @@
           </span>
         </button>
 
+        <!-- подарок -->
+          <button class="gift-trigger" id="giftTrigger" type="button" aria-label="Открыть подарок">
+            <img
+              src="image/подарок.webp"
+              alt="Подарок"
+              class="gift-trigger_image"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="gift-trigger_badge">ЗАБЕРИТЕ<br />ПОДАРОК!</span>
+          </button>
+
+          <!-- попап подарка -->
+          <div class="gift-popup" id="giftPopup" hidden>
+            <div class="gift-popup_overlay" id="giftPopupOverlay"></div>
+
+            <div
+              class="gift-popup_window"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="giftPopupTitle"
+            >
+              <button class="gift-popup_close" id="giftPopupClose" type="button" aria-label="Закрыть">
+                ×
+              </button>
+
+              <p class="gift-popup_text" id="giftPopupTitle">
+                При бронировании программы<br />
+                назовите промокод “ПОДАРОК”<br />
+                и получите скидку - 1000 руб.
+                <br /><br />
+                Подробности у администратора!
+              </p>
+            </div>
+          </div>
+
         <div class="card" hidden>
           <a href="tel:+79063298381">Позвонить +7 906-329-83-81</a>
           <button type="button">Отменить</button>
@@ -315,7 +351,7 @@
       <section class="slogan">
         <div class="slogan-wrap">
           <img src="image/торт.webp" alt="тортик" class="cake" loading="lazy" decoding="async" />
-          <img src="image/подарок.webp" alt="подарок" class="gift" loading="lazy" decoding="async" />
+          <img src="image/мишка.webp" alt="подарок" class="gift" loading="lazy" decoding="async" />
 
           <div class="slogan-content">
             <p class="slogan-text">
