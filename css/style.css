@@ -779,13 +779,15 @@ h1 {
 
 @media (max-width: 435px) {
   .gift-trigger {
-    top: 350px;
-    right: 40px;
+    flex-direction: column; /* ↓ теперь вертикально */
+    align-items: center;
+    top: 400px;
+    right: 60px;
     gap: 6px;
   }
 
   .gift-trigger_image {
-    width: 72px;
+    width: 120px;
   }
 
   .gift-trigger_badge {
