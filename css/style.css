@@ -4408,27 +4408,3 @@ h1 {
     scroll-behavior: auto !important;
   }
 }
-
-
-/* Защита от дурака: на любом экране шире 500px принудительно включаем мобильные стили */
-@media (min-width: 436px) and (max-width: 1024px) {
-  /* Принудительно применяем те же правила, что и для мобильной версии */
-  /* Просто скопируйте сюда все стили из вашего блока @media (max-width: 435px) */
-  /* и замените везде 435px на 1024px */
-  
-  /* ЛИБО (проще): */
-  body {
-    transform: scale(1);
-    width: 100%;
-  }
-  
-  .desktop-header {
-    display: none !important;
-  }
-  
-  .mobile-header {
-    display: block !important;
-  }
-  
-  /* ... и так далее для всех блоков */
-}
