@@ -42,7 +42,7 @@ html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
-  overflow-x: visible;
+  overflow-x: hidden;
 }
 
 *,
@@ -53,7 +53,8 @@ html {
 
 body {
   margin: 0;
-  overflow-x: clip;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 main {
@@ -271,7 +272,7 @@ h1 {
   font-size: 48px;
   font-family: var(--font-family-base);
   font-weight: 900;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .container {
@@ -790,8 +791,7 @@ h1 {
     flex-direction: column; /* ↓ теперь вертикально */
     align-items: center;
     top: 400px;
-    right: 60px;
-    gap: 6px;
+    right: 2cqh;
   }
 
   .gift-trigger_image {
@@ -4407,4 +4407,32 @@ h1 {
     transition: none !important;
     scroll-behavior: auto !important;
   }
+}
+
+* {
+  min-width: 0;
+}
+
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+
+@media (max-width: 435px) {
+
+  .container,
+  .first,
+  .first_container,
+  .content,
+  .studio-overview-window,
+  .reviews-window-mobile,
+  .photogallery-window {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
 }

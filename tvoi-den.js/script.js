@@ -541,3 +541,7 @@ if (giftTrigger && giftPopup && giftPopupClose && giftPopupOverlay) {
     }
   });
 }
+
+window.addEventListener('load', () => {
+  window.dispatchEvent(new Event('resize'));
+});
